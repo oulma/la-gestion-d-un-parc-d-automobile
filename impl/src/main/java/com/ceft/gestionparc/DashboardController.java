@@ -15,7 +15,7 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-public class Dashboard implements Initializable {
+public class DashboardController implements Initializable {
     @FXML
     private ImageView imagepark;
     @FXML
@@ -49,7 +49,7 @@ public class Dashboard implements Initializable {
 
     public void goToDashboard(){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("view/Dashboard.fxml"));
             Stage dashStage = new Stage();
             dashStage.initStyle(StageStyle.UNDECORATED);
             dashStage.setScene(new Scene(root,1280,600));

@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Dashboard">
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.DashboardController">
     <children>
         <ImageView fx:id="imagepark" fitHeight="600.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../_img/VOITURE.png" />
+                <Image url="@../../../../../../../_img/VOITURE.png" />
             </image>
         </ImageView>
         <Button id="windows7-default" layoutX="143.0" layoutY="112.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-radius: 12;" text="Button" />

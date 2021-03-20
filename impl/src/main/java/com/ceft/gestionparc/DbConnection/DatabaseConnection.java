@@ -10,7 +10,8 @@ public class DatabaseConnection {
     public Connection connectionDuBd() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection databaseLink = DriverManager.getConnection("jdbc:mysql://localhost/dbadmin","root","");
+
+        Connection databaseLink = DriverManager.getConnection("jdbc:mysql://localhost/parc","root","");
         return databaseLink;
     }
 }
