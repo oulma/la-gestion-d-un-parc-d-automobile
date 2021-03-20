@@ -21,7 +21,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane id="5" prefHeight="417.0" prefWidth="319.0" style="-fx-background-color: #900C3F; -fx-background-radius: 0em 3em 3em 0em;" BorderPane.alignment="CENTER">
+      <AnchorPane id="5" prefHeight="417.0" prefWidth="319.0" style="-fx-background-color: yellow; -fx-background-radius: 0em 3em 3em 0em;" BorderPane.alignment="CENTER">
          <Label layoutX="49.0" layoutY="182.0" prefHeight="17.0" prefWidth="154.0" text="Nom d'utilisateur : " />
          <Label layoutX="48.0" layoutY="240.0" prefHeight="18.0" prefWidth="154.0" text="Mot de passe :" />
          <TextField fx:id="usernameTextField" layoutX="48.0" layoutY="200.0" prefHeight="26.0" prefWidth="218.0" promptText="Nome d'utilisateur" />
