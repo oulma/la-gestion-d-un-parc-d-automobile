@@ -4,20 +4,26 @@ import com.ceft.gestionparc.DbConnection.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class PasswordOublier {
+public class PasswordOublier implements Initializable {
     @FXML
     private Button annulerOublierPass,resinistialisation;
     @FXML
@@ -91,6 +97,22 @@ public class PasswordOublier {
             Stage stage = (Stage) ok.getScene().getWindow();
             stage.close();
         }
+        @FXML
+        private ImageView key,lock1,lock2;
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        File brandingFile = new File("_img/key.png");
+        Image brandignImage = new Image(brandingFile.toURI().toString());
+        key.setImage(brandignImage);
+
+        File brandingFile1 = new File("_img/padlock.png");
+        Image brandignImage1 = new Image(brandingFile1.toURI().toString());
+        lock1.setImage(brandignImage1);
+
+        File lockFile = new File("_img/padlock.png");
+        Image lockImage = new Image(lockFile.toURI().toString());
+        lock2.setImage(lockImage);
+    }
 
 }
 
