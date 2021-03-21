@@ -1,5 +1,4 @@
 package com.ceft.gestionparc;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -11,8 +10,7 @@ public class App extends Application {
        AuthentificationController aut= new AuthentificationController();
        aut.showAuthentification();
 
-        //com/ceft/gestionparc/controller/java
-        //com/ceft/gestionparc/Authentification.fxml
+
     }
 
 

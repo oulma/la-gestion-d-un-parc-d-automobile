@@ -49,7 +49,7 @@ public class DashboardController implements Initializable {
 
     public void goToDashboard(){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("view/Dashboard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/Dashboard.fxml"));
             Stage dashStage = new Stage();
             dashStage.initStyle(StageStyle.UNDECORATED);
             dashStage.setScene(new Scene(root,1280,600));
