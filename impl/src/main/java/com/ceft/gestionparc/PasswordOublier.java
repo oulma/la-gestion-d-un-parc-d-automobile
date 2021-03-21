@@ -23,7 +23,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class PasswordOublier implements Initializable {
+public class PasswordOublier {
     @FXML
     private Button annulerOublierPass,resinistialisation;
     @FXML
@@ -32,8 +32,6 @@ public class PasswordOublier implements Initializable {
     private PasswordField PASSWORD2,PASSWORD1;
     @FXML
     private Label messageErreurOublierPass;
-    @FXML
-    private Label greenSeclable;
 
     public void annulerOublierPassOnAction(){
         Stage stage = (Stage) annulerOublierPass.getScene().getWindow();
@@ -97,22 +95,6 @@ public class PasswordOublier implements Initializable {
             Stage stage = (Stage) ok.getScene().getWindow();
             stage.close();
         }
-        @FXML
-        private ImageView key,lock1,lock2;
-
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile = new File("_img/key.png");
-        Image brandignImage = new Image(brandingFile.toURI().toString());
-        key.setImage(brandignImage);
-
-        File brandingFile1 = new File("_img/padlock.png");
-        Image brandignImage1 = new Image(brandingFile1.toURI().toString());
-        lock1.setImage(brandignImage1);
-
-        File lockFile = new File("_img/padlock.png");
-        Image lockImage = new Image(lockFile.toURI().toString());
-        lock2.setImage(lockImage);
-    }
 
 }
 
