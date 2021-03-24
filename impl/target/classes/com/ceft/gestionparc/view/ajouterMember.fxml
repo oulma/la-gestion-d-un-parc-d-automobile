@@ -13,7 +13,7 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: #DA6E70; -fx-background-radius: 15;">
          <children>
-            <Label fx:id="setEmail" layoutX="874.0" layoutY="18.0" text="heeeeeee">
+            <Label fx:id="setEmail" layoutX="874.0" layoutY="19.0" underline="true">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
@@ -113,10 +113,10 @@
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="359.0" layoutY="177.0" prefHeight="35.0" prefWidth="384.0" promptText="CIN" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="177.0" />
-            <TextField layoutX="359.0" layoutY="17.0" prefHeight="35.0" prefWidth="384.0" promptText="Nom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="17.0" />
-            <TextField layoutX="359.0" layoutY="101.0" prefHeight="35.0" prefWidth="384.0" promptText="Prénom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="101.0" />
-            <Button alignment="CENTER" layoutX="512.0" layoutY="406.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="193.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 20;" text="Ajouter">
+            <TextField fx:id="cinAjouterUtilisateur" layoutX="359.0" layoutY="177.0" prefHeight="35.0" prefWidth="384.0" promptText="CIN" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="177.0" />
+            <TextField fx:id="nomAjouterUtilisateur" layoutX="359.0" layoutY="17.0" prefHeight="35.0" prefWidth="384.0" promptText="Nom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="17.0" />
+            <TextField fx:id="prenomAjouterUtilisateur" layoutX="359.0" layoutY="101.0" prefHeight="35.0" prefWidth="384.0" promptText="Prénom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="101.0" />
+            <Button fx:id="ajouterUtilisateur" alignment="CENTER" layoutX="512.0" layoutY="406.0" mnemonicParsing="false" onAction="#ajouterUtilisateurOnAction" prefHeight="55.0" prefWidth="193.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 20;" text="Ajouter">
                <font>
                   <Font name="Times New Roman" size="24.0" />
                </font>
@@ -126,8 +126,15 @@
                   <Font name="Times New Roman" size="24.0" />
                </font>
             </Button>
-            <PasswordField layoutX="359.0" layoutY="250.0" prefHeight="35.0" prefWidth="379.0" promptText="Mots de passe" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="250.0" />
-            <PasswordField layoutX="359.0" layoutY="326.0" prefHeight="35.0" prefWidth="379.0" promptText="Confirmation" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="326.0" />
+            <PasswordField fx:id="npassAjouterUtilisateur" layoutX="359.0" layoutY="326.0" prefHeight="35.0" prefWidth="379.0" promptText="Confirmation" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="326.0" />
+            <PasswordField fx:id="passAjouterUtilisateur" layoutX="359.0" layoutY="250.0" prefHeight="35.0" prefWidth="379.0" promptText="Mots de passe" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="250.0" />
+            <Label fx:id="confirmAjouter" layoutX="359.0" layoutY="379.0" textFill="RED" AnchorPane.leftAnchor="359.0" />
+            <Label layoutX="118.0" layoutY="58.0" text="Email :">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailAjouterUtilisateur" layoutX="359.0" layoutY="58.0" prefHeight="35.0" prefWidth="384.0" promptText="email" />
          </children>
       </AnchorPane>
       <Button layoutX="1193.0" layoutY="4.0" minHeight="0.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="66.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 3EM 3EM 3EM 3EM;" textFill="WHITE" wrapText="true" />

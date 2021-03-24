@@ -42,7 +42,7 @@ public class PasswordOublier {
         if (!serial.getText().isBlank() && !PASSWORD2.getText().isBlank() && !PASSWORD1.getText().isBlank()) {
                validateRes();
             } else {
-            messageErreurOublierPass.setText("nom d'utilisateur ou le mot de passe vide");
+            messageErreurOublierPass.setText("Serie ou le mot de passe son vide");
             }
         }
 

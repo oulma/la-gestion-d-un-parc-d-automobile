@@ -24,7 +24,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class AuthentificationController implements Initializable {
-
+    public static String user;
     @FXML
     private Button cancelButton;
     @FXML
@@ -80,12 +80,14 @@ public class AuthentificationController implements Initializable {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-
+    public void retrunEmail() {
+        user = String.valueOf(usernameTextField.getText());
+    }
 
     public void validateLogin() throws SQLException, ClassNotFoundException {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.connectionDuBd();
-
+        retrunEmail();
         String verifyLogin = "SELECT count(1) FROM utilisateur where nomU = '" + usernameTextField.getText() + "' and motPasse = '" + enterPasswordField.getText() + "'";
 
         try {

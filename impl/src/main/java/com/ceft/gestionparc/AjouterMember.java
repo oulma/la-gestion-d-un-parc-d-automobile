@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,11 +28,19 @@ import java.util.ResourceBundle;
 
 public class AjouterMember implements Initializable {
     @FXML
+    private TextField nomAjouterUtilisateur, cinAjouterUtilisateur, prenomAjouterUtilisateur, emailAjouterUtilisateur;
+    @FXML
+    private PasswordField passAjouterUtilisateur, npassAjouterUtilisateur;
+    @FXML
+    private Label confirmAjouter;
+    @FXML
     public Label setEmail;
     @FXML
     private Button annulerAjouterMember;
     @FXML
     private ImageView dash1, dash2, dash3, dash4, dash5, dash6, dash7, dash77;
+    @FXML
+    private Button ajouterUtilisateur;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -72,33 +82,65 @@ public class AjouterMember implements Initializable {
         }
     }
 
-
-
-    //se methode annuller l'ajoute d'un utilisateur
-    public void annulerAjouterMemberOnAction() {
-        Stage stage = (Stage) annulerAjouterMember.getScene().getWindow();
-        stage.close();
+    //had le method kat ajouti lina user fe la base de donner
+    public void ajouterUtilisateurOnAction() throws SQLException, IOException, ClassNotFoundException {
+        if (!emailAjouterUtilisateur.getText().isBlank() && !prenomAjouterUtilisateur.getText().isBlank() && !cinAjouterUtilisateur.getText().isBlank() && !passAjouterUtilisateur.getText().isBlank() && !npassAjouterUtilisateur.getText().isBlank() && !nomAjouterUtilisateur.getText().isBlank()) {
+            validateAjouter();
+        } else {
+            cinAjouterUtilisateur.setText("Entrer tout les champ");
+        }
     }
-    // had le methode kat rej3 lina le email dyal ay wa7ed t connecta l application
-    public String afficherEmail() throws SQLException, ClassNotFoundException {
-        DashboardController d = new DashboardController();
-        String requet = "Select * from utilisateur where nomU ='a'";
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.connectionDuBd();
-        Statement statement = connectDB.createStatement();
-        ResultSet rs = statement.executeQuery(requet);
-        if(rs.next()){
 
-                      return rs.getString(5);
-                  }
-                  else{
-                      return "N/A";
-                  }
+    public void validateAjouter() throws SQLException, ClassNotFoundException, IOException {
+        if (passAjouterUtilisateur.getText().equals(npassAjouterUtilisateur.getText())) {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.connectionDuBd();
 
-
-
+            try {
+                Statement st = connectDB.createStatement();
+                String addAccount = "INSERT INTO utilisateur (idUtilisateur, serieU, nomU, motPasse, emailU, cinU) VALUES ('5','d', '"+prenomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"', '" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
+                st.executeUpdate(addAccount);
+                Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/Confirmation.fxml"));
+                Scene scene = new Scene(root);
+                Stage primaryStage = new Stage();
+                primaryStage.initStyle(StageStyle.TRANSPARENT);
+                primaryStage.setScene(scene);
+                scene.setFill(Color.TRANSPARENT);
+                primaryStage.show();
+                Stage stage = (Stage) ajouterUtilisateur.getScene().getWindow();
+                stage.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            confirmAjouter.setText("votre série est invalide");
+        }
     }
-}
+
+
+        //se methode annuller l'ajoute d'un utilisateur
+        public void annulerAjouterMemberOnAction () {
+            Stage stage = (Stage) annulerAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        // had le methode kat rej3 lina le email dyal ay wa7ed t connecta l application
+        public String afficherEmail () throws SQLException, ClassNotFoundException {
+            String requet = "Select * from utilisateur where nomU ='" + AuthentificationController.user + "'";
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.connectionDuBd();
+            Statement statement = connectDB.createStatement();
+            ResultSet rs = statement.executeQuery(requet);
+            if (rs.next()) {
+
+                return rs.getString(5);
+            } else {
+                return "N/A";
+            }
+
+
+        }
+    }
+
 
 
 
