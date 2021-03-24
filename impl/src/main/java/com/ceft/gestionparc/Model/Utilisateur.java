@@ -1,5 +1,13 @@
 package com.ceft.gestionparc.Model;
 
+import com.ceft.gestionparc.DashboardController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import java.util.ArrayList;
 
 public class Utilisateur {
@@ -26,6 +34,7 @@ public class Utilisateur {
         this.reservation = reservation;
         this.parking = parking;
     }
+
 
     public int getIdU() {
         return idU;
@@ -59,9 +68,7 @@ public class Utilisateur {
         this.motPasse = motPasse;
     }
 
-    public String getEmailU() {
-        return emailU;
-    }
+    public String getEmailU() { return emailU; }
 
     public void setEmailU(String emailU) {
         this.emailU = emailU;
@@ -90,4 +97,12 @@ public class Utilisateur {
     public void setParking(ArrayList<Parking> parking) {
         this.parking = parking;
     }
-}
+
+
+
+
+    }
+
+
+
+

@@ -13,7 +13,7 @@
 <BorderPane prefHeight="426.0" prefWidth="574.0" style="-fx-background-radius: 0em 3em 3em 0em;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.AuthentificationController">
    <left>
       <AnchorPane prefHeight="0.0" prefWidth="229.0">
-         <ImageView fx:id="brandignImageView" fitHeight="495.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+         <ImageView fx:id="brandignImageView" fitHeight="495.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../../../../../../../_img/_login.png" />
             </image>
@@ -21,19 +21,19 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane id="5" prefHeight="417.0" prefWidth="319.0" style="-fx-background-color: tan; -fx-background-radius: 0em 3em 3em 0em;" BorderPane.alignment="CENTER">
-         <Label layoutX="49.0" layoutY="182.0" prefHeight="17.0" prefWidth="154.0" text="Nom d'utilisateur : " />
-         <Label layoutX="48.0" layoutY="240.0" prefHeight="18.0" prefWidth="154.0" text="Mot de passe :" />
-         <TextField fx:id="usernameTextField" layoutX="48.0" layoutY="200.0" prefHeight="26.0" prefWidth="218.0" promptText="Nome d'utilisateur" />
-         <ImageView fx:id="lockImageView" fitHeight="119.0" fitWidth="100.0" layoutX="102.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane id="5" prefHeight="417.0" prefWidth="319.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 0em 3em 3em 0em;" BorderPane.alignment="CENTER">
+         <Label layoutX="40.0" layoutY="182.0" prefHeight="17.0" prefWidth="154.0" text="Nom d'utilisateur : " />
+         <Label layoutX="39.0" layoutY="240.0" prefHeight="18.0" prefWidth="154.0" text="Mot de passe :" />
+         <TextField fx:id="usernameTextField" layoutX="39.0" layoutY="200.0" prefHeight="26.0" prefWidth="218.0" promptText="Nome d'utilisateur" />
+         <ImageView fx:id="lockImageView" fitHeight="119.0" fitWidth="100.0" layoutX="93.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../../../../../../../_img/_person.png" />
             </image>
          </ImageView>
-         <PasswordField fx:id="enterPasswordField" layoutX="48.0" layoutY="259.0" prefHeight="26.0" prefWidth="218.0" promptText="Mot de passe" />
-         <Hyperlink fx:id="oublierPass" onAction="#oublierPassOnAction" layoutX="47.0" layoutY="386.0" text="Mot de passe oublier ?" />
-         <Button fx:id="cancelButton" layoutX="49.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: AC2E45;" text="Annuler" textFill="WHITE" />
-         <Button fx:id="loginButton" layoutX="49.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: AC2E45;" text="LOGIN" textAlignment="CENTER" textFill="WHITE" />
+         <PasswordField fx:id="enterPasswordField" layoutX="39.0" layoutY="259.0" prefHeight="26.0" prefWidth="218.0" promptText="Mot de passe" />
+         <Hyperlink fx:id="oublierPass" layoutX="38.0" layoutY="386.0" onAction="#oublierPassOnAction" text="Mot de passe oublier ?" />
+         <Button fx:id="cancelButton" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Annuler" textFill="WHITE" />
+         <Button fx:id="loginButton" layoutX="40.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="LOGIN" textAlignment="CENTER" textFill="WHITE" />
          <Label fx:id="loginMessageLabel" layoutX="50.0" layoutY="290.0" textFill="#ff0101" />
       </AnchorPane>
    </center>

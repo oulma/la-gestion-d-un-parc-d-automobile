@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-//salam
+
 
     public Connection connectionDuBd() throws ClassNotFoundException, SQLException {
 

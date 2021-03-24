@@ -50,6 +50,8 @@ public class AuthentificationController implements Initializable {
         lockImageView.setImage(lockImage);
     }
 
+
+
     public void showAuthentification() throws IOException {
 
 
@@ -62,11 +64,11 @@ public class AuthentificationController implements Initializable {
         primaryStage.show();
 
     }
-
+   
 
     public void loginButtonOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
-
+            
             validateLogin();
 
         } else {
@@ -91,7 +93,7 @@ public class AuthentificationController implements Initializable {
             ResultSet rs = statement.executeQuery(verifyLogin);
             while (rs.next()) {
 
-                //     Utilisateur util = new Utilisateur(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                //  Utilisateur util = new Utilisateur(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 
                 if (rs.getInt(1) == 1) {
                     DashboardController dashboard = new DashboardController();
