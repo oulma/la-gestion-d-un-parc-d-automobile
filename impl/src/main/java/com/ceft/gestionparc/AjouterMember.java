@@ -1,7 +1,6 @@
 package com.ceft.gestionparc;
 
 import com.ceft.gestionparc.DbConnection.DatabaseConnection;
-import com.mysql.cj.jdbc.StatementImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -27,6 +26,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class AjouterMember implements Initializable {
+
     @FXML
     private TextField nomAjouterUtilisateur, cinAjouterUtilisateur, prenomAjouterUtilisateur, emailAjouterUtilisateur;
     @FXML
@@ -87,9 +87,10 @@ public class AjouterMember implements Initializable {
         if (!emailAjouterUtilisateur.getText().isBlank() && !prenomAjouterUtilisateur.getText().isBlank() && !cinAjouterUtilisateur.getText().isBlank() && !passAjouterUtilisateur.getText().isBlank() && !npassAjouterUtilisateur.getText().isBlank() && !nomAjouterUtilisateur.getText().isBlank()) {
             validateAjouter();
         } else {
-            cinAjouterUtilisateur.setText("Entrer tout les champ");
+            confirmAjouter.setText("Entrer tout les champ");
         }
     }
+
 
     public void validateAjouter() throws SQLException, ClassNotFoundException, IOException {
         if (passAjouterUtilisateur.getText().equals(npassAjouterUtilisateur.getText())) {
@@ -98,9 +99,9 @@ public class AjouterMember implements Initializable {
 
             try {
                 Statement st = connectDB.createStatement();
-                String addAccount = "INSERT INTO utilisateur (idUtilisateur, serieU, nomU, motPasse, emailU, cinU) VALUES ('5','d', '"+prenomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"', '" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
+                String addAccount = "INSERT INTO utilisateur (idUtilisateur,serieU, nomU,prénomU, motPasse, emailU, cinU) VALUES ('15','d','"+prenomAjouterUtilisateur.getText() +"','"+nomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"','" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
                 st.executeUpdate(addAccount);
-                Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/Confirmation.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/ConfirmationAjouterUtil.fxml"));
                 Scene scene = new Scene(root);
                 Stage primaryStage = new Stage();
                 primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -113,9 +114,10 @@ public class AjouterMember implements Initializable {
                 e.printStackTrace();
             }
         } else {
-            confirmAjouter.setText("votre série est invalide");
+            confirmAjouter.setText("les mots de passe ne correspondent pas");
         }
     }
+
 
 
         //se methode annuller l'ajoute d'un utilisateur

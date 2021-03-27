@@ -54,7 +54,7 @@
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Button>
-      <Button fx:id="Statistique" alignment="BOTTOM_CENTER" layoutX="112.0" layoutY="115.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-radius: 2EM 2EM 2EM 2EM; -fx-background-color: linear-gradient(#ffffff00,#DA6E70,#DA6E70);" text="Statistique" textAlignment="CENTER" underline="true">
+      <Button fx:id="statistique" alignment="BOTTOM_CENTER" layoutX="112.0" layoutY="115.0" mnemonicParsing="false" onAction="#showStatistique" prefHeight="129.0" prefWidth="190.0" style="-fx-background-radius: 2EM 2EM 2EM 2EM; -fx-background-color: linear-gradient(#ffffff00,#DA6E70,#DA6E70);" text="Statistique" textAlignment="CENTER" underline="true">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
