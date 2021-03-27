@@ -32,9 +32,9 @@ public class AjouterMember implements Initializable {
     @FXML
     private PasswordField passAjouterUtilisateur, npassAjouterUtilisateur;
     @FXML
-    private Label confirmAjouter;
+    public Label setEmail,confirmAjouter;
     @FXML
-    public Label setEmail;
+    private TextField setSerie;
     @FXML
     private Button annulerAjouterMember;
     @FXML
@@ -99,7 +99,7 @@ public class AjouterMember implements Initializable {
 
             try {
                 Statement st = connectDB.createStatement();
-                String addAccount = "INSERT INTO utilisateur (idUtilisateur,serieU, nomU,prénomU, motPasse, emailU, cinU) VALUES ('15','d','"+prenomAjouterUtilisateur.getText() +"','"+nomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"','" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
+                String addAccount = "INSERT INTO utilisateur (idUtilisateur,serieU, nomU,prénomU, motPasse, emailU, cinU) VALUES ('15','"+setSerie.getText()+"','"+prenomAjouterUtilisateur.getText() +"','"+nomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"','" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
                 st.executeUpdate(addAccount);
                 Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/ConfirmationAjouterUtil.fxml"));
                 Scene scene = new Scene(root);

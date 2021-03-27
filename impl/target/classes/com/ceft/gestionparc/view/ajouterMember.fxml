@@ -88,41 +88,42 @@
       </AnchorPane>
       <AnchorPane layoutX="274.0" layoutY="80.0" prefHeight="489.0" prefWidth="976.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
-            <Label layoutX="117.0" layoutY="14.0" text="Nom :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="14.0">
+            <Label layoutX="119.0" layoutY="17.0" text="Nom :" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="17.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="215.0" text="CIN :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="215.0">
+            <Label layoutX="117.0" layoutY="237.0" text="CIN :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="237.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="78.0" text="Prénom :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="78.0">
+            <Label layoutX="117.0" layoutY="77.0" text="Prénom :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="77.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="274.0" text="Mots de passe :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="274.0">
+            <Label layoutX="117.0" layoutY="283.0" text="Mots de passe :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="283.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="334.0" text="Confirmation :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="334.0">
+            <Label layoutX="117.0" layoutY="337.0" text="Confirmation :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="337.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="118.0" layoutY="148.0" text="Email :" AnchorPane.topAnchor="148.0">
+            <Label layoutX="117.0" layoutY="183.0" text="Email :" AnchorPane.topAnchor="183.0">
                <font>
                   <Font name="Times New Roman Bold Italic" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="nomAjouterUtilisateur" layoutX="359.0" layoutY="14.0" prefHeight="35.0" prefWidth="384.0" promptText="Nom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="14.0" />
-            <TextField fx:id="prenomAjouterUtilisateur" layoutX="359.0" layoutY="78.0" prefHeight="35.0" prefWidth="384.0" promptText="Prénom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="78.0" />
-            <TextField fx:id="emailAjouterUtilisateur" layoutX="359.0" layoutY="148.0" prefHeight="35.0" prefWidth="384.0" promptText="email" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="148.0" />
-            <TextField fx:id="cinAjouterUtilisateur" layoutX="359.0" layoutY="215.0" prefHeight="35.0" prefWidth="384.0" promptText="CIN" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="215.0" />
-            <PasswordField fx:id="passAjouterUtilisateur" layoutX="359.0" layoutY="274.0" prefHeight="35.0" prefWidth="379.0" promptText="Mots de passe" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="274.0" />
+            <TextField fx:id="prenomAjouterUtilisateur" layoutX="359.0" layoutY="72.0" prefHeight="35.0" prefWidth="384.0" promptText="Prénom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="72.0" />
+            <TextField fx:id="setSerie" layoutX="358.0" layoutY="136.0" prefHeight="28.0" prefWidth="379.0" promptText="Série" />
+            <TextField fx:id="emailAjouterUtilisateur" layoutX="359.0" layoutY="175.0" prefHeight="35.0" prefWidth="384.0" promptText="email" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="175.0" />
+            <TextField fx:id="cinAjouterUtilisateur" layoutX="359.0" layoutY="226.0" prefHeight="35.0" prefWidth="384.0" promptText="CIN" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="226.0" />
+            <PasswordField fx:id="passAjouterUtilisateur" layoutX="359.0" layoutY="278.0" prefHeight="35.0" prefWidth="379.0" promptText="Mots de passe" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="278.0" />
             <PasswordField fx:id="npassAjouterUtilisateur" layoutX="359.0" layoutY="334.0" prefHeight="35.0" prefWidth="379.0" promptText="Confirmation" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="334.0" />
             <Label fx:id="confirmAjouter" layoutX="359.0" layoutY="379.0" textFill="RED" AnchorPane.leftAnchor="359.0" />
             <Button fx:id="ajouterUtilisateur" alignment="CENTER" layoutX="554.0" layoutY="406.0" mnemonicParsing="false" onAction="#ajouterUtilisateurOnAction" prefHeight="55.0" prefWidth="193.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 20;" text="Ajouter">
@@ -135,6 +136,11 @@
                   <Font name="Times New Roman" size="24.0" />
                </font>
             </Button>
+            <Label layoutX="117.0" layoutY="136.0" text="Série :">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <Button layoutX="1180.0" layoutY="4.0" minHeight="0.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="66.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 3EM 3EM 3EM 3EM;" textFill="WHITE" wrapText="true" />
@@ -143,5 +149,11 @@
             <Image url="@../../../../../../../_img/new-user.png" />
          </image>
       </ImageView>
+      <Label layoutX="127.0" layoutY="131.0" text="Série : ">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="634.0" layoutY="194.0" prefHeight="26.0" prefWidth="379.0" text="Exmeple : AAAA-AAAA-AAAA-AAAA" />
    </children>
 </AnchorPane>
