@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Statistique">
+   <children>
+      <LineChart fx:id="parcMois" layoutX="38.0" layoutY="230.0" prefHeight="348.0" prefWidth="549.0" title="Parc / mois">
+        <xAxis>
+          <CategoryAxis fx:id="Z" label="mois" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="Y" label="nombre des places" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <PieChart fx:id="piechart" layoutX="653.0" layoutY="239.0" prefHeight="293.0" prefWidth="381.0" />
+   </children>
+</AnchorPane>

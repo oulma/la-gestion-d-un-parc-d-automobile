@@ -27,10 +27,8 @@ public class DashboardController implements Initializable {
     private Button greenButton, redButton, yellowButton;
     @FXML
     private Button ajouterCompte;
-    @FXML
-    private Button annulerAjouterMember;
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+        public void initialize(URL url, ResourceBundle resourceBundle) {
         File parkFile = new File("_img/VOITURE.png");
         Image parkImage = new Image(parkFile.toURI().toString());
         imagepark.setImage(parkImage);
@@ -107,6 +105,28 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
+            Stage stage = (Stage)  ajouterCompte.getScene().getWindow();
+            stage.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    @FXML
+    private Button statistique;
+    public void showStatistique(){
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/ceft/gestionparc/view/Statistique.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+            Stage stage = (Stage)  statistique.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();

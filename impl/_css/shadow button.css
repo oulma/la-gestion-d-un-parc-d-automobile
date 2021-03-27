@@ -1,0 +1,5 @@
+#example1 {
+-fx-border: 1px solid;
+-fx-padding: 10px;
+-fx-box-shadow: 5px 10px 8px 10px #888888;
+}
