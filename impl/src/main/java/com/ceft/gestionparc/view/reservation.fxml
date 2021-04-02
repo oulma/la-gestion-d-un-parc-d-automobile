@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Reservation">
+    <children>
+        <AnchorPane fx:id="statistique" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(WHITE,#6f6464);">
+            <children>
+                <Button ellipsisString="" layoutX="50.0" layoutY="17.0" mnemonicParsing="false" opacity="0.73" prefHeight="84.0" prefWidth="151.0" style="-fx-background-radius: 2EM 2EM 2EM 2EM; -fx-background-color: #D2D2D2;" textAlignment="RIGHT" textFill="#613030" />
+                <ImageView fx:id="AjouterCompte" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/new-user.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="statistic" fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/statistics.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="Camera" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/_camera.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="27.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="ajouterMombreRS" layoutX="70.0" layoutY="147.0" mnemonicParsing="false" onAction="#ajouterMombreRSonAction" prefWidth="145.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="74.0" layoutY="217.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="74.0" layoutY="288.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Camera et liste" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="71.0" layoutY="365.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="78.0" layoutY="445.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="72.0" layoutY="521.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <ImageView fx:id="archive" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/_archive.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="ListeNoire" fitHeight="50.0" fitWidth="50.0" layoutX="17.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/blocked.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="paiment" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/save-money.png" />
+                    </image>
+                </ImageView>
+                <AnchorPane layoutX="251.0" layoutY="42.0" prefHeight="559.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 0EM 0EM 0EM;">
+                    <children>
+                        <TextField layoutX="211.0" layoutY="80.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
+                        <TextField layoutX="211.0" layoutY="148.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
+                        <TextField layoutX="211.0" layoutY="214.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
+                        <TextField layoutX="211.0" layoutY="287.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
+                        <Label layoutX="38.0" layoutY="80.0" text="Nom Et Prénom :">
+                            <font>
+                                <Font name="System Bold Italic" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="148.0" text="CIN :">
+                            <font>
+                                <Font name="System Bold Italic" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="214.0" text="Matricule :">
+                            <font>
+                                <Font name="System Bold Italic" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="292.0" text="Date d'entrée :">
+                            <font>
+                                <Font name="System Bold Italic" size="18.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="354.0" layoutY="425.0" mnemonicParsing="false" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Ajouter">
+                            <font>
+                                <Font name="System Bold Italic" size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="annulerReservation" layoutX="232.0" layoutY="425.0" mnemonicParsing="false" onAction="#annulerReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Annuler">
+                            <font>
+                                <Font name="System Bold Italic" size="14.0" />
+                            </font>
+                        </Button>
+                  <ListView layoutX="547.0" layoutY="80.0" prefHeight="384.0" prefWidth="450.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464);" />
+                  <TextField layoutX="211.0" layoutY="356.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
+                  <Label layoutX="36.0" layoutY="356.0" text="Date de sortie :">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="163.0" text="Réservation" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setEmail" layoutX="840.0" layoutY="26.0" prefHeight="27.0" prefWidth="151.0" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            <Button fx:id="XButtonInReservation" layoutX="1239.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#XButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="X" />
+            <Button fx:id="squareButtonInReservation" layoutX="1210.0" layoutY="9.0" minWidth="22.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="❐">
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+            <Button fx:id="downButtonInReservation" layoutX="1179.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#downButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="-" />
+            <Button layoutX="59.0" layoutY="23.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="132.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;" />
+            <ImageView fx:id="Reservation" fitHeight="70.0" fitWidth="93.0" layoutX="90.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/reservation.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

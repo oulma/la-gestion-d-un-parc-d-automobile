@@ -12,7 +12,7 @@
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
+                <artifactId>javafx-controls</artifactId>
             <version>16</version>
         </dependency>
         <dependency>
@@ -44,7 +44,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>com.ceft.gestionparc.App</mainClass>
+                    <mainClass>com.ceft.gestionparc.Controller.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>

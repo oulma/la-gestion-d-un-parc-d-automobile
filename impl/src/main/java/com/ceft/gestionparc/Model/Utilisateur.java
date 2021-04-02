@@ -1,13 +1,5 @@
 package com.ceft.gestionparc.Model;
 
-import com.ceft.gestionparc.DashboardController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 import java.util.ArrayList;
 
 public class Utilisateur {

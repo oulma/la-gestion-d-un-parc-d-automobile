@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.AjouterMember">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 15;">
+         <children>
+            <Label fx:id="setEmail" layoutX="336.0" layoutY="33.0" underline="true">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="89.0" layoutY="191.0" text="Satistiques" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="256.0" text="Caméra &amp; Liste" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="327.0" text="Archive" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="90.0" layoutY="397.0" text="Liste Noire" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="90.0" layoutY="468.0" text="Réservation" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="532.0" text="Le paiment" underline="true" AnchorPane.leftAnchor="90.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="dash1" fitHeight="52.0" fitWidth="50.0" layoutX="17.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/statistics.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dash2" fitHeight="52.0" fitWidth="50.0" layoutX="11.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/_camera.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dash4" fitHeight="52.0" fitWidth="50.0" layoutX="17.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/blocked.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dash5" fitHeight="52.0" fitWidth="76.0" layoutX="17.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/reservation.png" />
+               </image>
+            </ImageView>
+            <Button ellipsisString="" layoutX="64.0" layoutY="4.0" mnemonicParsing="false" prefHeight="136.0" prefWidth="145.0" style="-fx-background-radius: 8EM 8EM 8EM 8EM; -fx-background-color: #EECEC8;" textAlignment="RIGHT" textFill="#613030" />
+            <ImageView fx:id="dash6" fitHeight="52.0" fitWidth="76.0" layoutX="23.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/save-money.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dash3" fitHeight="52.0" fitWidth="45.0" layoutX="22.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="17.0">
+               <image>
+                  <Image url="@../../../../../../../_img/_archive.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dash7" fitHeight="82.0" fitWidth="95.0" layoutX="97.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/new-user.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="273.0" layoutY="25.0" minHeight="0.0" minWidth="50.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 6EM 6EM 6EM 6EM;" textFill="WHITE" wrapText="true" />
+            <ImageView fx:id="dash77" fitHeight="35.0" fitWidth="39.0" layoutX="283.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/new-user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="274.0" layoutY="80.0" prefHeight="489.0" prefWidth="976.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="119.0" layoutY="19.0" text="Nom :" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="19.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="237.0" text="CIN :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="237.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="77.0" text="Prénom :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="77.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="283.0" text="Mots de passe :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="283.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="337.0" text="Confirmation :" AnchorPane.leftAnchor="117.0" AnchorPane.topAnchor="337.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="183.0" text="Email :" AnchorPane.topAnchor="183.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nomAjouterUtilisateur" layoutX="359.0" layoutY="16.0" prefHeight="35.0" prefWidth="384.0" promptText="Nom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="16.0" />
+            <TextField fx:id="prenomAjouterUtilisateur" layoutX="359.0" layoutY="72.0" prefHeight="35.0" prefWidth="384.0" promptText="Prénom" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="72.0" />
+            <TextField fx:id="setSerie" layoutX="358.0" layoutY="136.0" prefHeight="28.0" prefWidth="379.0" promptText="Série" />
+            <TextField fx:id="emailAjouterUtilisateur" layoutX="359.0" layoutY="175.0" prefHeight="35.0" prefWidth="384.0" promptText="email" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="175.0" />
+            <TextField fx:id="cinAjouterUtilisateur" layoutX="359.0" layoutY="226.0" prefHeight="35.0" prefWidth="384.0" promptText="CIN" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="226.0" />
+            <PasswordField fx:id="passAjouterUtilisateur" layoutX="359.0" layoutY="280.0" prefHeight="35.0" prefWidth="379.0" promptText="Mots de passe" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="280.0" />
+            <PasswordField fx:id="npassAjouterUtilisateur" layoutX="359.0" layoutY="334.0" prefHeight="35.0" prefWidth="379.0" promptText="Confirmation" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="334.0" />
+            <Label fx:id="confirmAjouter" layoutX="359.0" layoutY="379.0" textFill="RED" AnchorPane.leftAnchor="359.0" />
+            <Button fx:id="ajouterUtilisateur" alignment="CENTER" layoutX="554.0" layoutY="406.0" mnemonicParsing="false" onAction="#ajouterUtilisateurOnAction" prefHeight="55.0" prefWidth="193.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 20;" text="Ajouter">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="annulerAjouterMember" alignment="CENTER" layoutX="336.0" layoutY="406.0" mnemonicParsing="false" onAction="#annulerAjouterMemberOnAction" prefHeight="55.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 20;" text="Annuler" wrapText="true">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="117.0" layoutY="136.0" text="Série :">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="634.0" layoutY="194.0" prefHeight="26.0" prefWidth="379.0" text="Exmeple : AAAA-AAAA-AAAA-AAAA" />
+   </children>
+</AnchorPane>

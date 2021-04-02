@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Listenoire">
+   <children>
+      <AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 1EM 1EM 1EM 1EM;">
+         <children>
+            <Button ellipsisString="" layoutX="45.0" layoutY="10.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="151.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 2EM 2EM 2EM 2EM;" textAlignment="RIGHT" textFill="#613030" />
+            <Button ellipsisString="" layoutX="55.0" layoutY="16.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="132.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;" textAlignment="RIGHT" textFill="#613030" />
+            <ImageView fx:id="blocked" fitHeight="70.0" fitWidth="93.0" layoutX="90.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/blocked.png" />
+               </image>
+            </ImageView>
+            <ImageView id="User" fx:id="User" fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/new-user.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Reservation" alignment="CENTER" layoutX="5.0" layoutY="381.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <ImageView id="reservation" fx:id="reservation" fitHeight="50.0" fitWidth="50.0" layoutX="4.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../../../../../_img/reservation.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Archive" alignment="CENTER" layoutX="5.0" layoutY="454.0" mnemonicParsing="false" onAction="#Archive" prefHeight="61.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="Montantt" alignment="CENTER" layoutX="4.0" layoutY="514.0" mnemonicParsing="false" onAction="#Montantt" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Montant" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="Mont" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../../../../../_img/save-money.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="archive" fitHeight="50.0" fitWidth="44.0" layoutX="11.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../_img/_archive.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="CameraEtListe" alignment="CENTER" layoutX="19.0" layoutY="235.0" mnemonicParsing="false" onAction="#CameraEtListe" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Caméra &amp; Liste" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="AjouterMemberListNoir" alignment="CENTER" layoutX="25.0" layoutY="313.0" mnemonicParsing="false" onAction="#showAjouterMemberListNoir" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="AjouterMember" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="249.0" layoutY="41.0" prefHeight="559.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 0EM;">
+         <children>
+            <Label id="Lnoire" layoutX="16.0" layoutY="-1.0" prefHeight="51.0" prefWidth="256.0" text="Liste Noire" underline="true" AnchorPane.leftAnchor="16.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Button ellipsisString="" layoutX="3.0" layoutY="140.0" mnemonicParsing="false" prefHeight="416.0" prefWidth="498.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 3em 3em 3em 3em;" textAlignment="RIGHT" textFill="#613030" />
+            <Button ellipsisString="" layoutX="11.0" layoutY="151.0" mnemonicParsing="false" prefHeight="396.0" prefWidth="482.0" style="-fx-background-color: WHITE; -fx-background-radius: 3EM 3EM 3EM 3EM;" textAlignment="RIGHT" textFill="#613030" />
+            <Button id="Ajouter" fx:id="ajouterOnAction" alignment="CENTER" layoutX="48.0" layoutY="467.0" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="43.0" prefWidth="187.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 1EM;" text="Ajouter" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <ComboBox layoutX="201.0" layoutY="72.0" prefHeight="41.0" prefWidth="290.0" style="-fx-background-radius: 1EM;" />
+            <Button fx:id="annulerAjouterMember11" alignment="CENTER" layoutX="-247.0" layoutY="126.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Satistiques" underline="true" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button id="Rechercher" fx:id="annulerAjouterMember112" alignment="CENTER" layoutX="15.0" layoutY="71.0" mnemonicParsing="false" onAction="#Rechercher" prefHeight="44.0" prefWidth="178.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 1EM;" text="Rechercher" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Button>
+            <ImageView id="statistics" fx:id="statistics" fitHeight="50.0" fitWidth="50.0" layoutX="-243.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../../../../../_img/statistics.png" />
+               </image>
+            </ImageView>
+            <Button id="Annuler" fx:id="Annuler" alignment="CENTER" layoutX="266.0" layoutY="466.0" mnemonicParsing="false" onAction="#AnnulerListeNoire" prefHeight="37.0" prefWidth="192.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 1EM;" text="Annuler" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Button>
+            <ComboBox layoutX="171.0" layoutY="369.0" prefHeight="41.0" prefWidth="295.0" style="-fx-background-radius: 1EM;" />
+            <TableView layoutX="515.0" layoutY="65.0" prefHeight="492.0" prefWidth="523.0" style="-fx-background-radius: 1EM 1EM 1EM 1EM;">
+              <columns>
+                <TableColumn prefWidth="180.0" style="-fx-background-radius: 1EM;" text="Matricule" />
+                <TableColumn prefWidth="170.0" text="Marque" />
+                  <TableColumn prefWidth="170.0" style="-fx-background-radius: 1EM;" text="Etat" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label id="Matricule" layoutX="296.0" layoutY="248.0" text="Matricule :">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField id="Prenom" layoutX="421.0" layoutY="331.0" prefHeight="35.0" prefWidth="295.0" promptText="Marque" style="-fx-background-radius: 1EM;" />
+      <TextField id="Matricule" layoutX="422.0" layoutY="246.0" prefHeight="35.0" prefWidth="297.0" promptText="Matricule " style="-fx-background-radius: 1EM;" />
+      <Label layoutX="94.0" layoutY="288.0" underline="true">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <ImageView id="camera" fx:id="camera" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../../../../../../../_img/_camera.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1205.0" layoutY="45.0" minHeight="0.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="56.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 3em 3em 3em 3em;" textFill="WHITE" wrapText="true" />
+      <Button layoutX="1208.0" layoutY="48.0" minHeight="0.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 4em 4em 4em 4em;" textFill="WHITE" wrapText="true" />
+      <ImageView id="Add" fx:id="Add" fitHeight="38.0" fitWidth="30.0" layoutX="1219.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../_img/new-user.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Email" layoutX="934.0" layoutY="55.0" text="oumaimatijja2000@gmail.com">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="redButton" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1233.0" layoutY="6.0" mnemonicParsing="false" onAction="#redButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1202.0" layoutY="6.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text=" ❐">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1169.0" layoutY="5.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Satistiques" alignment="CENTER" layoutX="-1.0" layoutY="103.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Dashboard" underline="true" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="23.0" />
+         </font>
+      </Button>
+      <Label layoutX="298.0" layoutY="337.0" text="Marque :">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="298.0" layoutY="422.0" text="Etat :">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
