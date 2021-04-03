@@ -30,7 +30,7 @@
                 <Font name="System Bold Italic" size="21.0" />
             </font>
         </Button>
-        <Button fx:id="Camera_list" alignment="BOTTOM_CENTER" layoutX="409.0" layoutY="137.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Camera &amp; list" textAlignment="CENTER" underline="true">
+        <Button fx:id="camera_list" alignment="BOTTOM_CENTER" layoutX="409.0" layoutY="137.0" mnemonicParsing="false" onAction="#showCameraliste" pickOnBounds="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Camera &amp; list" textAlignment="CENTER" underline="true">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
@@ -54,7 +54,7 @@
                 <Font name="System Bold Italic" size="21.0" />
             </font>
         </Button>
-        <Button fx:id="réservation" alignment="BOTTOM_CENTER" layoutX="553.0" layoutY="372.0" mnemonicParsing="false" onAction="#réservationOnACtion" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Réservation" textAlignment="CENTER" underline="true">
+        <Button fx:id="réservation" alignment="BOTTOM_CENTER" layoutX="553.0" layoutY="372.0" mnemonicParsing="false" onAction="#showReservation" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Réservation" textAlignment="CENTER" underline="true">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
@@ -110,18 +110,18 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1186.0" layoutY="16.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;">
+        <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1187.0" layoutY="16.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="❒">
             <font>
-                <Font name="Arial" size="12.0" />
+                <Font name="Arial" size="10.0" />
             </font>
         </Button>
-        <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1153.0" layoutY="15.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_" underline="true">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
+        <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1153.0" layoutY="15.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_">
             <opaqueInsets>
                 <Insets />
             </opaqueInsets>
+         <font>
+            <Font size="11.0" />
+         </font>
         </Button>
     </children>
 </AnchorPane>

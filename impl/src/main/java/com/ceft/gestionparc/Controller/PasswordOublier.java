@@ -25,6 +25,8 @@ import java.util.ResourceBundle;
 
 public class PasswordOublier implements Initializable {
     @FXML
+    private ImageView key1,lock1,lock2;
+    @FXML
     private Button annulerOublierPass,resinistialisation;
     @FXML
     private TextField serial;
@@ -32,6 +34,18 @@ public class PasswordOublier implements Initializable {
     private PasswordField PASSWORD2,PASSWORD1;
     @FXML
     private Label messageErreurOublierPass;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        File keyFile = new File("_img/key.png");
+        Image keyImage = new Image(keyFile.toURI().toString());
+        key1.setImage(keyImage);
+
+        File lockFile = new File("_img/padlock.png");
+        Image lockImage = new Image(lockFile.toURI().toString());
+        lock1.setImage(lockImage);
+        lock2.setImage(lockImage);
+
+    }
 
     public void annulerOublierPassOnAction(){
         Stage stage = (Stage) annulerOublierPass.getScene().getWindow();
@@ -51,7 +65,7 @@ public class PasswordOublier implements Initializable {
           DatabaseConnection connectNow = new DatabaseConnection();
           Connection connectDB = connectNow.connectionDuBd();
 
-          String verifyRes = "SELECT count(1) FROM utilisateur where serieU = '" + serial.getText() + "'";
+          String verifyRes = "SELECT count(*) FROM utilisateur where serieU = '" + serial.getText() + "'";
 
           try {
               Statement statement = connectDB.createStatement();
@@ -76,7 +90,6 @@ public class PasswordOublier implements Initializable {
                       messageErreurOublierPass.setText("votre série est invalide");
                   }
 
-
               }
           } catch (Exception e) {
               e.printStackTrace();
@@ -95,20 +108,7 @@ public class PasswordOublier implements Initializable {
             Stage stage = (Stage) ok.getScene().getWindow();
             stage.close();
         }
-    @FXML
-    private ImageView key1,lock1,lock2;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        File keyFile = new File("_img/key.png");
-        Image keyImage = new Image(keyFile.toURI().toString());
-        key1.setImage(keyImage);
 
-        File lockFile = new File("_img/padlock.png");
-        Image lockImage = new Image(lockFile.toURI().toString());
-        lock1.setImage(lockImage);
-        lock2.setImage(lockImage);
-
-    }
 }
 
 

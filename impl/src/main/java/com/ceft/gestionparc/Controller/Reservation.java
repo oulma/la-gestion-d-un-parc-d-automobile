@@ -1,16 +1,27 @@
 package com.ceft.gestionparc.Controller;
+import com.ceft.gestionparc.DbConnection.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class Reservation implements Initializable {
@@ -50,7 +61,7 @@ public class Reservation implements Initializable {
         paiment.setImage(paimentImage);
 
 
-       //had code kay rj3 lina l'email lfo9 dyal kola interface
+       //return l'email au haut de la interface
         AjouterMember aj = new AjouterMember();
         try {
             setEmail.setText(aj.afficherEmail());
@@ -71,7 +82,7 @@ public class Reservation implements Initializable {
         Stage stage = (Stage) downButtonInReservation.getScene().getWindow();
         stage.close();
     }
-    //kat sed lina l'interface dyal reseravation
+    //qui ferme l'interface de réservation
     @FXML
     private Button annulerReservation;
     public void annulerReservationOnAction(){
@@ -88,6 +99,50 @@ public class Reservation implements Initializable {
         DashboardController dh = new DashboardController();
         dh.showAjouterMember();
         Stage stage = (Stage)  ajouterMombreRS.getScene().getWindow();
+        stage.close();
+    }
+    //######################################################
+    //# l'ajoute d'une reservation
+    //######################################################
+    @FXML
+    private Label reservationmessageErreur;
+    @FXML
+    private TextField NomPrenom,cin,matricule,dateEntrer,datesortie;
+    @FXML
+    private Button ajouterReservation;
+    public void ajouterReservationOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        if(!NomPrenom.getText().isBlank() && !cin.getText().isBlank() && !matricule.getText().isBlank()
+        && !dateEntrer.getText().isBlank()){
+
+
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.connectionDuBd();
+        String addReservation = "INSERT INTO `réservation` (`nom`, `CIN`, `Matricule`, `date d'entrée`, `date de sortie`) " +
+                              "VALUES ('"+NomPrenom.getText()+"', '"+cin.getText()+"'," +
+                                " '"+matricule.getText()+"', '"+dateEntrer.getText()+"', '"+datesortie.getText()+"');";
+            Statement statement = connectDB.createStatement();
+             statement.executeUpdate(addReservation);
+            Stage stage = (Stage) ajouterReservation.getScene().getWindow();
+            stage.close();
+
+            Parent root = FXMLLoader.load(getClass().getResource("/ConfirmationAjouterReservation.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+
+
+        }else {
+            reservationmessageErreur.setText("Entrer touts les champs");
+        }
+
+    }
+@FXML
+private Button ok;
+    public void okOnAction() {
+        Stage stage = (Stage) ok.getScene().getWindow();
         stage.close();
     }
 }

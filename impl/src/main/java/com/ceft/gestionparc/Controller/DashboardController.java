@@ -28,7 +28,7 @@ public class DashboardController implements Initializable {
     //had le method kat dik l'interface dyal reserevation
 
     //################################################################"
-    public void réservationOnACtion(){
+    public void showReservation(){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/reservation.fxml"));
             Scene scene = new Scene(root);
@@ -134,19 +134,35 @@ public class DashboardController implements Initializable {
 
     public void yellowButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) yellowButton.getScene().getWindow();
-        stage.close();
+        stage.toBack();
     }
 
     public void greenButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) greenButton.getScene().getWindow();
         stage.isMaximized();
-
     }
 
     //had le method kat affichi lina le window bash nzido Uitilisateur
     public void showAjouterMember() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/ajouterMember.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    public void showCameraliste() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/cameraListe.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.initStyle(StageStyle.TRANSPARENT);

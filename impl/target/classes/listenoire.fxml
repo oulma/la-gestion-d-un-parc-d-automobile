@@ -28,7 +28,7 @@
                   <Image url="@../../../../../../../_img/new-user.png" />
                </image>
             </ImageView>
-            <Button fx:id="Reservation" alignment="CENTER" layoutX="-8.0" layoutY="381.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="65.0" prefWidth="275.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true" wrapText="true">
+            <Button fx:id="Reservation" alignment="CENTER" layoutX="5.0" layoutY="381.0" mnemonicParsing="false" onAction="#Reservation" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
@@ -38,17 +38,17 @@
                   <Image url="@../../../../../../../_img/reservation.png" />
                </image>
             </ImageView>
-            <Button fx:id="Archive" alignment="CENTER" layoutX="-33.0" layoutY="454.0" mnemonicParsing="false" onAction="#Archive" prefHeight="61.0" prefWidth="299.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true" wrapText="true">
+            <Button fx:id="Archive" alignment="CENTER" layoutX="5.0" layoutY="454.0" mnemonicParsing="false" onAction="#Archive" prefHeight="61.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
             </Button>
-            <Button fx:id="Montantt" alignment="CENTER" layoutX="-52.0" layoutY="518.0" mnemonicParsing="false" onAction="#Montantt" prefHeight="65.0" prefWidth="337.0" style="-fx-background-color: #ffffff00;" text="Montant" underline="true" wrapText="true">
+            <Button fx:id="Montantt" alignment="CENTER" layoutX="4.0" layoutY="514.0" mnemonicParsing="false" onAction="#Montantt" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Montant" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
             </Button>
-            <ImageView fx:id="Mont" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fx:id="Mont" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../../../../../../_img/save-money.png" />
                </image>
@@ -58,12 +58,12 @@
                   <Image url="@../../../../../../../_img/_archive.png" />
                </image>
             </ImageView>
-            <Button fx:id="CameraEtListe" alignment="CENTER" layoutX="3.0" layoutY="235.0" mnemonicParsing="false" onAction="#CameraEtListe" prefHeight="65.0" prefWidth="283.0" style="-fx-background-color: #ffffff00;" text="Caméra &amp; Liste" underline="true" wrapText="true">
+            <Button fx:id="CameraEtListe" alignment="CENTER" layoutX="19.0" layoutY="235.0" mnemonicParsing="false" onAction="#CameraEtListe" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Caméra &amp; Liste" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
             </Button>
-            <Button fx:id="AjouterMemberListNoir" alignment="CENTER" layoutX="18.0" layoutY="313.0" mnemonicParsing="false" onAction="#showAjouterMemberListNoir" prefHeight="65.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="AjouterMember" underline="true" wrapText="true">
+            <Button fx:id="AjouterMemberListNoir" alignment="CENTER" layoutX="25.0" layoutY="313.0" mnemonicParsing="false" onAction="#showAjouterMemberListNoir" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="AjouterMember" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
@@ -86,7 +86,7 @@
                </font>
             </Button>
             <ComboBox layoutX="201.0" layoutY="72.0" prefHeight="41.0" prefWidth="290.0" style="-fx-background-radius: 1EM;" />
-            <Button fx:id="annulerAjouterMember11" alignment="CENTER" layoutX="-276.0" layoutY="126.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="275.0" style="-fx-background-color: #ffffff00;" text="Satistiques" underline="true" wrapText="true">
+            <Button fx:id="annulerAjouterMember11" alignment="CENTER" layoutX="-247.0" layoutY="126.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Satistiques" underline="true" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font>
@@ -163,7 +163,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button fx:id="Satistiques" alignment="CENTER" layoutX="-1.0" layoutY="103.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Dashbord" underline="true" wrapText="true">
+      <Button fx:id="Satistiques" alignment="CENTER" layoutX="-1.0" layoutY="103.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Dashboard" underline="true" wrapText="true">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>

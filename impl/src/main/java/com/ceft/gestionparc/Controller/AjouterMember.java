@@ -41,7 +41,8 @@ public class AjouterMember implements Initializable {
     private ImageView dash1, dash2, dash3, dash4, dash5, dash6, dash7, dash77;
     @FXML
     private Button ajouterUtilisateur;
-
+    //pour appeller les autre interface a partire du ajouter member
+    DashboardController dh = new DashboardController();
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         File dash1File = new File("_img/statistics.png");
@@ -71,7 +72,6 @@ public class AjouterMember implements Initializable {
         File dash7File = new File("_img/new-user.png");
         Image dash7Image = new Image(dash7File.toURI().toString());
         dash7.setImage(dash7Image);
-        dash77.setImage(dash7Image);
 
         try {
             setEmail.setText(afficherEmail());
@@ -82,7 +82,7 @@ public class AjouterMember implements Initializable {
         }
     }
 
-    //had le method kat ajouti lina user fe la base de donner
+    //qui ajoute un utilisateur dans la base de donner
     public void ajouterUtilisateurOnAction() throws SQLException, IOException, ClassNotFoundException {
         if (!emailAjouterUtilisateur.getText().isBlank() && !prenomAjouterUtilisateur.getText().isBlank() && !cinAjouterUtilisateur.getText().isBlank() && !passAjouterUtilisateur.getText().isBlank() && !npassAjouterUtilisateur.getText().isBlank() && !nomAjouterUtilisateur.getText().isBlank()) {
             validateAjouter();
@@ -99,7 +99,7 @@ public class AjouterMember implements Initializable {
 
             try {
                 Statement st = connectDB.createStatement();
-                String addAccount = "INSERT INTO utilisateur (idUtilisateur,serieU, nomU,prénomU, motPasse, emailU, cinU) VALUES ('15','"+setSerie.getText()+"','"+prenomAjouterUtilisateur.getText() +"','"+nomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"','" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
+                String addAccount = "INSERT INTO utilisateur (serieU, nomU,PrenomU, motPasse, emailU, cinU) VALUES ('"+setSerie.getText()+"','"+prenomAjouterUtilisateur.getText() +"','"+nomAjouterUtilisateur.getText()+"','"+npassAjouterUtilisateur.getText()+"','" + emailAjouterUtilisateur.getText() + "', '" + cinAjouterUtilisateur.getText() + "')";
                 st.executeUpdate(addAccount);
                 Parent root = FXMLLoader.load(getClass().getResource("/ConfirmationAjouterUtil.fxml"));
                 Scene scene = new Scene(root);
@@ -120,12 +120,12 @@ public class AjouterMember implements Initializable {
 
 
 
-        //se methode annuller l'ajoute d'un utilisateur
+        //se methode annuler l'ajout d'un utilisateur
         public void annulerAjouterMemberOnAction () {
             Stage stage = (Stage) annulerAjouterMember.getScene().getWindow();
             stage.close();
         }
-        // had le methode kat rej3 lina le email dyal ay wa7ed t connecta l application
+        // return l'email de l'utilisateur connecter
         public String afficherEmail () throws SQLException, ClassNotFoundException {
             String requet = "Select * from utilisateur where nomU ='" + AuthentificationController.user + "'";
             DatabaseConnection connectNow = new DatabaseConnection();
@@ -138,10 +138,59 @@ public class AjouterMember implements Initializable {
             } else {
                 return "N/A";
             }
-
-
         }
-    }
+
+        //##########################################################"
+        // les interface & button de couté
+        //##########################################################"
+        @FXML
+        private Button statistiqueAjouterMember;
+        public void statistiqueAjouterMemberOnAction(){
+            dh.showStatistique();
+            Stage stage = (Stage) statistiqueAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        @FXML
+        private Button cameralistAjouterMember;
+        public void cameralistAjouterMemberOnAction(){
+            dh.showCameraliste();
+            Stage stage = (Stage) cameralistAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        @FXML
+        private Button listnoirAjouterMember;
+        public void listnoirAjouterMemberOnAction(){
+            dh.showListeNoire();
+            Stage stage = (Stage) listnoirAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        @FXML
+        private Button reservationAjouterMember;
+        public void reservationAjouterMemberOnAction(){
+            dh.showReservation();
+            Stage stage = (Stage) reservationAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        @FXML
+        private Button archiveAjouterMember;
+        public void archiveAjouterMemberOnAction(){
+            dh.goToDashboard();
+            Stage stage = (Stage) archiveAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+        @FXML
+        private Button MontantAjouterMember;
+        public void MontantAjouterMemberOnAction(){
+            dh.showMontant();
+            Stage stage = (Stage) MontantAjouterMember.getScene().getWindow();
+            stage.close();
+        }
+
+
+
+
+
+}
 
 
 

@@ -77,10 +77,10 @@
                 </ImageView>
                 <AnchorPane layoutX="251.0" layoutY="42.0" prefHeight="559.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 0EM 0EM 0EM;">
                     <children>
-                        <TextField layoutX="211.0" layoutY="80.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
-                        <TextField layoutX="211.0" layoutY="148.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
-                        <TextField layoutX="211.0" layoutY="214.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
-                        <TextField layoutX="211.0" layoutY="287.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
+                        <TextField fx:id="NomPrenom" layoutX="211.0" layoutY="80.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
+                        <TextField fx:id="cin" layoutX="211.0" layoutY="148.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
+                        <TextField fx:id="matricule" layoutX="211.0" layoutY="214.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
+                        <TextField fx:id="dateEntrer" layoutX="211.0" layoutY="287.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
                         <Label layoutX="38.0" layoutY="80.0" text="Nom Et Prénom :">
                             <font>
                                 <Font name="System Bold Italic" size="18.0" />
@@ -101,18 +101,18 @@
                                 <Font name="System Bold Italic" size="18.0" />
                             </font>
                         </Label>
-                        <Button layoutX="354.0" layoutY="425.0" mnemonicParsing="false" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Ajouter">
+                        <Button fx:id="ajouterReservation" layoutX="354.0" layoutY="425.0" mnemonicParsing="false" onAction="#ajouterReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Ajouter">
                             <font>
                                 <Font name="System Bold Italic" size="14.0" />
                             </font>
                         </Button>
-                        <Button fx:id="annulerReservation" layoutX="232.0" layoutY="425.0" mnemonicParsing="false" onAction="#annulerReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Annuler">
+                        <Button fx:id="annulerReservation" layoutX="217.0" layoutY="425.0" mnemonicParsing="false" onAction="#annulerReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Annuler">
                             <font>
                                 <Font name="System Bold Italic" size="14.0" />
                             </font>
                         </Button>
                   <ListView layoutX="547.0" layoutY="80.0" prefHeight="384.0" prefWidth="450.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464);" />
-                  <TextField layoutX="211.0" layoutY="356.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
+                  <TextField fx:id="datesortie" layoutX="211.0" layoutY="356.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
                   <Label layoutX="36.0" layoutY="356.0" text="Date de sortie :">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
@@ -128,6 +128,9 @@
                         <Font name="System Bold Italic" size="16.0" />
                      </font>
                   </Label>
+                  <Label layoutX="210.0" layoutY="269.0" prefHeight="17.0" prefWidth="128.0" text="Ex : 2000-09-23" />
+                  <Label layoutX="211.0" layoutY="339.0" prefHeight="17.0" prefWidth="128.0" text="Ex : 2000-09-23" />
+                  <Label fx:id="reservationmessageErreur" layoutX="211.0" layoutY="402.0" textFill="RED" />
                     </children>
                 </AnchorPane>
             <Button fx:id="XButtonInReservation" layoutX="1239.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#XButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="X" />
