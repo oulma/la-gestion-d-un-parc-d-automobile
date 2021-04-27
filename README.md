@@ -8,8 +8,8 @@
 
 - [Description](#description)
 - [How To Use](#how-to-use)
-- [License](#Screenshot)
-- [Author Info](#Collaborator)
+- [Screenshot](#Screenshot)
+- [Collaborator](#Collaborator)
 
 ---
 
