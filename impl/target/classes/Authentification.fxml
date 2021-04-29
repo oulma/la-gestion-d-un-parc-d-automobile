@@ -5,12 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="426.0" prefWidth="574.0" style="-fx-background-radius: 0em 3em 3em 0em;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.AuthentificationController">
+<BorderPane prefHeight="426.0" prefWidth="574.0" style="-fx-background-radius: 0em 3em 3em 0em;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.AuthentificationController">
    <left>
       <AnchorPane prefHeight="0.0" prefWidth="229.0">
          <ImageView fx:id="brandignImageView" fitHeight="473.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
@@ -32,8 +33,14 @@
          </ImageView>
          <PasswordField fx:id="enterPasswordField" layoutX="39.0" layoutY="259.0" prefHeight="26.0" prefWidth="218.0" promptText="Mot de passe" />
          <Hyperlink fx:id="oublierPass" layoutX="38.0" layoutY="386.0" onAction="#oublierPassOnAction" text="Mot de passe oublier ?" />
-         <Button fx:id="cancelButton" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Annuler" textFill="WHITE" />
-         <Button fx:id="loginButton" layoutX="40.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="LOGIN" textAlignment="CENTER" textFill="WHITE" />
+         <Button fx:id="cancelButton" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Annuler" textFill="WHITE">
+            <effect>
+               <DropShadow height="15.0" radius="7.0" width="15.0" />
+            </effect></Button>
+         <Button fx:id="loginButton" layoutX="40.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+            <effect>
+               <DropShadow height="15.0" radius="7.0" width="15.0" />
+            </effect></Button>
          <Label fx:id="loginMessageLabel" layoutX="36.0" layoutY="290.0" prefHeight="18.0" prefWidth="274.0" textFill="#ff0101" />
       </AnchorPane>
    </center>
