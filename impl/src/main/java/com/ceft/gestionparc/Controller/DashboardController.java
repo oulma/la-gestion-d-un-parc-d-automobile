@@ -91,6 +91,7 @@ public class DashboardController implements Initializable {
         File dash7File = new File("_img/save-money.png");
         Image dash7Image = new Image(dash7File.toURI().toString());
         dash7.setImage(dash7Image);
+
     }
 
     public void goToDashboard() {
@@ -98,6 +99,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Dashboard.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
@@ -116,6 +119,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Montant.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
@@ -149,6 +154,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/ajouterMember.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
@@ -166,6 +173,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/cameraListe.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
@@ -184,6 +193,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Statistique.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
@@ -201,6 +212,8 @@ public class DashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
+            Image image = new Image("_img/icon.png");
+            primaryStage.getIcons().add(image);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
