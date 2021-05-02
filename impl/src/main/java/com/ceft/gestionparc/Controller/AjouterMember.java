@@ -1,6 +1,7 @@
 package com.ceft.gestionparc.Controller;
 
 import com.ceft.gestionparc.DbConnection.DatabaseConnection;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,12 +39,16 @@ public class AjouterMember implements Initializable {
     @FXML
     private Button annulerAjouterMember;
     @FXML
-    private ImageView dash1, dash2, dash3, dash4, dash5, dash6, dash7, dash77;
+    private ImageView dash1, dash2, dash3, dash4, dash5, dash6, dash7, side1,side2;
     @FXML
     private Button ajouterUtilisateur;
-    //pour appeller les autre interface a partire du ajouter member
     DashboardController dh = new DashboardController();
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        File sideFile = new File("_img/_side.png");
+        Image sideImage = new Image(sideFile.toURI().toString());
+        side1.setImage(sideImage);
+        side2.setImage(sideImage);
+
 
         File dash1File = new File("_img/statistics.png");
         Image dash1Image = new Image(dash1File.toURI().toString());
@@ -139,6 +144,24 @@ public class AjouterMember implements Initializable {
                 return "N/A";
             }
         }
+        @FXML
+        private Button redButton;
+    public void redButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) redButton.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    private Button greenButton;
+    public void greenButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) greenButton.getScene().getWindow();
+        stage.toBack();
+    }
+    @FXML
+    private Button yellowButton;
+    public void yellowButtonOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) yellowButton.getScene().getWindow();
+        stage.toBack();
+    }
 
         //##########################################################"
         // les interface & button de couté
@@ -174,7 +197,7 @@ public class AjouterMember implements Initializable {
         @FXML
         private Button archiveAjouterMember;
         public void archiveAjouterMemberOnAction(){
-            dh.goToDashboard();
+            dh.showArchive();
             Stage stage = (Stage) archiveAjouterMember.getScene().getWindow();
             stage.close();
         }
@@ -186,10 +209,13 @@ public class AjouterMember implements Initializable {
             stage.close();
         }
 
-
-
-
-
+    @FXML
+    private Button dashboard;
+    public void dashboardOnAction() {
+            dh.goToDashboard();
+            Stage stage = (Stage) dashboard.getScene().getWindow();
+            stage.close();
+    }
 }
 
 

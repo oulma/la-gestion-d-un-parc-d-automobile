@@ -54,8 +54,8 @@ public class AuthentificationController implements Initializable {
 
 
         //afficher l'interface d'authentification
-    public void showAuthentification() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Authentification.fxml"));
+    public void showAuthentification() throws IOException {         //changer pour tester votre inteface
+        Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -92,8 +92,8 @@ public class AuthentificationController implements Initializable {
         retrunEmail();
 
         try {
-            Statement statement = connectDB.createStatement();
-            ResultSet rs = statement.executeQuery(verifyLogin);
+            Statement st = connectDB.createStatement();
+            ResultSet rs = st.executeQuery(verifyLogin);
             while (rs.next()) {
 
                 //  Utilisateur util = new Utilisateur(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));

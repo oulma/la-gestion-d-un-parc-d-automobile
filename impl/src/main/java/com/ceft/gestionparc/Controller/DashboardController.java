@@ -130,19 +130,20 @@ public class DashboardController implements Initializable {
         }
     }
 
-    public void redButtonOnAction(ActionEvent event) {
+    public void redButtonOnAction() {
         Stage stage = (Stage) redButton.getScene().getWindow();
         stage.close();
     }
 
-    public void yellowButtonOnAction(ActionEvent event) {
+    public void yellowButtonOnAction() {
         Stage stage = (Stage) yellowButton.getScene().getWindow();
         stage.toBack();
     }
 
-    public void greenButtonOnAction(ActionEvent event) {
+    public void greenButtonOnAction() {
         Stage stage = (Stage) greenButton.getScene().getWindow();
-        stage.isMaximized();
+        //Nous devons le changer On maximiser l'ecrant
+        stage.toBack();
     }
 
     //had le method kat affichi lina le window bash nzido Uitilisateur
@@ -197,6 +198,22 @@ public class DashboardController implements Initializable {
             e.getCause();
         }
     }
+    public void showArchive(){
 
 
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 }

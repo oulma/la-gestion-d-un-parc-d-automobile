@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,7 +22,10 @@
             </cursor>
             <font>
                 <Font name="System Bold Italic" size="21.0" />
-            </font></Button>
+            </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
         <Button fx:id="ajouterCompte" alignment="BOTTOM_CENTER" layoutX="679.0" layoutY="138.0" mnemonicParsing="false" onAction="#showAjouterMember" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Ajouter Compte" textAlignment="CENTER" underline="true">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
@@ -29,6 +33,9 @@
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
         <Button fx:id="camera_list" alignment="BOTTOM_CENTER" layoutX="409.0" layoutY="137.0" mnemonicParsing="false" onAction="#showCameraliste" pickOnBounds="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Camera &amp; list" textAlignment="CENTER" underline="true">
             <cursor>
@@ -37,6 +44,9 @@
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
         <Button fx:id="statistique" alignment="BOTTOM_CENTER" layoutX="112.0" layoutY="141.0" mnemonicParsing="false" onAction="#showStatistique" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Statistique" textAlignment="CENTER" underline="true">
             <cursor>
@@ -45,14 +55,24 @@
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
+<<<<<<< HEAD
         <Button fx:id="archive" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="368.0" mnemonicParsing="false"  prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Archive" textAlignment="CENTER" underline="true">
+=======
+        <Button fx:id="archive" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="368.0" mnemonicParsing="false" onAction="#showArchive" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Archive" textAlignment="CENTER" underline="true">
+>>>>>>> e430f0957c41b321fb9c39b1b03a226d7ca81fdb
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
         <Button fx:id="réservation" alignment="BOTTOM_CENTER" layoutX="553.0" layoutY="372.0" mnemonicParsing="false" onAction="#showReservation" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Réservation" textAlignment="CENTER" underline="true">
             <cursor>
@@ -61,6 +81,9 @@
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
         <Button fx:id="Montant" alignment="BOTTOM_CENTER" layoutX="826.0" layoutY="373.0" mnemonicParsing="false" onAction="#showMontant" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Montant" textAlignment="CENTER" underline="true">
             <cursor>
@@ -69,6 +92,9 @@
             <font>
                 <Font name="System Bold Italic" size="21.0" />
             </font>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
         <ImageView fx:id="dash3" fitWidth="80.0" layoutX="458.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
             <image>
