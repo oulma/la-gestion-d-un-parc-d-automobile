@@ -59,9 +59,7 @@
             <DropShadow />
          </effect>
         </Button>
-<<<<<<< HEAD
-        <Button fx:id="archive" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="368.0" mnemonicParsing="false"  prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Archive" textAlignment="CENTER" underline="true">
-=======
+
         <Button fx:id="archive" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="368.0" mnemonicParsing="false" onAction="#showArchive" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Archive" textAlignment="CENTER" underline="true">
 >>>>>>> e430f0957c41b321fb9c39b1b03a226d7ca81fdb
             <cursor>

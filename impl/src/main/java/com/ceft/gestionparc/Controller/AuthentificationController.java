@@ -55,7 +55,7 @@ public class AuthentificationController implements Initializable {
 
         //afficher l'interface d'authentification
     public void showAuthentification() throws IOException {         //changer pour tester votre inteface
-        Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Authentification.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.initStyle(StageStyle.TRANSPARENT);
