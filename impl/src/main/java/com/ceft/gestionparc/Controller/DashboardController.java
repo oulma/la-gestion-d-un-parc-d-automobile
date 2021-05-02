@@ -29,6 +29,7 @@ public class DashboardController implements Initializable {
 
     //################################################################"
     public void showReservation(){
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/reservation.fxml"));
             Scene scene = new Scene(root);
@@ -37,6 +38,8 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
+            Stage stage=(Stage) réservation.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -194,5 +197,6 @@ public class DashboardController implements Initializable {
             e.getCause();
         }
     }
+
 
 }

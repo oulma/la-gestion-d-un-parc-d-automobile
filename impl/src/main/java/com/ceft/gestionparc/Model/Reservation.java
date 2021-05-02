@@ -1,30 +1,37 @@
 package com.ceft.gestionparc.Model;
 
-import java.util.Date;
+import com.ceft.gestionparc.Controller.ReservationController;
 
-public class Reservation {
+import java.time.LocalDate;
 
-    private int idR;
+public class Reservation extends ReservationController {
+
+    private String idR;
     private String nomR;
+    private String CIN;
     private String matricule;
-    private Date dateEntre;
-    private Date dateSortie;
+    private String dateEntre;
+    private String dateSortie;
 
 
-    public Reservation(int idR, String nomR, String matricule, Date dateEntre, Date dateSortie) {
+
+    public Reservation(String idR, String CIN, String nomR, String matricule, String dateEntre, String dateSortie) {
         this.idR = idR;
         this.nomR = nomR;
+        this.CIN=CIN;
         this.matricule = matricule;
         this.dateEntre = dateEntre;
         this.dateSortie = dateSortie;
+
     }
 
-
-    public int getIdR() {
+    public String getIdR() {
         return idR;
     }
 
-    public void setIdR(int idR) {
+
+
+    public void setIdR(String idR) {
         this.idR = idR;
     }
 
@@ -36,6 +43,14 @@ public class Reservation {
         this.nomR = nomR;
     }
 
+    public String getCIN() {
+        return CIN;
+    }
+
+    public void setCIN(String CIN) {
+        this.CIN = CIN;
+    }
+
     public String getMatricule() {
         return matricule;
     }
@@ -44,19 +59,22 @@ public class Reservation {
         this.matricule = matricule;
     }
 
-    public Date getDateEntre() {
+    public String getDateEntre() {
         return dateEntre;
     }
 
-    public void setDateEntre(Date dateEntre) {
+    public void setDateEntre(String dateEntre) {
         this.dateEntre = dateEntre;
     }
 
-    public Date getDateSortie() {
+    public String getDateSortie() {
         return dateSortie;
     }
 
-    public void setDateSortie(Date dateSortie) {
+    public void setDateSortie(String dateSortie) {
         this.dateSortie = dateSortie;
     }
 }
+
+
+
