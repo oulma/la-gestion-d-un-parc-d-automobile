@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" style="-fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.DashboardController">
+    <children>
+        <ImageView fx:id="imagepark" fitHeight="600.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: linear-gradient(#EECEC8,#EECEC8,#6f6464);">
+            <image>
+                <Image url="@../../../../../../../_img/VOITURE.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="listeNoire" alignment="BOTTOM_CENTER" layoutX="956.0" layoutY="138.0" mnemonicParsing="false" onAction="#showListeNoire" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Liste Noire" textAlignment="CENTER" underline="true" AnchorPane.topAnchor="138.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font></Button>
+        <Button fx:id="ajouterCompte" alignment="BOTTOM_CENTER" layoutX="679.0" layoutY="138.0" mnemonicParsing="false" onAction="#showAjouterMember" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Ajouter Compte" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="camera_list" alignment="BOTTOM_CENTER" layoutX="409.0" layoutY="137.0" mnemonicParsing="false" onAction="#showCameraliste" pickOnBounds="false" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Camera &amp; list" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="statistique" alignment="BOTTOM_CENTER" layoutX="112.0" layoutY="141.0" mnemonicParsing="false" onAction="#showStatistique" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Statistique" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="archive" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="368.0" mnemonicParsing="false"  prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Archive" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="réservation" alignment="BOTTOM_CENTER" layoutX="553.0" layoutY="372.0" mnemonicParsing="false" onAction="#showReservation" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Réservation" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <Button fx:id="Montant" alignment="BOTTOM_CENTER" layoutX="826.0" layoutY="373.0" mnemonicParsing="false" onAction="#showMontant" prefHeight="129.0" prefWidth="190.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="Montant" textAlignment="CENTER" underline="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <font>
+                <Font name="System Bold Italic" size="21.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="dash3" fitWidth="80.0" layoutX="458.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/_camera.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash4" fitWidth="70.0" layoutX="170.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/statistics.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash5" fitHeight="97.0" fitWidth="60.0" layoutX="352.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464);">
+            <image>
+                <Image url="@../../../../../../../_img/_archive.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash6" fitHeight="97.0" fitWidth="80.0" layoutX="608.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/reservation.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash2" fitWidth="70.0" layoutX="741.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/new-user.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash1" fitWidth="65.0" layoutX="1027.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/blocked.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="dash7" fitHeight="97.0" fitWidth="80.0" layoutX="880.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../_img/save-money.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="redButton" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1221.0" layoutY="16.0" mnemonicParsing="false" onAction="#redButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1187.0" layoutY="16.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="❒">
+            <font>
+                <Font name="Arial" size="10.0" />
+            </font>
+        </Button>
+        <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1153.0" layoutY="15.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+         <font>
+            <Font size="11.0" />
+         </font>
+        </Button>
+    </children>
+</AnchorPane>

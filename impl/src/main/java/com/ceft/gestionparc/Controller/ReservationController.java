@@ -143,7 +143,7 @@ public class ReservationController implements Initializable {
                     stage.toFront();
                     return;
                 }else{
-                    int status=statement.executeUpdate("INSERT INTO réservation (CIN, nom, Matricule, `date d'entrée`, `date de sortie`)   VALUES ( '"+cinAjt+"',"+NometPrenomAjt+" ',"+martAjt+"', '"+dateEntrAjt+"', '"+dateSorAjt+"')");
+                    int status=statement.executeUpdate("INSERT INTO réservation (nom, CIN, Matricule, `date d'entrée`, `date de sortie`)   VALUES  ( '"+NomPrenomFld.getText()+" ','"+cinFld.getText()+"','"+martAjt+"','"+dateEntée.getValue()+"', '"+dateDeSortie.getValue()+"')");
                     if(status>0)
                     {
                         JOptionPane.showMessageDialog(null,"Ajout avec succes");
@@ -231,6 +231,7 @@ public class ReservationController implements Initializable {
         // 5. Add sorted (and filtered) data to the table.
         Table.setItems(sortedData);
     }
+
     private Reservation RS;
     @FXML public void SUPPRIMERAction() {
            int action = JOptionPane.showConfirmDialog(null, "Confirmer votre suppession?");
@@ -257,6 +258,7 @@ public class ReservationController implements Initializable {
     ResultSet rs = null;
     PreparedStatement pst;
     private boolean update;
+
     public void refreshTableAction() throws ClassNotFoundException {
         Oblist.clear();
         try {
@@ -290,14 +292,14 @@ public class ReservationController implements Initializable {
             Connection connectDB = connectNow.connectionDuBd();
             ResultSet rs =connectDB.createStatement().executeQuery("SELECT * FROM réservation");
             while (rs.next()){
-                Oblist.add(new Reservation(rs.getString("id"),rs.getString("nom"),rs.getString("CIN"),rs.getString("Matricule"),rs.getString("date d'entrée"),rs.getString("date de sortie")));
+                Oblist.add(new Reservation(rs.getString("id"),rs.getString("CIN"),rs.getString("nom"),rs.getString("Matricule"),rs.getString("date d'entrée"),rs.getString("date de sortie")));
             }
         } catch (SQLException | ClassNotFoundException exception) {
             Logger.getLogger(Reservation.class.getName()).log(Level.SEVERE,null,exception);
         }
         col_ID.setCellValueFactory(new PropertyValueFactory<>("idR"));
-        col_nom.setCellValueFactory(new PropertyValueFactory<>("nomR"));
-        col_cin.setCellValueFactory(new PropertyValueFactory<>("CIN"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("CIN"));
+        col_cin.setCellValueFactory(new PropertyValueFactory<>("nomR"));
         col_matricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));
         col_da_ent.setCellValueFactory(new PropertyValueFactory<>("dateEntre"));
         col_dat_sor.setCellValueFactory(new PropertyValueFactory<>("dateSortie"));
