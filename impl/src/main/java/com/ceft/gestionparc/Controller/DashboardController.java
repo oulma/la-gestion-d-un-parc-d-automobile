@@ -25,7 +25,7 @@ public class DashboardController implements Initializable {
     private Button réservation;
     //################################################################"
 
-    //had le method kat dik l'interface dyal reserevation
+    //had le method katdik l'interface dyal reserevation
 
     //################################################################"
     public void showReservation(){
