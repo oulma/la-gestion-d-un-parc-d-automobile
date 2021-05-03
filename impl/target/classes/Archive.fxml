@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Archive">
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Archive">
    <children>
       <AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 1EM 1EM 1EM 1EM;">
          <children>
@@ -79,7 +79,7 @@
                 <TableColumn fx:id="idCol" prefWidth="53.0" style="-fx-background-radius: 1EM;" text="id" />
                 <TableColumn fx:id="matriculeCol" prefWidth="211.0" text="Matricule" />
                   <TableColumn fx:id="nomCol" prefWidth="169.0" style="-fx-background-radius: 1EM;" text="Nom" />
-                  <TableColumn fx:id="dateCol" prefWidth="169.0" style="-fx-background-radius: 1EM;" text="Date d'Entrée" />
+                  <TableColumn fx:id="dateCol" prefWidth="169.0" style="-fx-background-radius: 1EM;" text="Date d'Entrer" />
               </columns>
             </TableView>
             <Label id="Lnoire" layoutX="16.0" layoutY="60.0" prefHeight="51.0" prefWidth="116.0" text="Recherche ">
@@ -101,7 +101,7 @@
             <TextField fx:id="researchFleid" layoutX="19.0" layoutY="165.0" prefHeight="30.0" prefWidth="290.0" promptText="tout par default" />
             <Label fx:id="erreur" layoutX="26.0" layoutY="271.0" textFill="RED" />
             <Label fx:id="dtFormatEx" layoutX="315.0" layoutY="172.0" />
-            <Button id="Rechercher" fx:id="deletButton" alignment="CENTER" layoutX="301.0" layoutY="501.0" mnemonicParsing="false" onAction="#deletButtonOnAction" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 1EM;" text="Delete" wrapText="true">
+            <Button id="Rechercher" fx:id="deletButton" alignment="CENTER" layoutX="301.0" layoutY="501.0" mnemonicParsing="false" onAction="#deletButtonOnAction" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 1EM;" text="Delet" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="20.0" />
                </font>

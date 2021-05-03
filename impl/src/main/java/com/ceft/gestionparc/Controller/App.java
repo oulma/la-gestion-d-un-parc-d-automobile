@@ -10,7 +10,6 @@ public class App extends Application {
 
        AuthentificationController aut= new AuthentificationController();
        aut.showAuthentification();
-
     }
 
     public static void main(String[] args) { launch(args);

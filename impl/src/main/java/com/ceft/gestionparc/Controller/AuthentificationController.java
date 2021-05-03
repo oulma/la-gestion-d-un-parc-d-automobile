@@ -58,15 +58,10 @@ public class AuthentificationController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/Authentification.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
-        //------------prog image---------------//
-        Image image = new Image("_img/icon.png");
-        primaryStage.getIcons().add(image);
-        //------------------------------------//
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
-
 
     }
    @FXML
