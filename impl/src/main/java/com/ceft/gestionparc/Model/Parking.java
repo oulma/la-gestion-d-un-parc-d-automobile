@@ -13,13 +13,13 @@ public class Parking {
     private int idPark;
     private String seriePark;
     private int placePark;
-    private int placeOccupé;
+    private static int placeOccupé;
     public ArrayList<Voiture> voiture;
 
-    public int getPlaceOccupé() throws SQLException, ClassNotFoundException {
+    public static int  getPlaceOccupé() throws SQLException, ClassNotFoundException {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.connectionDuBd();
-        String countHowManyCarInPark = "SELECT COUNT(*) FROM voiturein";
+        String countHowManyCarInPark = "SELECT COUNT(*) FROM voiture";
         Statement statement = connectDB.createStatement();
         ResultSet rs = statement.executeQuery(countHowManyCarInPark);
         placeOccupé = rs.getInt(1);
