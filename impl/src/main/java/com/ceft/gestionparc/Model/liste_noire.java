@@ -1,41 +1,55 @@
 package com.ceft.gestionparc.Model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.ArrayList;
 
 public class liste_noire {
+      private SimpleStringProperty  Matricule;
+    private SimpleStringProperty Marque;
+    private SimpleStringProperty Etat;
 
-        private int type;
-        private String description;
+        public liste_noire(String matricule, String marque, String etat) {
+            this.Matricule = new SimpleStringProperty(matricule);
+            this.Marque = new SimpleStringProperty(marque);
+            this.Etat = new SimpleStringProperty(etat);
+        }
 
-        public ArrayList<Voiture> voiture;
-
-    public liste_noire(int type, String description, ArrayList<Voiture> voiture) {
-        this.type = type;
-        this.description = description;
-        this.voiture = voiture;
+    public String getMatricule() {
+        return Matricule.get();
     }
 
-    public int getType() {
-        return type;
+    public SimpleStringProperty matriculeProperty() {
+        return Matricule;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setMatricule(String matricule) {
+        this.Matricule.set(matricule);
     }
 
-    public String getDescription() {
-        return description;
+    public String getMarque() {
+        return Marque.get();
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public SimpleStringProperty marqueProperty() {
+        return Marque;
     }
 
-    public ArrayList<Voiture> getVoiture() {
-        return voiture;
+    public void setMarque(String marque) {
+        this.Marque.set(marque);
     }
 
-    public void setVoiture(ArrayList<Voiture> voiture) {
-        this.voiture = voiture;
+    public String getEtat() {
+        return Etat.get();
+    }
+
+    public SimpleStringProperty etatProperty() {
+        return Etat;
+    }
+
+    public void setEtat(String etat) {
+        this.Etat.set(etat);
     }
 }
+

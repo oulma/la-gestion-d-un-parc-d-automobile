@@ -25,6 +25,9 @@ module com.ceft.gestionparc.Controller {
     requires javafx.swing;
     opens com.ceft.gestionparc.Model to javafx.graphics;
     exports com.ceft.gestionparc.Model;
+    requires mysql.connector.java;
+    requires javafx.base;
+    requires javafx.graphics;
     opens com.ceft.gestionparc.Controller to javafx.fxml;
     exports com.ceft.gestionparc.Controller;
 

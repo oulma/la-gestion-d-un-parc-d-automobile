@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="186.0" prefWidth="457.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 15; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ConfirmationAjouterUtil">
+<AnchorPane prefHeight="186.0" prefWidth="457.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 15; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ConfirmationAjouterUtil">
    <children>
-      <Button fx:id="okAjouterButton" layoutX="185.0" layoutY="146.0" mnemonicParsing="false" onAction="#okAtouterButtonOnAction" prefHeight="33.0" prefWidth="87.0" style="-fx-background-color: #EECEC8; -fx-background-radius: 15;" text="Ok">
+      <Button fx:id="okAjouterButton" layoutX="185.0" layoutY="143.0" mnemonicParsing="false" onAction="#okAtouterButtonOnAction" prefHeight="33.0" prefWidth="87.0" style="-fx-background-radius: 15;" text="Ok">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>

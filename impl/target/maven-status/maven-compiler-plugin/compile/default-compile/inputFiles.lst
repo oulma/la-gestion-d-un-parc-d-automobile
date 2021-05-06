@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\module-info.java
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\Controller\CameraListe.java
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\Controller\DashboardController.java
@@ -33,3 +34,26 @@ C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\op
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\openalpr\jni\AlprCoordinate.java
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\Controller\Montant.java
 C:\Users\oulma\Desktop\New folder\poo\impl\src\main\java\com\ceft\gestionparc\Model\Parking.java
+=======
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\Listenoire.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\PasswordOublier.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\Montant.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\module-info.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\AjouterMember.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\Reservation.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\ConfirmationAjouterUtil.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\Voiture.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\DashboardController.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\Archive.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\ReservationController.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\AuthentificationController.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\Utilisateur.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\frais_parking.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\CameraListe.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\Parking.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\App.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Model\liste_noire.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\Statistique.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\DbConnection\DatabaseConnection.java
+C:\Users\user\Desktop\projet home\impl\src\main\java\com\ceft\gestionparc\Controller\ConfirmationOublierPass.java
+>>>>>>> b26e2265ca77c3de08d402bbad2bc73508a658f1

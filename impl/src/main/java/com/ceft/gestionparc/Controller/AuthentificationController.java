@@ -30,7 +30,7 @@ public class AuthentificationController implements Initializable {
     @FXML
     private Button loginButton;
     @FXML
-    private ImageView brandignImageView, lockImageView;
+    private ImageView brandignImageView, login;
     @FXML
     private Label loginMessageLabel;
     @FXML
@@ -45,16 +45,16 @@ public class AuthentificationController implements Initializable {
         Image brandignImage = new Image(brandingFile.toURI().toString());
         brandignImageView.setImage(brandignImage);
 
-        File lockFile = new File("_img/_person.png");
+        File lockFile = new File("_img/login.png");
         Image lockImage = new Image(lockFile.toURI().toString());
-        lockImageView.setImage(lockImage);
+        login.setImage(lockImage);
 
 
     }
 
 
         //afficher l'interface d'authentification
-    public void showAuthentification() throws IOException {
+    public void showAuthentification() throws IOException {         //changer pour tester votre inteface
         Parent root = FXMLLoader.load(getClass().getResource("/Authentification.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
@@ -90,14 +90,12 @@ public class AuthentificationController implements Initializable {
         Connection connectDB = connectNow.connectionDuBd();
         String verifyLogin = "SELECT count(1) FROM utilisateur where nomU = '" + usernameTextField.getText() + "' and motPasse = '" + enterPasswordField.getText() + "'";
         retrunEmail();
-
         try {
-            Statement statement = connectDB.createStatement();
-            ResultSet rs = statement.executeQuery(verifyLogin);
+            Statement st = connectDB.createStatement();
+            ResultSet rs = st.executeQuery(verifyLogin);
             while (rs.next()) {
 
                 //  Utilisateur util = new Utilisateur(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-
                 if (rs.getInt(1) == 1) {
                     DashboardController dashboard = new DashboardController();
                     dashboard.goToDashboard();
@@ -107,14 +105,10 @@ public class AuthentificationController implements Initializable {
                 } else {
                     loginMessageLabel.setText("identifiant invalide");
                 }
-
-
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
 

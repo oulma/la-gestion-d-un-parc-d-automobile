@@ -8,8 +8,13 @@
 
 - [Description](#description)
 - [How To Use](#how-to-use)
+<<<<<<< HEAD
 - [License](#Screenshot)
 - [Author Info](#Collaborator)
+=======
+- [Screenshot](#Screenshot)
+- [Collaborator](#Collaborator)
+>>>>>>> b26e2265ca77c3de08d402bbad2bc73508a658f1
 
 ---
 

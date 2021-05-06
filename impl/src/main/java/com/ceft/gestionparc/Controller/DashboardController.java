@@ -25,10 +25,11 @@ public class DashboardController implements Initializable {
     private Button réservation;
     //################################################################"
 
-    //had le method kat dik l'interface dyal reserevation
+    //had le method katdik l'interface dyal reserevation
 
     //################################################################"
     public void showReservation(){
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/reservation.fxml"));
             Scene scene = new Scene(root);
@@ -37,6 +38,8 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
+            Stage stage=(Stage) réservation.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,7 +49,7 @@ public class DashboardController implements Initializable {
     }
     public void showListeNoire() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/listenoire.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/ListeNoireTable.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -127,19 +130,21 @@ public class DashboardController implements Initializable {
         }
     }
 
-    public void redButtonOnAction(ActionEvent event) {
+    public void redButtonOnAction() {
         Stage stage = (Stage) redButton.getScene().getWindow();
         stage.close();
     }
 
-    public void yellowButtonOnAction(ActionEvent event) {
+    public void yellowButtonOnAction() {
         Stage stage = (Stage) yellowButton.getScene().getWindow();
-        stage.toBack();
+        stage.isMaximized();
     }
 
-    public void greenButtonOnAction(ActionEvent event) {
+    public void greenButtonOnAction() {
         Stage stage = (Stage) greenButton.getScene().getWindow();
-        stage.isMaximized();
+
+        //Nous devons le changer On maximiser l'ecrant
+        stage.toBack();
     }
 
     //had le method kat affichi lina le window bash nzido Uitilisateur
@@ -152,7 +157,6 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -170,7 +174,6 @@ public class DashboardController implements Initializable {
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
 
-
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
@@ -178,9 +181,25 @@ public class DashboardController implements Initializable {
     }
 
     public void showStatistique(){
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Statistique.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    public void showArchive(){
+
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -194,5 +213,4 @@ public class DashboardController implements Initializable {
             e.getCause();
         }
     }
-
 }

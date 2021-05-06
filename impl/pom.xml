@@ -36,6 +36,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.22</version>
         </dependency>
+<<<<<<< HEAD
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -75,6 +76,14 @@
         </dependency>
 
 
+=======
+        <!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>5.15.2</version>
+        </dependency>
+>>>>>>> b26e2265ca77c3de08d402bbad2bc73508a658f1
 
 
     </dependencies>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Reservation">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ReservationController">
     <children>
         <AnchorPane fx:id="statistique" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(WHITE,#6f6464);">
             <children>
@@ -35,27 +37,27 @@
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="74.0" layoutY="217.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
+                <Button fx:id="StatistiqueRS" layoutX="74.0" layoutY="217.0" mnemonicParsing="false" onAction="#statistiqueRSonAction" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="74.0" layoutY="288.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Camera et liste" underline="true">
+                <Button fx:id="CameraRS" layoutX="74.0" layoutY="288.0" mnemonicParsing="false" onAction="#cameraRSonAction" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Camera et liste" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="71.0" layoutY="365.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
+                <Button fx:id="ArchiveRS" layoutX="71.0" layoutY="365.0" mnemonicParsing="false" onAction="#ArchiveRSonAction" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="78.0" layoutY="445.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
+                <Button fx:id="listenoireRS" layoutX="78.0" layoutY="445.0" mnemonicParsing="false" onAction="#listenoireonAction" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="72.0" layoutY="521.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
+                <Button fx:id="montantRS" layoutX="72.0" layoutY="521.0" mnemonicParsing="false" onAction="#MontantonAction" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
@@ -75,12 +77,11 @@
                         <Image url="@../../../../../../../_img/save-money.png" />
                     </image>
                 </ImageView>
-                <AnchorPane layoutX="251.0" layoutY="42.0" prefHeight="559.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 0EM 0EM 0EM;">
+                <AnchorPane layoutX="251.0" layoutY="31.0" prefHeight="570.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;">
                     <children>
-                        <TextField fx:id="NomPrenom" layoutX="211.0" layoutY="80.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
-                        <TextField fx:id="cin" layoutX="211.0" layoutY="148.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
-                        <TextField fx:id="matricule" layoutX="211.0" layoutY="214.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
-                        <TextField fx:id="dateEntrer" layoutX="211.0" layoutY="287.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
+                        <TextField fx:id="NomPrenomFld" layoutX="211.0" layoutY="80.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
+                        <TextField fx:id="cinFld" layoutX="211.0" layoutY="148.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
+                        <TextField fx:id="matriculeFld" layoutX="211.0" layoutY="214.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
                         <Label layoutX="38.0" layoutY="80.0" text="Nom Et Prénom :">
                             <font>
                                 <Font name="System Bold Italic" size="18.0" />
@@ -101,18 +102,11 @@
                                 <Font name="System Bold Italic" size="18.0" />
                             </font>
                         </Label>
-                        <Button fx:id="ajouterReservation" layoutX="354.0" layoutY="425.0" mnemonicParsing="false" onAction="#ajouterReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Ajouter">
+                        <Button fx:id="ajouterReservation" layoutX="274.0" layoutY="411.0" mnemonicParsing="false" onAction="#ajouterReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Ajouter">
                             <font>
                                 <Font name="System Bold Italic" size="14.0" />
                             </font>
                         </Button>
-                        <Button fx:id="annulerReservation" layoutX="217.0" layoutY="425.0" mnemonicParsing="false" onAction="#annulerReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #6f6464;" text="Annuler">
-                            <font>
-                                <Font name="System Bold Italic" size="14.0" />
-                            </font>
-                        </Button>
-                  <ListView layoutX="547.0" layoutY="80.0" prefHeight="384.0" prefWidth="450.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464);" />
-                  <TextField fx:id="datesortie" layoutX="211.0" layoutY="356.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
                   <Label layoutX="36.0" layoutY="356.0" text="Date de sortie :">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
@@ -123,14 +117,44 @@
                         <Font name="System Bold Italic" size="27.0" />
                      </font>
                   </Label>
-                  <Label fx:id="setEmail" layoutX="840.0" layoutY="26.0" prefHeight="27.0" prefWidth="151.0" underline="true">
+                  <Label fx:id="setEmail" layoutX="836.0" layoutY="32.0" prefHeight="27.0" prefWidth="179.0" underline="true">
                      <font>
                         <Font name="System Bold Italic" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="210.0" layoutY="269.0" prefHeight="17.0" prefWidth="128.0" text="Ex : 2000-09-23" />
-                  <Label layoutX="211.0" layoutY="339.0" prefHeight="17.0" prefWidth="128.0" text="Ex : 2000-09-23" />
                   <Label fx:id="reservationmessageErreur" layoutX="211.0" layoutY="402.0" textFill="RED" />
+                  <Label fx:id="confirmierReservation" layoutX="217.0" layoutY="402.0" textFill="#03f841" />
+                  <TableView fx:id="Table" layoutX="507.0" layoutY="79.0" onMouseClicked="#Selectionne" prefHeight="381.0" prefWidth="506.0" style="-fx-background-radius: 0EM 0EM 0EM 0EM;">
+                    <columns>
+                      <TableColumn fx:id="col_ID" prefWidth="29.0" text="ID" />
+                      <TableColumn fx:id="col_nom" prefWidth="102.0" text="Nom Et Prénom" />
+                        <TableColumn fx:id="col_cin" prefWidth="61.0" text="CIN" />
+                        <TableColumn fx:id="col_matricule" prefWidth="81.0" text="Matricule" />
+                        <TableColumn fx:id="col_da_ent" prefWidth="120.0" text="Date d'entée" />
+                        <TableColumn fx:id="col_dat_sor" prefWidth="112.0" text="Date de sortie" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="supprimerRS" layoutX="276.0" layoutY="510.0" mnemonicParsing="false" onAction="#SUPPRIMERAction" opacity="0.73" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Supprimer">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="modifierRS" layoutX="274.0" layoutY="460.0" mnemonicParsing="false" onAction="#modifierOnaction" opacity="0.73" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Modifier">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="RecherRS" layoutX="508.0" layoutY="31.0" prefHeight="29.0" prefWidth="255.0" promptText="Taper ici pour rechercher" style="-fx-background-radius: 1EM 1EM 1EM 1EM;">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font></TextField>
+                  <ImageView fx:id="rechercher" fitHeight="27.0" fitWidth="37.0" layoutX="733.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../_img/_search.png" />
+                     </image>
+                  </ImageView>
+                  <DatePicker fx:id="dateEntée" layoutX="211.0" layoutY="281.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
+                  <DatePicker fx:id="dateDeSortie" layoutX="211.0" layoutY="344.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
                     </children>
                 </AnchorPane>
             <Button fx:id="XButtonInReservation" layoutX="1239.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#XButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="X" />

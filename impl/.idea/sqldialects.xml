@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ceft/gestionparc/Controller/ListeNoireTable.java" dialect="GenericSQL" />
+=======
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ceft/gestionparc/Controller/ReservationController.java" dialect="GenericSQL" />
+>>>>>>> 80f175811c5c9c94d55997807bad989aa4aeb713
+=======
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ceft/gestionparc/Controller/ReservationController.java" dialect="GenericSQL" />
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
+  </component>
+</project>
