@@ -203,8 +203,6 @@ public class ListeNoireTable implements Initializable {
                 if(status>0)
                 {
                     JOptionPane.showMessageDialog(null,"Ajout avec succes");
-                   // table.getItems().clear();
-                   // fill();
                     clean();
                     refreshTableAction();
                 }
@@ -256,8 +254,6 @@ public class ListeNoireTable implements Initializable {
                     Connection connectDB = connectNow.connectionDuBd();
                     Statement statement = connectDB.createStatement();
                     statement.executeUpdate("DELETE FROM `liste noir` WHERE matricule='"+liste.getMatricule()+"'");
-                   // table.getItems().clear();
-                    // fill();
                     refreshTableAction();
                 }
                 else {JOptionPane.showMessageDialog(null,"Selectionne element que vouler supprimer");}
@@ -276,24 +272,19 @@ public class ListeNoireTable implements Initializable {
                     // Si le texte du filtre est vide, affichez tout la listes.
                     if (newValue == null || newValue.isEmpty()) {
                         return true; }
-                    // Compare first name and last name of every person with filter text.
                     String lowerCaseFilter = newValue.toLowerCase();
                     if (liste_noire.getMatricule().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-                        return true; // Filter matches first name.
+                        return true;
                     } else if (liste_noire.getMarque().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                        return true; // Filter matches last name.
+                        return true;
                     }
                     else if (String.valueOf(liste_noire.getEtat()).indexOf(lowerCaseFilter)!=-1)
                         return true;
                     else
                         return false; // Does not match.
                 }); });
-            // 3. Enveloppez la liste filtrée dans une liste triée.
             SortedList<liste_noire> sortedData = new SortedList<>(filteredData);
-            // 4. Bind the SortedList comparator to the TableView comparator.
-            // 	  Otherwise, sorting the TableView would have no effect.
             sortedData.comparatorProperty().bind(table.comparatorProperty());
-            // 5. Ajoutez des données triées (et filtrées) à la table.
             table.setItems(sortedData);
         }
 

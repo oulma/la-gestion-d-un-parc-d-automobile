@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,23 +33,6 @@
                <Font name="Times New Roman" size="13.0" />
             </font></Label>
          <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="186.0" prefHeight="26.0" prefWidth="218.0" promptText="Nome d'utilisateur" />
-         <PasswordField fx:id="enterPasswordField" layoutX="50.0" layoutY="245.0" prefHeight="26.0" prefWidth="218.0" promptText="Mot de passe" />
-         <Hyperlink fx:id="oublierPass" layoutX="48.0" layoutY="368.0" onAction="#oublierPassOnAction" text="Mot de passe oublier ?" textFill="#6f96f2">
-            <font>
-               <Font name="Times New Roman" size="13.0" />
-            </font></Hyperlink>
-         <Button fx:id="cancelButton" layoutX="50.0" layoutY="334.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Annuler" textFill="WHITE">
-            <font>
-               <Font name="Times New Roman Bold Italic" size="13.0" />
-            </font></Button>
-         <Button fx:id="loginButton" layoutX="50.0" layoutY="296.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Se connecter" textAlignment="CENTER" textFill="WHITE">
-            <font>
-               <Font name="Times New Roman Bold Italic" size="13.0" />
-            </font></Button>
-         <Label fx:id="loginMessageLabel" layoutX="50.0" layoutY="271.0" prefHeight="18.0" prefWidth="227.0" textFill="#ff0101">
-            <font>
-               <Font size="9.0" />
-            </font></Label>
          <Label layoutX="86.0" layoutY="96.0" text="M">
             <font>
                <Font name="Gigi" size="38.0" />
@@ -79,6 +63,18 @@
                <Image url="@../../../../../../../_img/login.png" />
             </image>
          </ImageView>
+
+         <PasswordField fx:id="enterPasswordField" layoutX="39.0" layoutY="259.0" prefHeight="26.0" prefWidth="218.0" promptText="Mot de passe" />
+         <Hyperlink fx:id="oublierPass" layoutX="38.0" layoutY="386.0" onAction="#oublierPassOnAction" text="Mot de passe oublier ?" />
+         <Button fx:id="cancelButton" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="Annuler" textFill="WHITE">
+            <effect>
+               <DropShadow height="15.0" radius="7.0" width="15.0" />
+            </effect></Button>
+         <Button fx:id="loginButton" layoutX="40.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: #6f6464;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+            <effect>
+               <DropShadow height="15.0" radius="7.0" width="15.0" />
+            </effect></Button>
+         <Label fx:id="loginMessageLabel" layoutX="36.0" layoutY="290.0" prefHeight="18.0" prefWidth="274.0" textFill="#ff0101" />
       </AnchorPane>
    </center>
 </BorderPane>

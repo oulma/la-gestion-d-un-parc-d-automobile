@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="517.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Reservation">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="517.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ReservationController">
     <children>
         <Button fx:id="ok" layoutX="199.0" layoutY="106.0" mnemonicParsing="false" onAction="#okOnAction" prefHeight="38.0" prefWidth="119.0" style="-fx-background-radius: 15; -fx-background-color: #EECEC8;" text="Ok">
             <font>
