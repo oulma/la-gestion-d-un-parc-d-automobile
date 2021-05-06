@@ -106,6 +106,7 @@ public class ReservationController implements Initializable {
         stage.toBack();
     }
     public void XButtonInReservationOnAction(){
+
         Stage stage = (Stage) XButtonInReservation.getScene().getWindow();
         stage.close();
     }
@@ -253,6 +254,7 @@ public class ReservationController implements Initializable {
                         DatabaseConnection connectNow = new DatabaseConnection();
                         Connection connectDB = connectNow.connectionDuBd();
                         Statement statement = connectDB.createStatement();
+
                         statement.executeUpdate("DELETE FROM `réservation` WHERE id='"+liste.getIdR()+"'");
                       //  Table.getItems().clear();
                         Fill();
@@ -304,6 +306,7 @@ public class ReservationController implements Initializable {
             Connection connectDB = connectNow.connectionDuBd();
             ResultSet rs =connectDB.createStatement().executeQuery("SELECT * FROM réservation");
             while (rs.next()){
+
                 Oblist.add(new Reservation(rs.getString("id"),rs.getString("nom"),rs.getString("CIN"),rs.getString("Matricule"),rs.getString("date d'entrée"),rs.getString("date de sortie")));
             }
         } catch (SQLException | ClassNotFoundException exception) {
@@ -323,6 +326,7 @@ public class ReservationController implements Initializable {
         matriculeFld.setText(null);
         dateDeSortie.setValue(null);
         dateEntée.setValue(null);
+        dateDeSortie.setValue(null);
     }
     public void Selectionne()
     {
@@ -332,6 +336,7 @@ public class ReservationController implements Initializable {
         matriculeFld.setText(student.getMatricule());
         dateDeSortie.setValue(LocalDate.parse(student.getDateEntre()));
         dateEntée.setValue(LocalDate.parse(student.getDateSortie()));
+        dateDeSortie.setValue(LocalDate.parse(student.getDateSortie()));
     }
 
     public void modifierOnaction(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -350,6 +355,7 @@ public class ReservationController implements Initializable {
             alert.setContentText("Remplir tous les champs");
             alert.showAndWait();
             return;
+
         }else if (dateEntrée.isAfter(datesortie)){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -358,7 +364,9 @@ public class ReservationController implements Initializable {
             Stage stage = (Stage) ajouterReservation.getScene().getWindow();
             stage.toFront();
             return;
-        }else{
+        }
+
+        else{
 
             int status=statement.executeUpdate("UPDATE `réservation` SET  `nom` = '"+noM+"', `CIN` = '"+ciN+"', `Matricule` = '"+matricule+"', `date d'entrée` = '"+dateEntrée+"', `date de sortie` = '"+datesortie+"' WHERE `réservation`.`id`="+student.getIdR());
             if(status>0)

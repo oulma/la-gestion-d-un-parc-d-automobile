@@ -117,7 +117,7 @@
                         <Font name="System Bold Italic" size="27.0" />
                      </font>
                   </Label>
-                  <Label fx:id="setEmail" layoutX="766.0" layoutY="32.0" prefHeight="27.0" prefWidth="249.0" underline="true">
+                  <Label fx:id="setEmail" layoutX="836.0" layoutY="32.0" prefHeight="27.0" prefWidth="179.0" underline="true">
                      <font>
                         <Font name="System Bold Italic" size="16.0" />
                      </font>

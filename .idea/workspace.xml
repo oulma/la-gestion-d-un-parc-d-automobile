@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="55322463-b0d3-4f55-a10a-9c581114ec91" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/Nouveau dossier.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/impl/.idea/libraries/fontawesomefx_8_91.xml" afterDir="false" />
@@ -19,6 +20,8 @@
       <change beforePath="$PROJECT_DIR$/impl/target/classes/com/ceft/gestionparc/Controller/Listenoire.class" beforeDir="false" afterPath="$PROJECT_DIR$/impl/target/classes/com/ceft/gestionparc/Controller/Listenoire.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/impl/target/classes/listenoire.fxml" beforeDir="false" />
 =======
+=======
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
     <list default="true" id="0d973f34-4b15-46a7-8d29-0046d1eeaf40" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/impl/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/impl/src/main/java/com/ceft/gestionparc/Controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/impl/src/main/java/com/ceft/gestionparc/Controller/DashboardController.java" afterDir="false" />
@@ -35,7 +38,10 @@
       <change beforePath="$PROJECT_DIR$/impl/target/classes/com/ceft/gestionparc/Model/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/impl/target/classes/com/ceft/gestionparc/Model/Reservation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/impl/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/impl/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/impl/target/classes/reservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/impl/target/classes/reservation.fxml" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> 80f175811c5c9c94d55997807bad989aa4aeb713
+=======
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +52,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectId" id="1rOOFtUgr4QNdQRc98VwhZtvwzE" />
 =======
   <component name="ProjectId" id="1rwPXPRA1rVzg6ASvTLjJsdfSMp" />
 >>>>>>> 80f175811c5c9c94d55997807bad989aa4aeb713
+=======
+  <component name="ProjectId" id="1rwPXPRA1rVzg6ASvTLjJsdfSMp" />
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -64,6 +74,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <changelist id="55322463-b0d3-4f55-a10a-9c581114ec91" name="Default Changelist" comment="" />
       <created>1618843578602</created>
       <option name="number" value="Default" />
@@ -73,13 +84,18 @@
       <workItem from="1618871443668" duration="264000" />
       <workItem from="1618872456388" duration="297000" />
 =======
+=======
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
       <changelist id="0d973f34-4b15-46a7-8d29-0046d1eeaf40" name="Default Changelist" comment="" />
       <created>1619884223267</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619884223267</updated>
       <workItem from="1619884230019" duration="35000" />
+<<<<<<< HEAD
 >>>>>>> 80f175811c5c9c94d55997807bad989aa4aeb713
+=======
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
     </task>
     <servers />
   </component>

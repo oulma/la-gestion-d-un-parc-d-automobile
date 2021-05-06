@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Nouveau dossier.iml" filepath="$PROJECT_DIR$/.idea/Nouveau dossier.iml" />
 =======
       <module fileurl="file://$PROJECT_DIR$/.idea/projet home.iml" filepath="$PROJECT_DIR$/.idea/projet home.iml" />
 >>>>>>> 80f175811c5c9c94d55997807bad989aa4aeb713
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/projet home.iml" filepath="$PROJECT_DIR$/.idea/projet home.iml" />
+>>>>>>> aa9d685d7032c23f7c24720bff02afba9d903339
     </modules>
   </component>
 </project>
