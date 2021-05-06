@@ -117,9 +117,6 @@ public class AjouterMember implements Initializable {
             confirmAjouter.setText("les mots de passe ne correspondent pas");
         }
     }
-
-
-
         //se methode annuler l'ajout d'un utilisateur
         public void annulerAjouterMemberOnAction () {
             Stage stage = (Stage) annulerAjouterMember.getScene().getWindow();
@@ -185,11 +182,6 @@ public class AjouterMember implements Initializable {
             Stage stage = (Stage) MontantAjouterMember.getScene().getWindow();
             stage.close();
         }
-
-
-
-
-
 }
 
 

@@ -46,7 +46,7 @@ public class DashboardController implements Initializable {
     }
     public void showListeNoire() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/listenoire.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/ListeNoireTable.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -134,12 +134,12 @@ public class DashboardController implements Initializable {
 
     public void yellowButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) yellowButton.getScene().getWindow();
-        stage.toBack();
+        stage.isMaximized();
     }
 
     public void greenButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) greenButton.getScene().getWindow();
-        stage.isMaximized();
+        stage.toBack();
     }
 
     //had le method kat affichi lina le window bash nzido Uitilisateur
@@ -152,7 +152,6 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -170,7 +169,6 @@ public class DashboardController implements Initializable {
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
 
-
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
@@ -178,7 +176,6 @@ public class DashboardController implements Initializable {
     }
 
     public void showStatistique(){
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Statistique.fxml"));
             Scene scene = new Scene(root);
@@ -188,11 +185,9 @@ public class DashboardController implements Initializable {
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
 
-
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
-
 }
