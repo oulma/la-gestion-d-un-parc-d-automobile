@@ -1,17 +1,232 @@
 package com.ceft.gestionparc.Controller;
-
+import com.ceft.gestionparc.Model.Voiture;
+import com.ceft.gestionparc.utils.Utils;
+import com.openalpr.jni.Alpr;
+import com.openalpr.jni.AlprException;
+import com.openalpr.jni.AlprPlateResult;
+import com.openalpr.jni.AlprResults;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.videoio.VideoCapture;
+import javax.imageio.ImageIO;
+
+
 
 public class CameraListe  implements Initializable {
+    private ScheduledExecutorService timer;
+    private VideoCapture capture = new VideoCapture();
+    private boolean cameraActive;
+    Point clickedPoint = new Point(0, 0);
+    static	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    static	java.util.Date date = new java.util.Date();
+    static	String strDate = sdf.format(date);
+
+ private final ObservableList<Voiture> listV= FXCollections.observableArrayList();
+    @FXML
+    private TableView<Voiture> table;
+
+    @FXML
+    private TableColumn<Voiture,Integer> ID;
+
+    @FXML
+    private TableColumn<Voiture, String> Matricule;
+
+    @FXML
+    private TableColumn<Voiture, String> DateEntree;
+
+    @FXML
+     private ImageView originalFrame;
+
+   // @FXML
+   // private MediaView mediaView;
+    @FXML
+    private Button cameraButton;
+    private File file;
+    private Media media;
+    private MediaPlayer mediaPlayer;
+    private static int id =0;
     @FXML
     private ImageView Cameraliste,AjouterCompte,statistic,reservation,archive,ListeNoire,paiment;
+
+    public CameraListe() { };
+
+    @FXML
+    protected void startCamera()
+    {
+        // set a fixed width for the frame
+       // originalFrame.setFitWidth(450);
+       // originalFrame.setFitHeight(300);
+        // preserve image ratio
+       originalFrame.setPreserveRatio(true);
+
+        // mouse listener
+        originalFrame.setOnMouseClicked(e -> {
+            System.out.println("[" + e.getX() + ", " + e.getY() + "]");
+            clickedPoint.x = e.getX();
+            clickedPoint.y = e.getY();
+        });
+
+        if (!this.cameraActive)
+        {
+
+            // commancer la capture de video
+            this.capture.open("_img/plaka4.mp4");
+
+            // is the video stream available?
+            if (this.capture.isOpened())
+            {
+                this.cameraActive = true;
+
+                // grab a frame every 33 ms (30 frames/sec)
+                Runnable frameGrabber = new Runnable() {
+
+                    @Override
+                    public void run()
+                    {
+                        // effectively grab and process a single frame
+                        Mat frame = grabFrame();
+                        // convert and show the frame
+                        Image imageToShow = Utils.mat2Image(frame);
+                        updateImageView(originalFrame, imageToShow);
+                    }
+                };
+
+                this.timer = Executors.newSingleThreadScheduledExecutor();
+                this.timer.scheduleAtFixedRate(frameGrabber, 0, 33, TimeUnit.MILLISECONDS);
+
+                // update the button content
+                this.cameraButton.setText("Stop Camera");
+            }
+            else
+            {
+                // log the error
+                System.err.println("Failed to open the camera connection...");
+            }
+        }
+        else
+        {
+            // the camera is not active at this point
+            this.cameraActive = false;
+            // update again the button content
+            this.cameraButton.setText("Start Camera");
+
+
+            // stop the timer
+            this.stopAcquisition();
+        }
+    }
+    private Mat grabFrame()
+    {
+        Mat frame = new Mat();
+
+        // check if the capture is open
+        if (this.capture.isOpened())
+        {
+            try
+            {
+                // read the current frame
+                this.capture.read(frame);
+
+                // if the frame is not empty, process it
+                if (!frame.empty())
+                {
+                    try {
+                        BufferedImage img = Utils.matToBufferedImage(frame);
+
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        ImageIO.write(img, "png", baos);
+                        baos.flush();
+                        byte[] imageInByte = baos.toByteArray();
+                        baos.close();
+                        System.out.println("alpr bda lkhedma...");
+                        Alpr alpr = new Alpr("eu", "openalpr.conf", "runtime_data");
+                        // Set top N candidates returned to 20
+                        alpr.setTopN(10);
+                        // Set pattern to Maryland
+                        alpr.setDefaultRegion("md");
+                        AlprResults results = alpr.recognize(imageInByte);
+                        for (AlprPlateResult result : results.getPlates()) {
+                            if (result.getBestPlate().getCharacters() != null) {
+                                id++;
+                                //listV.add(new Voiture(id,result.getBestPlate().getCharacters(),strDate));
+                                Voiture v = new Voiture(id,result.getBestPlate().getCharacters(),strDate);
+                                table.getItems().add(v);
+                                // cvSaveImage("_img/" + result.getBestPlate().getCharacters() + "_.jpg", frame);
+                                System.out.println("ra9m lmatricule howa :"+result.getBestPlate().getCharacters());
+
+                            }
+                        }
+                        alpr.unload();
+
+
+                    }catch(IOException | AlprException e1){
+                        e1.printStackTrace();
+                    }
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                // log the (full) error
+                System.err.print("Exception in the image elaboration...");
+                e.printStackTrace();
+            }
+        }
+
+        return frame;
+    }
+    private void updateImageView(ImageView view, Image image)
+    {
+        Utils.onFXThread(view.imageProperty(), image);
+    }
+
+    private void stopAcquisition()
+    {
+        if (this.timer != null && !this.timer.isShutdown())
+        {
+            try
+            {
+                // stop the timer
+                this.timer.shutdown();
+                this.timer.awaitTermination(33, TimeUnit.MILLISECONDS);
+            }
+            catch (InterruptedException e)
+            {
+                // log any exception
+                System.err.println("Exception in stopping the frame capture, trying to release the camera now... " + e);
+            }
+        }
+
+        if (this.capture.isOpened())
+        {
+            // release the camera
+            this.capture.release();
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         File CameralisteFile = new File("_img/_camera.png");
@@ -43,5 +258,35 @@ public class CameraListe  implements Initializable {
         Image paimentImage = new Image(paimentFile.toURI().toString());
         paiment.setImage(paimentImage);
 
+        ID.setCellValueFactory(new PropertyValueFactory<>("IdV"));
+        Matricule.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+        DateEntree.setCellValueFactory(new PropertyValueFactory<>("DateEntrer"));
+       // file = new File("_img/plaka4.mp4");
+      //  media= new Media(file.toURI().toString());
+      //  mediaPlayer= new MediaPlayer(media);
+       // mediaView.setMediaPlayer(mediaPlayer);
     }
+
+    //public void playVideio(ActionEvent actionEvent) throws AlprException, IOException {
+    //    mediaPlayer.play();
+       //int width = mediaPlayer.getMedia().getWidth();
+       // int height = mediaPlayer.getMedia().getHeight();
+       // WritableImage wim = new WritableImage(width, height);
+       // MediaView mv = new MediaView();
+       // mediaView.setFitWidth(width);
+       // mediaView.setFitHeight(height);
+      //  mediaView.setMediaPlayer(mediaPlayer);
+       // mediaView.snapshot(null, wim);
+
+
+
+
+//}
+
+
+    //public void pauseVideio(ActionEvent actionEvent) {
+      //  mediaPlayer.pause();
+    //}
+
+
 }

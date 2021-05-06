@@ -2,6 +2,7 @@ package com.ceft.gestionparc.Controller;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import org.opencv.core.Core;
 
 public class App extends Application {
 
@@ -12,7 +13,10 @@ public class App extends Application {
        aut.showAuthentification();
     }
 
-    public static void main(String[] args) { launch(args);
+    public static void main(String[] args) {
+        System.loadLibrary( "opencv_java452" );
+
+        launch(args);
     }
 
 }

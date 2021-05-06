@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.CameraListe">
@@ -78,24 +77,25 @@
                                 <Font name="System Bold Italic" size="24.0" />
                             </font>
                         </Label>
-                        <Label fx:id="setEmail" layoutX="769.0" layoutY="20.0" prefHeight="27.0" prefWidth="189.0" text="atiqakacem@gmail.com" underline="true">
+                        <Label fx:id="setEmail" layoutX="769.0" layoutY="20.0" prefHeight="27.0" prefWidth="189.0" text="" underline="true">
                             <font>
                                 <Font name="System Bold Italic" size="16.0" />
                             </font>
                         </Label>
-                  <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="970.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../_img/new-user.png" />
-                     </image>
-                  </ImageView>
-                  <Pane layoutX="25.0" layoutY="70.0" prefHeight="454.0" prefWidth="472.0" style="-fx-background-color: #FF5733; -fx-background-radius: 3EM 3EM 3EM 3EM;" />
-                  <TableView layoutX="570.0" layoutY="82.0" prefHeight="444.0" prefWidth="429.0" style="-fx-background-radius: 0EM 0EM 3EM 3EM;">
-                    <columns>
-                      <TableColumn prefWidth="109.0" text="ID" />
-                      <TableColumn prefWidth="153.0" text="Matricule" />
-                        <TableColumn prefWidth="166.0" text="Date d'entrée" />
-                    </columns>
-                  </TableView>
+                        <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="970.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../../_img/new-user.png" />
+                            </image>
+                        </ImageView>
+                        <TableView fx:id="table" layoutX="570.0" layoutY="82.0" prefHeight="444.0" prefWidth="429.0" style="-fx-background-radius: 0EM 0EM 3EM 3EM;">
+                            <columns>
+                                <TableColumn fx:id="ID" prefWidth="109.0" text="ID" />
+                                <TableColumn fx:id="Matricule" prefWidth="153.0" text="Matricule" />
+                                <TableColumn fx:id="DateEntree" prefWidth="166.0" text="Date d'entrée" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="cameraButton" layoutX="256.0" layoutY="501.0" mnemonicParsing="false" onAction="#startCamera" prefHeight="25.0" prefWidth="103.0" text="Start camera" />
+                  <ImageView fx:id="originalFrame" fitHeight="415.0" fitWidth="541.0" layoutX="15.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" y="10.0" />
                     </children>
                 </AnchorPane>
                 <Button fx:id="XButtonInReservation" layoutX="1239.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="X" />
@@ -110,11 +110,11 @@
                         <Image url="@../../../../../../../_img/reservation.png" />
                     </image>
                 </ImageView>
-            <ImageView fx:id="Cameraliste" fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../_img/_camera.png" />
-               </image>
-            </ImageView>
+                <ImageView fx:id="Cameraliste" fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../../_img/_camera.png" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
     </children>
