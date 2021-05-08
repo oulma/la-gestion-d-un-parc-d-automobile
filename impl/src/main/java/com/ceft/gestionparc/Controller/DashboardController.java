@@ -116,7 +116,7 @@ public class DashboardController implements Initializable {
     private Button Montant;
     public void showMontant() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Montant.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Monttent.fxml"));
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.initStyle(StageStyle.TRANSPARENT);

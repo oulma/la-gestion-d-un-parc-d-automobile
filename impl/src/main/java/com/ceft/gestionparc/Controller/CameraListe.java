@@ -7,6 +7,7 @@ import com.openalpr.jni.AlprPlateResult;
 import com.openalpr.jni.AlprResults;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -28,6 +29,8 @@ import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+import javafx.stage.Stage;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.videoio.VideoCapture;
@@ -93,7 +96,8 @@ public class CameraListe  implements Initializable {
         {
 
             // commancer la capture de video
-            this.capture.open("_img/plaka4.mp4");
+            String cameraVideo = "_img/plaka4.mp4";
+            this.capture.open(cameraVideo);
 
             // is the video stream available?
             if (this.capture.isOpened())
@@ -161,7 +165,7 @@ public class CameraListe  implements Initializable {
                         baos.flush();
                         byte[] imageInByte = baos.toByteArray();
                         baos.close();
-                        System.out.println("alpr bda lkhedma...");
+                        System.out.println("alpr commancer le travail...");
                         Alpr alpr = new Alpr("eu", "openalpr.conf", "runtime_data");
                         // Set top N candidates returned to 20
                         alpr.setTopN(10);
@@ -287,6 +291,52 @@ public class CameraListe  implements Initializable {
     //public void pauseVideio(ActionEvent actionEvent) {
       //  mediaPlayer.pause();
     //}
+
+
+    @FXML
+    private Button ajouterMombreRS,StatistiqueC,réservation,archivee,listenoire,montant;
+
+    public void ajouterAnction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showAjouterMember();
+        Stage stage = (Stage)  ajouterMombreRS.getScene().getWindow();
+        stage.close();
+    }
+
+    public void StatistiqueAnction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showStatistique();
+        Stage stage = (Stage)  StatistiqueC.getScene().getWindow();
+        stage.close();
+    }
+
+    public void anction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showReservation();
+        Stage stage = (Stage)  réservation.getScene().getWindow();
+        stage.close();
+    }
+
+    public void archiveAnction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showArchive();
+        Stage stage = (Stage)  archivee.getScene().getWindow();
+        stage.close();
+    }
+
+    public void listenoireAnction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showListeNoire();
+        Stage stage = (Stage) listenoire .getScene().getWindow();
+        stage.close();
+    }
+
+    public void montantAction(ActionEvent event) {
+        DashboardController dh = new DashboardController();
+        dh.showMontant();
+        Stage stage = (Stage) montant .getScene().getWindow();
+        stage.close();
+    }
 
 
 }

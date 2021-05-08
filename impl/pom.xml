@@ -6,8 +6,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>15</maven.compiler.release>
         <javacpp.cppbuild.skip>false</javacpp.cppbuild.skip>
         <javacpp.parser.skip>false</javacpp.parser.skip>
         <javacpp.compiler.skip>false</javacpp.compiler.skip>
@@ -36,7 +35,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.22</version>
         </dependency>
-<<<<<<< HEAD
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -76,14 +74,13 @@
         </dependency>
 
 
-=======
         <!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>font-awesome</artifactId>
             <version>5.15.2</version>
         </dependency>
->>>>>>> b26e2265ca77c3de08d402bbad2bc73508a658f1
+
 
 
     </dependencies>
@@ -95,7 +92,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>11</release>
+                 <release> 11</release>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -104,6 +102,21 @@
                 <version>0.0.4</version>
                 <configuration>
                     <mainClass>com.ceft.gestionparc.Controller.App</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.ceft.gestionparc.Controller.App</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
 
