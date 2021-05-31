@@ -25,7 +25,7 @@ public class Statistique implements Initializable {
     @FXML private CategoryAxis Z;
     @FXML private NumberAxis Y;
     @FXML private Button greenButton, redButton, yellowButton;
-    @FXML private Label placeVide,carIn,carIn1;
+    @FXML private Label placeVide,carIn,carIn1,placeOccuper,MantantStats;
     @FXML private PieChart piechar;
     @FXML private ImageView barreTop;
     private int placeOccupé;
@@ -35,14 +35,31 @@ public class Statistique implements Initializable {
         Image barreTopImage = new Image(barreTopFile.toURI().toString());
         barreTop.setImage(barreTopImage);
 
+        MantantStats.setText(String.valueOf(Monttent.montant())+" MAD");
+
+        Parking parking = new Parking();
+        try {
+            parking.SQLajouterVoiture();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         ObservableList<PieChart.Data> pieC = null;
         try {
             pieC = FXCollections.observableArrayList(
               new PieChart.Data("Place Vide",100-getPlaceOccupéAvecReservation()),
               new PieChart.Data("Place Réserver", getPlaceOccupéAvecReservation()),
-              new PieChart.Data("Place Full",40)
+              new PieChart.Data("Place Full",parking.nomberVoiture())
             );
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            placeOccuper.setText(String.valueOf(parking.nomberVoiture()+getPlaceOccupéAvecReservation()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -51,30 +68,36 @@ public class Statistique implements Initializable {
         piechar.setData(pieC);
         //kat 3mre lina lgraph li kayn fl l'interface statistic #mazal makamlch
         XYChart.Series set1 = new XYChart.Series<>();
-        set1.getData().add(new XYChart.Data("1",100));
-        set1.getData().add(new XYChart.Data("2",10));
-        set1.getData().add(new XYChart.Data("3",50));
-        set1.getData().add(new XYChart.Data("4",60));
-        set1.getData().add(new XYChart.Data("5",99));
-        set1.getData().add(new XYChart.Data("6",56));
-        set1.getData().add(new XYChart.Data("7",9));
-        set1.getData().add(new XYChart.Data("8",30));
-        set1.getData().add(new XYChart.Data("9",40));
-        set1.getData().add(new XYChart.Data("10",54));
-        set1.getData().add(new XYChart.Data("11",78));
-        set1.getData().add(new XYChart.Data("12",25));
-        parcMois.getData().addAll(set1);
-
-        //les statistic de combient de place vide ou oucupée dans notre parking
-        Parking parking = new Parking(1,"A-A-A-A",100);
         try {
-            int placeEmpty = parking.getPlacePark() - getPlaceOccupéAvecReservation();
-            placeVide.setText(String.valueOf(placeEmpty));
+            set1.getData().add(new XYChart.Data("1",parking.nomberVoiture()+getPlaceOccupéAvecReservation()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        set1.getData().add(new XYChart.Data("2",0));
+        set1.getData().add(new XYChart.Data("3",0));
+        set1.getData().add(new XYChart.Data("4",0));
+        set1.getData().add(new XYChart.Data("5",0));
+        set1.getData().add(new XYChart.Data("6",0));
+        set1.getData().add(new XYChart.Data("7",0));
+        set1.getData().add(new XYChart.Data("8",0));
+        set1.getData().add(new XYChart.Data("9",0));
+        set1.getData().add(new XYChart.Data("10",0));
+        set1.getData().add(new XYChart.Data("11",0));
+        set1.getData().add(new XYChart.Data("12",0));
+        parcMois.getData().addAll(set1);
+
+        //les statistic de combient de place vide ou oucupée dans notre parking
+        int placeEmpty = 0;
+        try {
+            placeEmpty = parking.getPlaceParkMax() - (parking.nomberVoiture() + getPlaceOccupéAvecReservation());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        placeVide.setText(String.valueOf(placeEmpty));
         try {
             carIn.setText(String.valueOf(getPlaceOccupéAvecReservation()));
         } catch (SQLException throwables) {
@@ -82,6 +105,7 @@ public class Statistique implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        carIn1.setText(String.valueOf(parking.nomberVoiture()));
     }
 
     public int getPlaceOccupéAvecReservation() throws SQLException, ClassNotFoundException {

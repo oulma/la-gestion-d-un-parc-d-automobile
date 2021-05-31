@@ -1,4 +1,6 @@
 package com.ceft.gestionparc.Controller;
+import com.ceft.gestionparc.DbConnection.DatabaseConnection;
+import com.ceft.gestionparc.Model.Parking;
 import com.ceft.gestionparc.Model.Voiture;
 import com.ceft.gestionparc.utils.Utils;
 import com.openalpr.jni.Alpr;
@@ -23,6 +25,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -73,7 +79,17 @@ public class CameraListe  implements Initializable {
     @FXML private Button greenButton, redButton, yellowButton;
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        File CameralisteFile = new File("_img/_camera.png");
+        Parking parking = new Parking();
+        try {
+            parking.SQLajouterVoiture();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+       File CameralisteFile = new File("_img/_camera.png");
         Image CameralisteImage = new Image(CameralisteFile.toURI().toString());
         Cameraliste.setImage(CameralisteImage);
 
@@ -105,6 +121,7 @@ public class CameraListe  implements Initializable {
         ID.setCellValueFactory(new PropertyValueFactory<>("IdV"));
         Matricule.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
         DateEntree.setCellValueFactory(new PropertyValueFactory<>("DateEntrer"));
+
         // file = new File("_img/plaka4.mp4");
         //  media= new Media(file.toURI().toString());
         //  mediaPlayer= new MediaPlayer(media);
@@ -125,8 +142,20 @@ public class CameraListe  implements Initializable {
         stage.toBack();
     }
 
-    public CameraListe() { };
+    private void ajouterVoitByDet(String m,String d) throws SQLException, ClassNotFoundException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.connectionDuBd();
+        String addVoitureSQL = "INSERT INTO `voiture` (`matricule`, `date_dentrer`) VALUES ('"+m+"','"+d+"')";
+        String deletDup = "DELETE S1 FROM voiture AS S1  \n" +
+                "INNER JOIN voiture AS S2   \n" +
+                "WHERE S1.id < S2.id AND S1.matricule = S2.matricule; ";
 
+        Statement statement = connectDB.createStatement();
+        statement.executeUpdate(addVoitureSQL);
+        statement.executeUpdate(deletDup);
+    }
+
+    public CameraListe() { };
     @FXML
     protected void startCamera()
     {
@@ -193,6 +222,7 @@ public class CameraListe  implements Initializable {
             this.stopAcquisition();
         }
     }
+
     private Mat grabFrame()
     {
         Mat frame = new Mat();
@@ -227,10 +257,11 @@ public class CameraListe  implements Initializable {
                             if (result.getBestPlate().getCharacters() != null) {
                                 id++;
                                 //listV.add(new Voiture(id,result.getBestPlate().getCharacters(),strDate));
-                                Voiture v = new Voiture(id,result.getBestPlate().getCharacters(),strDate);
+                                Voiture v = new Voiture(result.getBestPlate().getCharacters(),strDate);
                                 table.getItems().add(v);
                                 // cvSaveImage("_img/" + result.getBestPlate().getCharacters() + "_.jpg", frame);
                                 System.out.println("ra9m lmatricule howa :"+result.getBestPlate().getCharacters());
+                                ajouterVoitByDet(result.getBestPlate().getCharacters(),strDate);
 
                             }
                         }
@@ -240,9 +271,7 @@ public class CameraListe  implements Initializable {
                     }catch(IOException | AlprException e1){
                         e1.printStackTrace();
                     }
-
                 }
-
             }
             catch (Exception e)
             {
@@ -254,6 +283,7 @@ public class CameraListe  implements Initializable {
 
         return frame;
     }
+
     private void updateImageView(ImageView view, Image image)
     {
         Utils.onFXThread(view.imageProperty(), image);

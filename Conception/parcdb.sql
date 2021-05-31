@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : sam. 08 mai 2021 à 07:30
--- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.2
+-- Host: 127.0.0.1
+-- Generation Time: May 31, 2021 at 09:03 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `parcdb`
+-- Database: `parcdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `liste noir`
+-- Table structure for table `liste noir`
 --
 
 CREATE TABLE `liste noir` (
@@ -35,10 +34,18 @@ CREATE TABLE `liste noir` (
   `etat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `liste noir`
+--
+
+INSERT INTO `liste noir` (`id`, `matricule`, `marque`, `etat`) VALUES
+(1, 'MA-EGEG', 'dacia', 'Violations de la circulation'),
+(3, 'MA-EGEG54', 'ASASA', 'Violations de la circulation');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `parc`
+-- Table structure for table `parc`
 --
 
 CREATE TABLE `parc` (
@@ -48,7 +55,7 @@ CREATE TABLE `parc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `parc`
+-- Dumping data for table `parc`
 --
 
 INSERT INTO `parc` (`id`, `Matricule`, `Montant`) VALUES
@@ -69,7 +76,7 @@ INSERT INTO `parc` (`id`, `Matricule`, `Montant`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `placeparc`
+-- Table structure for table `placeparc`
 --
 
 CREATE TABLE `placeparc` (
@@ -80,7 +87,7 @@ CREATE TABLE `placeparc` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `réservation`
+-- Table structure for table `réservation`
 --
 
 CREATE TABLE `réservation` (
@@ -93,17 +100,19 @@ CREATE TABLE `réservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `réservation`
+-- Dumping data for table `réservation`
 --
 
 INSERT INTO `réservation` (`id`, `nom`, `CIN`, `Matricule`, `date d'entrée`, `date de sortie`) VALUES
-(1, 'hamid', 'i24324325', '61-B-181841', '2021-04-03', '2021-04-04'),
-(4, 'atiqa kacem', 'sh64343', '61-B3-24242', '2021-04-03', '2021-04-04');
+(1, 'hamid bot', 'i24324325', '61-B-181841', '2021-04-04', '2021-04-04'),
+(4, 'atiqa kacem', 'sh64343', '61-B3-24242', '2021-04-03', '2021-04-04'),
+(8, 'mohamed oulm', 'I34634', '61-B-181841', '2020-05-07', '2020-05-09'),
+(19, 'mohamed oulm', 'I34634', '61-B-1818477', '2020-05-07', '2020-05-09');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Table structure for table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -117,17 +126,19 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `serieU`, `nomU`, `motPasse`, `emailU`, `cinU`, `PrenomU`) VALUES
-(1, 'BBBB-BBBB-BBBB-BBBB', 'mahdi', 'admin123', 'mahdiaatmani@gmail.com', 'i3463634', 'mahdi'),
-(2, 'AAAA-AAAA-AAAA-AAAA', 'tijja', 'admin123', 'tijjaoumaima@gmail.com', 'i3463634', 'oumaima');
+(1, 'BBBB-BBBB-BBBB-BBBB', 'mahdi', 'a', 'mahdiaatmani@gmail.com', 'i3463634', 'mahdi'),
+(2, 'AAAA-AAAA-AAAA-AAAA', 'tijja', 'admin123', 'tijjaoumaima@gmail.com', 'i3463634', 'oumaima'),
+(7, 'KKKK-KKKK-KKKK-KKKK', 'oulma', 'azerty', 'mohamedoulma@gmail.com', 'I54645', 'mohamed'),
+(8, 'a', 'a', 'a', 'mahdiaatmani@gmail.com', 'a', 'aa');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `voitsortie`
+-- Table structure for table `voitsortie`
 --
 
 CREATE TABLE `voitsortie` (
@@ -139,82 +150,106 @@ CREATE TABLE `voitsortie` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `voiture`
+-- Table structure for table `voiture`
 --
 
 CREATE TABLE `voiture` (
   `id` int(10) NOT NULL,
   `matricule` varchar(40) NOT NULL,
-  `date d'entrée` date NOT NULL
+  `nom` varchar(32) DEFAULT NULL,
+  `date_dentrer` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Dumping data for table `voiture`
+--
+
+INSERT INTO `voiture` (`id`, `matricule`, `nom`, `date_dentrer`) VALUES
+(69, 'MA-ADLAKD', 'Mahdi Atmandla^d', '2021-05-31 18:14:09'),
+(70, 'BM-38842', 'mohamed oulma', '2001-20-01'),
+(71, 'CM-38843', 'atika kacem', '2001-20-01'),
+(104, 'KI006SD', NULL, '2021-05-31 19:54:17'),
+(106, 'K006SD', NULL, '2021-05-31 19:54:17');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `liste noir`
+-- Indexes for table `liste noir`
 --
 ALTER TABLE `liste noir`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `parc`
+-- Indexes for table `parc`
 --
 ALTER TABLE `parc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `placeparc`
+-- Indexes for table `placeparc`
 --
 ALTER TABLE `placeparc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `réservation`
+-- Indexes for table `réservation`
 --
 ALTER TABLE `réservation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `utilisateur`
+-- Indexes for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`idUtilisateur`);
 
 --
--- Index pour la table `voitsortie`
+-- Indexes for table `voitsortie`
 --
 ALTER TABLE `voitsortie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `voiture`
+-- Indexes for table `voiture`
 --
 ALTER TABLE `voiture`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `parc`
+-- AUTO_INCREMENT for table `liste noir`
+--
+ALTER TABLE `liste noir`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `parc`
 --
 ALTER TABLE `parc`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1014;
+  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
 
 --
--- AUTO_INCREMENT pour la table `réservation`
+-- AUTO_INCREMENT for table `réservation`
 --
 ALTER TABLE `réservation`
-  MODIFY `id` int(29) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(29) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT pour la table `utilisateur`
+-- AUTO_INCREMENT for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `idUtilisateur` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idUtilisateur` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `voiture`
+--
+ALTER TABLE `voiture`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

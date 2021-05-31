@@ -28,6 +28,11 @@ public class Voiture {
 
     private Date dateSortie;
 
+    public Voiture(String matricule, String dateEntrer) {
+        this.matricule = matricule;
+        this.dateEntrer = dateEntrer;
+    }
+
     public Voiture(int idV, String matricule, String dateEntrer) {
         this.idV = idV;
         this.matricule = matricule;

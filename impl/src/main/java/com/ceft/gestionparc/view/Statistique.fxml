@@ -21,12 +21,12 @@
          </image>
       </ImageView>
       <LineChart fx:id="parcMois" layoutX="38.0" layoutY="230.0" prefHeight="348.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464);" title="Parc / mois">
-        <xAxis>
-          <CategoryAxis fx:id="Z" label="mois" side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis fx:id="Y" label="nombre des places" side="LEFT" />
-        </yAxis>
+         <xAxis>
+            <CategoryAxis fx:id="Z" label="mois" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="Y" label="nombre des places" side="LEFT" />
+         </yAxis>
       </LineChart>
       <Button fx:id="redButton" graphicTextGap="5.0" layoutX="1241.0" layoutY="8.0" mnemonicParsing="false" onAction="#redButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464) linear-gradient(#EECEC8,#6f6464); -fx-background-radius: 6em 6em 6em 6em;" text="X">
          <font>
@@ -110,7 +110,7 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Text>
-            <Label fx:id="MantantStats" layoutX="82.0" layoutY="33.0" prefHeight="49.0" prefWidth="107.0" text="0" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="33.0">
+            <Label fx:id="MantantStats" layoutX="8.0" layoutY="33.0" prefHeight="49.0" prefWidth="188.0" text="0" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="33.0">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>
