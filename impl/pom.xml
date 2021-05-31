@@ -12,6 +12,13 @@
         <javacpp.compiler.skip>false</javacpp.compiler.skip>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
                 <artifactId>javafx-controls</artifactId>

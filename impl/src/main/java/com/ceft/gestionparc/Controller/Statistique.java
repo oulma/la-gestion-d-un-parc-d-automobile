@@ -31,6 +31,7 @@ public class Statistique implements Initializable {
     private int placeOccupé;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         File barreTopFile = new File("_img/VOITURE1.png");
         Image barreTopImage = new Image(barreTopFile.toURI().toString());
         barreTop.setImage(barreTopImage);
