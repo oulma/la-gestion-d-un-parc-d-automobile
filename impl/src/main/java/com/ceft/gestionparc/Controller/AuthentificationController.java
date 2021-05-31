@@ -55,7 +55,7 @@ public class AuthentificationController implements Initializable {
 
         //afficher l'interface d'authentification
     public void showAuthentification() throws IOException {         //changer pour tester votre inteface
-        Parent root = FXMLLoader.load(getClass().getResource("/Authentification.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Monttent.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -66,7 +66,7 @@ public class AuthentificationController implements Initializable {
     }
    @FXML
    private ImageView loadgif;
-        //verifier le user et le pass sont vide ou non
+        //verifier le utilisateur et le password sont vide ou no
     public void loginButtonOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
 

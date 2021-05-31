@@ -1,5 +1,4 @@
 package com.ceft.gestionparc.Controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,51 +16,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
+    @FXML private ImageView imagepark, dash1, dash2, dash3, dash4, dash5, dash6, dash7;
+    @FXML private Button Montant,greenButton, redButton, yellowButton;
+    @FXML private Button réservation;
     @FXML
-    private ImageView imagepark, dash1, dash2, dash3, dash4, dash5, dash6, dash7;
-    @FXML
-    private Button greenButton, redButton, yellowButton;
-    @FXML
-    private Button réservation;
-    //################################################################"
-
-    //had le method katdik l'interface dyal reserevation
-
-    //################################################################"
-    public void showReservation(){
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/reservation.fxml"));
-            Scene scene = new Scene(root);
-            Stage primaryStage = new Stage();
-            primaryStage.initStyle(StageStyle.TRANSPARENT);
-            primaryStage.setScene(scene);
-            scene.setFill(Color.TRANSPARENT);
-            primaryStage.show();
-            Stage stage=(Stage) réservation.getScene().getWindow();
-            stage.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-
-    }
-    public void showListeNoire() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/ListeNoireTable.fxml"));
-            Scene scene = new Scene(root);
-            Stage primaryStage = new Stage();
-            primaryStage.initStyle(StageStyle.TRANSPARENT);
-            primaryStage.setScene(scene);
-            scene.setFill(Color.TRANSPARENT);
-            primaryStage.show();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-    }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         File parkFile = new File("_img/VOITURE.png");
         Image parkImage = new Image(parkFile.toURI().toString());
@@ -111,9 +69,52 @@ public class DashboardController implements Initializable {
             e.getCause();
         }
     }
+    //################################################################"
+    //se methode affiche l'interface de Reserevation
+    //################################################################"
+    public void showReservation(){
 
-    @FXML
-    private Button Montant;
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/reservation.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+            Stage stage=(Stage) réservation.getScene().getWindow();
+            stage.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+    //################################################################"
+    //se methode affiche l'interface de ListNoir du voiture
+    //################################################################"
+    @FXML private Button listeNoire,ajouterCompte;
+    public void showListeNoire() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ListeNoireTable.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.setScene(scene);
+            scene.setFill(Color.TRANSPARENT);
+            primaryStage.show();
+            Stage stage = (Stage)  listeNoire.getScene().getWindow();
+            stage.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    //################################################################"
+    //se methode affiche l'interface de Montant
+    //################################################################"
     public void showMontant() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Monttent.fxml"));
@@ -123,31 +124,33 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
+            Stage stage = (Stage) Montant.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
-
+    //################################################################"
+    //les trois button de annuler, maximiser et minimiser
+    //################################################################"
     public void redButtonOnAction() {
         Stage stage = (Stage) redButton.getScene().getWindow();
         stage.close();
     }
-
     public void yellowButtonOnAction() {
         Stage stage = (Stage) yellowButton.getScene().getWindow();
         stage.isMaximized();
     }
-
     public void greenButtonOnAction() {
         Stage stage = (Stage) greenButton.getScene().getWindow();
-
         //Nous devons le changer On maximiser l'ecrant
         stage.toBack();
     }
-
-    //had le method kat affichi lina le window bash nzido Uitilisateur
+    //################################################################"
+    //afficher l'interface pour ajouter un utilisateur comme administrateur
+    //################################################################"
     public void showAjouterMember() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/ajouterMember.fxml"));
@@ -157,13 +160,18 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
+            Stage stage = (Stage) ajouterCompte.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
-
+    //#####################################################################"
+    //afficher l'interface de supervision et de detection des plates
+    //#####################################################################"
+   @FXML private Button camera_list;
     public void showCameraliste() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/cameraListe.fxml"));
@@ -173,13 +181,16 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
-
+               Stage stage=(Stage) camera_list.getScene().getWindow();
+                       stage.close();
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
-
+    //################################################################"
+    //afficher l'interface de statistique au temp réel
+    //################################################################"
     public void showStatistique(){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Statistique.fxml"));
@@ -195,9 +206,11 @@ public class DashboardController implements Initializable {
             e.getCause();
         }
     }
+    //################################################################"
+    //afficher l'interface tout les voiture entrant le parc
+    //################################################################"
+    @FXML private Button archive;
     public void showArchive(){
-
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
             Scene scene = new Scene(root);
@@ -206,7 +219,8 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
-
+            Stage stage=(Stage) archive.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();

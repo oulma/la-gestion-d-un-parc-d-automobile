@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ReservationController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.CameraListe">
     <children>
-        <AnchorPane fx:id="statistique" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(WHITE,#6f6464);">
+        <AnchorPane fx:id="statistique" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(WHITE,#6f6464);">
             <children>
+                <Button fx:id="ajouterMombreRS" layoutX="70.0" layoutY="147.0" mnemonicParsing="false" prefWidth="145.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" underline="true">
+                    <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                    </font>
+                </Button>
                 <Button ellipsisString="" layoutX="50.0" layoutY="17.0" mnemonicParsing="false" opacity="0.73" prefHeight="84.0" prefWidth="151.0" style="-fx-background-radius: 2EM 2EM 2EM 2EM; -fx-background-color: #D2D2D2;" textAlignment="RIGHT" textFill="#613030" />
                 <ImageView fx:id="AjouterCompte" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -26,38 +30,28 @@
                         <Image url="@../../../../../../../_img/statistics.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="Camera" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../../../../../_img/_camera.png" />
-                    </image>
-                </ImageView>
                 <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="27.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" />
-                <Button fx:id="ajouterMombreRS" layoutX="70.0" layoutY="147.0" mnemonicParsing="false" onAction="#ajouterMombreRSonAction" prefWidth="145.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" underline="true">
+                <Button layoutX="74.0" layoutY="217.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="StatistiqueRS" layoutX="74.0" layoutY="217.0" mnemonicParsing="false" onAction="#statistiqueRSonAction" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
+                <Button layoutX="62.0" layoutY="288.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="CameraRS" layoutX="74.0" layoutY="288.0" mnemonicParsing="false" onAction="#cameraRSonAction" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Camera et liste" underline="true">
+                <Button layoutX="71.0" layoutY="365.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="ArchiveRS" layoutX="71.0" layoutY="365.0" mnemonicParsing="false" onAction="#ArchiveRSonAction" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
+                <Button layoutX="78.0" layoutY="445.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="listenoireRS" layoutX="78.0" layoutY="445.0" mnemonicParsing="false" onAction="#listenoireonAction" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="16.0" />
-                    </font>
-                </Button>
-                <Button fx:id="montantRS" layoutX="72.0" layoutY="521.0" mnemonicParsing="false" onAction="#MontantonAction" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
+                <Button layoutX="72.0" layoutY="521.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
@@ -77,106 +71,64 @@
                         <Image url="@../../../../../../../_img/save-money.png" />
                     </image>
                 </ImageView>
-                <AnchorPane layoutX="251.0" layoutY="31.0" prefHeight="570.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;">
+                <AnchorPane layoutX="251.0" layoutY="42.0" prefHeight="559.0" prefWidth="1029.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 0EM 0EM 0EM;">
                     <children>
-                        <TextField fx:id="NomPrenomFld" layoutX="211.0" layoutY="102.0" prefHeight="38.0" prefWidth="262.0" promptText="Nom et prénom" />
-                        <TextField fx:id="cinFld" layoutX="211.0" layoutY="175.0" prefHeight="38.0" prefWidth="262.0" promptText="CIN" />
-                        <TextField fx:id="matriculeFld" layoutX="211.0" layoutY="259.0" prefHeight="38.0" prefWidth="262.0" promptText="Matricule" />
-                        <Label layoutX="38.0" layoutY="94.0" text="Nom Et Prénom :">
+                        <Label layoutX="25.0" layoutY="7.0" prefHeight="39.0" prefWidth="206.0" text="Camera et liste" underline="true">
                             <font>
-                                <Font name="System Bold Italic" size="18.0" />
+                                <Font name="System Bold Italic" size="24.0" />
                             </font>
                         </Label>
-                        <Label layoutX="38.0" layoutY="167.0" text="CIN :">
-                            <font>
-                                <Font name="System Bold Italic" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="35.0" layoutY="251.0" text="Matricule :">
-                            <font>
-                                <Font name="System Bold Italic" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="38.0" layoutY="331.0" text="Date d'entrée :">
-                            <font>
-                                <Font name="System Bold Italic" size="18.0" />
-                            </font>
-                        </Label>
-                        <Button fx:id="ajouterReservation" layoutX="361.0" layoutY="491.0" mnemonicParsing="false" onAction="#ajouterReservationOnAction" opacity="0.73" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Ajouter" textFill="#0d0d0d">
-                            <font>
-                                <Font name="System Bold Italic" size="14.0" />
-                            </font>
-                        </Button>
-                        <Label layoutX="32.0" layoutY="417.0" text="Date de sortie :">
-                            <font>
-                                <Font name="System Bold Italic" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="163.0" text="Réservation" underline="true">
-                            <font>
-                                <Font name="System Bold Italic" size="27.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="setEmail" layoutX="731.0" layoutY="40.0" prefHeight="27.0" prefWidth="221.0" underline="true">
+                        <Label fx:id="setEmail" layoutX="769.0" layoutY="20.0" prefHeight="27.0" prefWidth="189.0" text="" underline="true">
                             <font>
                                 <Font name="System Bold Italic" size="16.0" />
                             </font>
                         </Label>
-                        <Label fx:id="reservationmessageErreur" layoutX="211.0" layoutY="402.0" textFill="RED" />
-                        <Label fx:id="confirmierReservation" layoutX="217.0" layoutY="402.0" textFill="#03f841" />
-                        <TableView fx:id="Table" layoutX="507.0" layoutY="142.0" onMouseClicked="#Selectionne" prefHeight="387.0" prefWidth="506.0" style="-fx-background-radius: 0EM 0EM 0EM 0EM;">
-                            <columns>
-                                <TableColumn fx:id="col_ID" prefWidth="29.0" text="ID" />
-                                <TableColumn fx:id="col_nom" prefWidth="102.0" text="Nom Et Prénom" />
-                                <TableColumn fx:id="col_cin" prefWidth="61.0" text="CIN" />
-                                <TableColumn fx:id="col_matricule" prefWidth="81.0" text="Matricule" />
-                                <TableColumn fx:id="col_da_ent" prefWidth="120.0" text="Date d'entée" />
-                                <TableColumn fx:id="col_dat_sor" prefWidth="112.0" text="Date de sortie" />
-                            </columns>
-                        </TableView>
-                        <Button fx:id="supprimerRS" layoutX="199.0" layoutY="491.0" mnemonicParsing="false" onAction="#SUPPRIMERAction" opacity="0.73" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Supprimer" textFill="#141414">
-                            <font>
-                                <Font name="System Bold Italic" size="14.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="modifierRS" layoutX="32.0" layoutY="491.0" mnemonicParsing="false" onAction="#modifierOnaction" opacity="0.73" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #6f6464; -fx-background-radius: 1EM 1EM 1EM 1EM;" text="Modifier" textFill="#0a0a0a">
-                            <font>
-                                <Font name="System Bold Italic" size="14.0" />
-                            </font>
-                        </Button>
-                        <TextField fx:id="RecherRS" layoutX="507.0" layoutY="102.0" prefHeight="29.0" prefWidth="255.0" promptText="Taper ici pour rechercher" style="-fx-background-radius: 1EM 1EM 1EM 1EM;">
-                            <font>
-                                <Font name="System Bold Italic" size="13.0" />
-                            </font></TextField>
-                        <ImageView fx:id="rechercher" fitHeight="27.0" fitWidth="37.0" layoutX="724.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="970.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../../../../_img/_search.png" />
+                                <Image url="@../../../../../../../_img/new-user.png" />
                             </image>
                         </ImageView>
-                        <DatePicker fx:id="dateEntée" layoutX="211.0" layoutY="331.0" prefHeight="38.0" prefWidth="262.0" promptText="Date d'entrée" />
-                        <DatePicker fx:id="dateDeSortie" layoutX="211.0" layoutY="411.0" prefHeight="38.0" prefWidth="262.0" promptText="Date de sortie" />
+                        <TableView fx:id="table" layoutX="570.0" layoutY="82.0" prefHeight="444.0" prefWidth="429.0" style="-fx-background-radius: 0EM 0EM 3EM 3EM;">
+                            <columns>
+                                <TableColumn fx:id="ID" prefWidth="109.0" text="ID" />
+                                <TableColumn fx:id="Matricule" prefWidth="153.0" text="Matricule" />
+                                <TableColumn fx:id="DateEntree" prefWidth="166.0" text="Date d'entrée" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="cameraButton" layoutX="256.0" layoutY="501.0" mnemonicParsing="false" onAction="#startCamera" prefHeight="25.0" prefWidth="103.0" text="Start camera" />
+                        <ImageView fx:id="originalFrame" fitHeight="415.0" fitWidth="541.0" layoutX="15.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" y="10.0" />
                     </children>
                 </AnchorPane>
-                <Button fx:id="XButtonInReservation" layoutX="1239.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#XButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="X" />
-                <Button fx:id="squareButtonInReservation" layoutX="1210.0" layoutY="9.0" minWidth="22.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="❐">
-                    <font>
-                        <Font size="10.0" />
-                    </font></Button>
-                <Button fx:id="downButtonInReservation" layoutX="1179.0" layoutY="8.0" minWidth="22.0" mnemonicParsing="false" onAction="#downButtonInReservationOnAction" prefHeight="28.0" prefWidth="26.0" style="-fx-background-radius: 15;" text="-" />
-                <Button layoutX="59.0" layoutY="23.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="132.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;" />
-                <ImageView fx:id="Reservation" fitHeight="70.0" fitWidth="93.0" layoutX="90.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                <Button layoutX="60.0" layoutY="23.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="132.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;" />
+                <ImageView fx:id="reservation" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../../_img/reservation.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="1215.0" layoutY="55.0" minHeight="0.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="56.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 3em 3em 3em 3em;" textFill="WHITE" wrapText="true" />
-                <Button layoutX="1218.0" layoutY="59.0" minHeight="0.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 4em 4em 4em 4em;" textFill="WHITE" wrapText="true" />
-                <ImageView id="Add" fx:id="Add" fitHeight="38.0" fitWidth="30.0" layoutX="1229.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="Cameraliste" fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../../../../_img/admin.png" />
+                        <Image url="@../../../../../../../_img/_camera.png" />
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
+      <Button fx:id="redButton" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1238.0" layoutY="11.0" mnemonicParsing="false" onAction="#redButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1204.0" layoutY="11.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="❒">
+         <font>
+            <Font name="Arial" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1170.0" layoutY="10.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

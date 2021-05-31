@@ -5,7 +5,6 @@ import javafx.stage.Stage;
 import org.opencv.core.Core;
 
 public class App extends Application {
-
     @Override
     public void start(Stage primaryStage) throws Exception{
 

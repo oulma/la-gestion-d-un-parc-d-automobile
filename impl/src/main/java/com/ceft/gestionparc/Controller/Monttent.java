@@ -82,10 +82,7 @@ public class Monttent implements Initializable{
     ObservableList<montant> observableList = FXCollections.observableArrayList();
 
 
-
-
     DatabaseConnection co= new DatabaseConnection();
-
 
 
     public void initialize(URL location, ResourceBundle resources) {

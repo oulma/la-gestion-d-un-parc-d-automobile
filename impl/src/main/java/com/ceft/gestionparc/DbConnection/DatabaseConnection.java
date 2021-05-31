@@ -17,7 +17,8 @@ public class DatabaseConnection {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection databaseLink = DriverManager.getConnection("jdbc:mysql://localhost/parcdb","root","");
+        Connection databaseLink = DriverManager.getConnection("jdbc:mysql://localhost/parcdb","root"
+                ,"");
         return databaseLink;
 
     }

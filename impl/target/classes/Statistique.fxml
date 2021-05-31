@@ -11,6 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Statistique">
    <children>
@@ -45,54 +46,76 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <AnchorPane layoutX="451.0" layoutY="95.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #949494; -fx-background-radius: 15;">
+      <AnchorPane layoutX="518.0" layoutY="97.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #949494; -fx-background-radius: 15;" AnchorPane.topAnchor="97.0">
          <children>
-            <Label fx:id="carIn" layoutX="59.0" layoutY="47.0" text="20" wrapText="true">
+            <Text layoutX="28.0" layoutY="24.3388671875" strokeType="OUTSIDE" strokeWidth="0.0" text="Places Vide : " textAlignment="CENTER" wrappingWidth="148.13671875" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="23.86328125" AnchorPane.topAnchor="1.3388671875">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Label fx:id="placeVide" layoutX="82.0" layoutY="34.0" prefHeight="49.0" prefWidth="80.0" text="0" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
                </font>
             </Label>
-            <Label layoutX="92.0" layoutY="46.0" text="/" wrapText="true" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="80.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="totalPlace1" layoutX="105.0" layoutY="46.0" prefHeight="30.0" prefWidth="70.0" text="100" wrapText="true" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="25.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="inout1" fitHeight="44.0" fitWidth="40.0" layoutX="78.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="1.0">
-               <image>
-                  <Image url="@../../../../../../../_img/inout.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="688.0" layoutY="95.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #949494; -fx-background-radius: 15;">
-         <children>
-            <Label fx:id="placeVide" layoutX="54.0" layoutY="48.0" text="80" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="89.0" layoutY="46.0" text="/" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="totalPlace2" layoutX="101.0" layoutY="48.0" prefHeight="30.0" prefWidth="80.0" text="100" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="inout2" fitHeight="44.0" fitWidth="40.0" layoutX="76.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="1.0">
-               <image>
-                  <Image url="@../../../../../../../_img/inout.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
       <PieChart fx:id="piechar" layoutX="725.0" layoutY="193.0" />
+      <AnchorPane layoutX="57.0" layoutY="97.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #FFC300; -fx-background-radius: 15;" AnchorPane.topAnchor="97.0">
+         <children>
+            <Text layoutX="15.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Places Réservés :" wrappingWidth="170.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Label fx:id="carIn" layoutX="81.0" layoutY="33.0" prefHeight="49.0" prefWidth="80.0" text="0" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="743.0" layoutY="97.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #F51C1C; -fx-background-radius: 15;" AnchorPane.topAnchor="97.0">
+         <children>
+            <Text layoutX="28.0" layoutY="24.3388671875" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Places  : " textAlignment="CENTER" wrappingWidth="148.13671875" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="23.86328125" AnchorPane.topAnchor="1.3388671875">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Label fx:id="placeOccuper" layoutX="81.0" layoutY="33.0" prefHeight="49.0" prefWidth="80.0" text="0" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="288.0" layoutY="97.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #FF5733; -fx-background-radius: 15;" AnchorPane.topAnchor="97.0">
+         <children>
+            <Text layoutX="12.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Places occupées :" textAlignment="CENTER" wrappingWidth="188.13671875">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Label fx:id="carIn1" layoutX="85.0" layoutY="33.0" prefHeight="49.0" prefWidth="166.0" text="0" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="975.0" layoutY="97.0" prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #B8FF39; -fx-background-radius: 15;" AnchorPane.topAnchor="97.0">
+         <children>
+            <Text layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant Total " textAlignment="CENTER" wrappingWidth="154.13671875" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Label fx:id="MantantStats" layoutX="82.0" layoutY="33.0" prefHeight="49.0" prefWidth="107.0" text="0" wrapText="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

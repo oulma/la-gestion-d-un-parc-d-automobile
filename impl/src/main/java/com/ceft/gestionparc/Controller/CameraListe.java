@@ -36,8 +36,6 @@ import org.opencv.core.Point;
 import org.opencv.videoio.VideoCapture;
 import javax.imageio.ImageIO;
 
-
-
 public class CameraListe  implements Initializable {
     private ScheduledExecutorService timer;
     private VideoCapture capture = new VideoCapture();
@@ -50,7 +48,7 @@ public class CameraListe  implements Initializable {
  private final ObservableList<Voiture> listV= FXCollections.observableArrayList();
     @FXML
     private TableView<Voiture> table;
-
+    private DashboardController dh =new DashboardController();
     @FXML
     private TableColumn<Voiture,Integer> ID;
 
@@ -71,8 +69,61 @@ public class CameraListe  implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
     private static int id =0;
+    @FXML private ImageView Cameraliste,AjouterCompte,statistic,reservation,archive,ListeNoire,paiment;
+    @FXML private Button greenButton, redButton, yellowButton;
     @FXML
-    private ImageView Cameraliste,AjouterCompte,statistic,reservation,archive,ListeNoire,paiment;
+    public void initialize(URL location, ResourceBundle resources) {
+        File CameralisteFile = new File("_img/_camera.png");
+        Image CameralisteImage = new Image(CameralisteFile.toURI().toString());
+        Cameraliste.setImage(CameralisteImage);
+
+        File AjouterCompteFile = new File("_img/new-user.png");
+        Image AjouterCompteImage = new Image(AjouterCompteFile.toURI().toString());
+        AjouterCompte.setImage(AjouterCompteImage);
+
+
+        File statisticFile = new File("_img/statistics.png");
+        Image statisticImage = new Image(statisticFile.toURI().toString());
+        statistic.setImage(statisticImage);
+
+        File reservationFile = new File("_img/reservation.png");
+        Image reservationImage = new Image(reservationFile.toURI().toString());
+        reservation.setImage(reservationImage);
+
+        File archiveFile = new File("_img/_archive.png");
+        Image archiveImage = new Image(archiveFile.toURI().toString());
+        archive.setImage(archiveImage);
+
+        File ListeNoireFile = new File("_img/blocked.png");
+        Image ListeNoireImage = new Image(ListeNoireFile.toURI().toString());
+        ListeNoire.setImage(ListeNoireImage);
+
+        File paimentFile = new File("_img/save-money.png");
+        Image paimentImage = new Image(paimentFile.toURI().toString());
+        paiment.setImage(paimentImage);
+
+        ID.setCellValueFactory(new PropertyValueFactory<>("IdV"));
+        Matricule.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+        DateEntree.setCellValueFactory(new PropertyValueFactory<>("DateEntrer"));
+        // file = new File("_img/plaka4.mp4");
+        //  media= new Media(file.toURI().toString());
+        //  mediaPlayer= new MediaPlayer(media);
+        // mediaView.setMediaPlayer(mediaPlayer);
+    }
+
+    public void redButtonOnAction() {
+        Stage stage = (Stage) redButton.getScene().getWindow();
+        stage.close();
+    }
+    public void yellowButtonOnAction() {
+        Stage stage = (Stage) yellowButton.getScene().getWindow();
+        stage.toBack();
+    }
+    public void greenButtonOnAction() {
+        Stage stage = (Stage) greenButton.getScene().getWindow();
+        //Nous devons le changer On maximiser l'ecrant
+        stage.toBack();
+    }
 
     public CameraListe() { };
 
@@ -231,45 +282,7 @@ public class CameraListe  implements Initializable {
             this.capture.release();
         }
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        File CameralisteFile = new File("_img/_camera.png");
-        Image CameralisteImage = new Image(CameralisteFile.toURI().toString());
-        Cameraliste.setImage(CameralisteImage);
 
-        File AjouterCompteFile = new File("_img/new-user.png");
-        Image AjouterCompteImage = new Image(AjouterCompteFile.toURI().toString());
-        AjouterCompte.setImage(AjouterCompteImage);
-
-
-        File statisticFile = new File("_img/statistics.png");
-        Image statisticImage = new Image(statisticFile.toURI().toString());
-        statistic.setImage(statisticImage);
-
-        File reservationFile = new File("_img/reservation.png");
-        Image reservationImage = new Image(reservationFile.toURI().toString());
-        reservation.setImage(reservationImage);
-
-        File archiveFile = new File("_img/_archive.png");
-        Image archiveImage = new Image(archiveFile.toURI().toString());
-        archive.setImage(archiveImage);
-
-        File ListeNoireFile = new File("_img/blocked.png");
-        Image ListeNoireImage = new Image(ListeNoireFile.toURI().toString());
-        ListeNoire.setImage(ListeNoireImage);
-
-        File paimentFile = new File("_img/save-money.png");
-        Image paimentImage = new Image(paimentFile.toURI().toString());
-        paiment.setImage(paimentImage);
-
-        ID.setCellValueFactory(new PropertyValueFactory<>("IdV"));
-        Matricule.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
-        DateEntree.setCellValueFactory(new PropertyValueFactory<>("DateEntrer"));
-       // file = new File("_img/plaka4.mp4");
-      //  media= new Media(file.toURI().toString());
-      //  mediaPlayer= new MediaPlayer(media);
-       // mediaView.setMediaPlayer(mediaPlayer);
-    }
 
     //public void playVideio(ActionEvent actionEvent) throws AlprException, IOException {
     //    mediaPlayer.play();

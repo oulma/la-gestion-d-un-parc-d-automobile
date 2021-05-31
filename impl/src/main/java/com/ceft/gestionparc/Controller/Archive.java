@@ -214,7 +214,7 @@ public class Archive implements Initializable {
     }
 
     public void showListNoirArchive(ActionEvent actionEvent) {
-    dh.showListeNoire();
+        dh.showListeNoire();
         Stage stage = (Stage) listnoir.getScene().getWindow();
         stage.close();
 

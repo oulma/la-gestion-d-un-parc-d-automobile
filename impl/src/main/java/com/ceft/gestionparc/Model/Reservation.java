@@ -15,7 +15,7 @@ public class Reservation extends ReservationController {
 
 
 
-    public Reservation(String idR, String CIN, String nomR, String matricule, String dateEntre, String dateSortie) {
+    public Reservation(String idR,String nomR,String CIN , String matricule, String dateEntre, String dateSortie) {
         this.idR = idR;
         this.nomR = nomR;
         this.CIN=CIN;

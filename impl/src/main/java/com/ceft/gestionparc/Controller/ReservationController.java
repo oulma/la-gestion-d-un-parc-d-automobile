@@ -190,7 +190,7 @@ public class ReservationController implements Initializable {
     @FXML private Button ArchiveRS;
     public void ArchiveRSonAction() {
         DashboardController dh = new DashboardController();
-        dh.showMontant();
+        dh.showArchive();
         Stage stage = (Stage)  ArchiveRS.getScene().getWindow();
         stage.close();
     }
@@ -229,6 +229,12 @@ public class ReservationController implements Initializable {
                     return true;
                 }     else if (liste_noire.getNomR().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                         return true;// Filter matches last name.
+                }    else if (liste_noire.getCIN().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;// Filter matches cin.
+                }    else if (liste_noire.getDateEntre().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;// Filter matches DATE Entrer.
+                }    else if (liste_noire.getDateSortie().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;// Filter matches DATE Sortie.
                 }
                 else if (String.valueOf(liste_noire.getMatricule()).indexOf(lowerCaseFilter)!=-1)
                     return true;
@@ -313,8 +319,8 @@ public class ReservationController implements Initializable {
             Logger.getLogger(Reservation.class.getName()).log(Level.SEVERE,null,exception);
         }
         col_ID.setCellValueFactory(new PropertyValueFactory<>("idR"));
-        col_nom.setCellValueFactory(new PropertyValueFactory<>("CIN"));
-        col_cin.setCellValueFactory(new PropertyValueFactory<>("nomR"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("nomR"));
+        col_cin.setCellValueFactory(new PropertyValueFactory<>("CIN"));
         col_matricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));
         col_da_ent.setCellValueFactory(new PropertyValueFactory<>("dateEntre"));
         col_dat_sor.setCellValueFactory(new PropertyValueFactory<>("dateSortie"));
