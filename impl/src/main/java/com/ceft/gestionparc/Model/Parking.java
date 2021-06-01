@@ -1,6 +1,7 @@
 package com.ceft.gestionparc.Model;
 
 import com.ceft.gestionparc.DbConnection.DatabaseConnection;
+import org.controlsfx.control.Notifications;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -14,10 +15,12 @@ public class Parking {
     private int idPark;
     private String seriePark;
     private int placePark;
-    private static int placeParkMax=100;
+    private static int placeParkMax=5;
     public ArrayList<Voiture> voiture;
 
- public Parking(){ }
+ public Parking(){
+     voiture = new ArrayList<>();
+ }
 
     public void SQLajouterVoiture() throws SQLException, ClassNotFoundException {
         DatabaseConnection connectNow = new DatabaseConnection();
@@ -27,15 +30,19 @@ public class Parking {
         ResultSet rs = statement.executeQuery(countHowManyCarInPark);
 
         while (rs.next()){
-            Voiture v =new Voiture(rs.getString("matricule"),rs.getString("date_dentrer"));
+
+            Voiture v =new Voiture(rs.getInt("id"),rs.getString("matricule"),rs.getString("dateEntrée"));
             ajouterVoiture(v);
+
+
+
         }
     }
     public int ajouterVoiture(Voiture v)
     {   if(placePark<=placeParkMax){
         ArrayList<Voiture> voitures = new ArrayList<>();
         placePark++;
-        voitures.add(v);
+        voiture.add(v);
         return 1;
     }else{
         return 0;

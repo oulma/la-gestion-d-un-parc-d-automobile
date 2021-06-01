@@ -12,7 +12,9 @@ import com.ceft.gestionparc.DbConnection.DatabaseConnection;
         import javafx.scene.image.Image;
         import javafx.scene.image.ImageView;
         import javafx.stage.Stage;
-        import java.io.File;
+import org.controlsfx.control.Notifications;
+
+import java.io.File;
         import java.net.URL;
         import java.sql.Connection;
         import java.sql.ResultSet;
@@ -31,6 +33,8 @@ public class Statistique implements Initializable {
     private int placeOccupé;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Parking parking = new Parking();
+
 
         File barreTopFile = new File("_img/VOITURE1.png");
         Image barreTopImage = new Image(barreTopFile.toURI().toString());
@@ -38,7 +42,6 @@ public class Statistique implements Initializable {
 
         MantantStats.setText(String.valueOf(Monttent.montant())+" MAD");
 
-        Parking parking = new Parking();
         try {
             parking.SQLajouterVoiture();
         } catch (SQLException throwables) {
@@ -47,26 +50,8 @@ public class Statistique implements Initializable {
             e.printStackTrace();
         }
 
-        ObservableList<PieChart.Data> pieC = null;
-        try {
-            pieC = FXCollections.observableArrayList(
-              new PieChart.Data("Place Vide",100-getPlaceOccupéAvecReservation()),
-              new PieChart.Data("Place Réserver", getPlaceOccupéAvecReservation()),
-              new PieChart.Data("Place Full",parking.nomberVoiture())
-            );
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            placeOccuper.setText(String.valueOf(parking.nomberVoiture()+getPlaceOccupéAvecReservation()));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        piechar.setData(pieC);
+
+
         //kat 3mre lina lgraph li kayn fl l'interface statistic #mazal makamlch
         XYChart.Series set1 = new XYChart.Series<>();
         try {
@@ -106,7 +91,43 @@ public class Statistique implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        ObservableList<PieChart.Data> pieC = null;
+        try {
+            pieC = FXCollections.observableArrayList(
+                    new PieChart.Data("Place Vide",placeEmpty),
+                    new PieChart.Data("Place Réserver", getPlaceOccupéAvecReservation()),
+                    new PieChart.Data("Place Occupee",parking.nomberVoiture())
+            );
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        piechar.setData(pieC);
         carIn1.setText(String.valueOf(parking.nomberVoiture()));
+        try {
+            placeOccuper.setText(String.valueOf(parking.nomberVoiture() + getPlaceOccupéAvecReservation()));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            if ((parking.nomberVoiture() + getPlaceOccupéAvecReservation())>=parking.getPlaceParkMax()) {
+                placeVide.setText("0");
+                Notifications.create()
+                        .title("Warning")
+                        .text("Parkc occupee")
+                        .showError(); }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public int getPlaceOccupéAvecReservation() throws SQLException, ClassNotFoundException {

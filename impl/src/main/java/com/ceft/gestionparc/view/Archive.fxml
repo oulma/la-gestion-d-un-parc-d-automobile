@@ -77,9 +77,8 @@
             <TableView fx:id="archiveTableView" layoutX="427.0" layoutY="65.0" prefHeight="492.0" prefWidth="611.0" style="-fx-background-radius: 1EM 1EM 1EM 1EM;">
               <columns>
                 <TableColumn fx:id="idCol" prefWidth="53.0" style="-fx-background-radius: 1EM;" text="id" />
-                <TableColumn fx:id="matriculeCol" prefWidth="211.0" text="Matricule" />
-                  <TableColumn fx:id="nomCol" prefWidth="169.0" style="-fx-background-radius: 1EM;" text="Nom" />
-                  <TableColumn fx:id="dateCol" prefWidth="169.0" style="-fx-background-radius: 1EM;" text="Date d'Entrer" />
+                <TableColumn fx:id="matriculeCol" prefWidth="329.0" text="Matricule" />
+                  <TableColumn fx:id="nomCol" prefWidth="228.0" style="-fx-background-radius: 1EM;" text="Date d'Entrer" />
               </columns>
             </TableView>
             <Label id="Lnoire" layoutX="16.0" layoutY="60.0" prefHeight="51.0" prefWidth="116.0" text="Recherche ">

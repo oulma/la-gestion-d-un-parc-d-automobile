@@ -124,8 +124,7 @@ public class DashboardController implements Initializable {
             primaryStage.setScene(scene);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.show();
-            Stage stage = (Stage) Montant.getScene().getWindow();
-            stage.close();
+
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -28,6 +28,9 @@ module com.ceft.gestionparc.Controller {
     requires mysql.connector.java;
     requires javafx.base;
     requires javafx.graphics;
+    requires org.controlsfx.controls;
+
+
     opens com.ceft.gestionparc.Controller to javafx.fxml;
     exports com.ceft.gestionparc.Controller;
 

@@ -14,7 +14,7 @@
     <children>
         <AnchorPane fx:id="statistique" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(WHITE,#6f6464);">
             <children>
-                <Button fx:id="ajouterMombreRS" layoutX="70.0" layoutY="147.0" mnemonicParsing="false" prefWidth="145.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" underline="true">
+                <Button fx:id="ajouterMombreRS" layoutX="70.0" layoutY="147.0" mnemonicParsing="false" onAction="#ajouterAnction" prefWidth="145.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
@@ -31,27 +31,27 @@
                     </image>
                 </ImageView>
                 <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="27.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" />
-                <Button layoutX="74.0" layoutY="217.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
+                <Button layoutX="74.0" layoutY="217.0" mnemonicParsing="false" onAction="#StatistiqueAnction" style="-fx-background-color: #ffffff00;" text="Statistiques" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="62.0" layoutY="288.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true">
+                <Button layoutX="62.0" layoutY="288.0" mnemonicParsing="false" onAction="#anction" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="71.0" layoutY="365.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
+                <Button layoutX="71.0" layoutY="365.0" mnemonicParsing="false" onAction="#archiveAnction" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #ffffff00;" text="Archive" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="78.0" layoutY="445.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
+                <Button layoutX="78.0" layoutY="445.0" mnemonicParsing="false" onAction="#listenoireAnction" style="-fx-background-color: #ffffff00;" text="Liste Noire" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="72.0" layoutY="521.0" mnemonicParsing="false" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
+                <Button layoutX="72.0" layoutY="521.0" mnemonicParsing="false" onAction="#montantAction" style="-fx-background-color: #ffffff00;" text="Le paiment" underline="true">
                     <font>
                         <Font name="System Bold Italic" size="16.0" />
                     </font>

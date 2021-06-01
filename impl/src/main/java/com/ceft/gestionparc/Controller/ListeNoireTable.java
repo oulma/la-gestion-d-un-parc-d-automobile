@@ -58,6 +58,9 @@ public class ListeNoireTable implements Initializable {
 
         SearchAction();
 
+
+
+
         //remplir la combobox
         EtatFld.getItems().add("Violations de la circulation");
         EtatFld.getItems().add("Volé");

@@ -181,7 +181,6 @@ public class Voiture {
             voiture.setIdVProperty(rs.getInt(1));
             voiture.setMatriculeProperty(rs.getString(2));
             voiture.setNomProperty(rs.getString(3));
-            voiture.setdateEntrerProperty(rs.getString(4));
 
             VoiList.add(voiture);
         }
@@ -213,7 +212,7 @@ public class Voiture {
             voiture.setIdVProperty(rsId.getInt(1));
             voiture.setMatriculeProperty(rsId.getString(2));
             voiture.setNomProperty(rsId.getString(3));
-            voiture.setdateEntrerProperty(rsId.getString(4));
+          //  voiture.setdateEntrerProperty(rsId.getString(4));
 
             VoiList.add(voiture);
         }
@@ -242,11 +241,12 @@ public class Voiture {
             voiture.setIdVProperty(rsmatricule.getInt(1));
             voiture.setMatriculeProperty(rsmatricule.getString(2));
             voiture.setNomProperty(rsmatricule.getString(3));
-            voiture.setdateEntrerProperty(rsmatricule.getString(4));
+         //   voiture.setdateEntrerProperty(rsmatricule.getString(4));
 
             VoiList.add(voiture);
         }
         return VoiList;
+
     }
     //--------------------------------------- Pour la Recherche par Nom --------------------------------------------------//
     public static ObservableList<Voiture> getArchiveFromCherche2(String Nom) throws ClassNotFoundException, SQLException {

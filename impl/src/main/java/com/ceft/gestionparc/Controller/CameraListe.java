@@ -41,7 +41,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.videoio.VideoCapture;
 import javax.imageio.ImageIO;
-
+ import org.controlsfx.control.Notifications;
 public class CameraListe  implements Initializable {
     private ScheduledExecutorService timer;
     private VideoCapture capture = new VideoCapture();
@@ -80,6 +80,8 @@ public class CameraListe  implements Initializable {
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         Parking parking = new Parking();
+
+        parking.getVoiture().clear();
         try {
             parking.SQLajouterVoiture();
         } catch (SQLException throwables) {
@@ -126,6 +128,7 @@ public class CameraListe  implements Initializable {
         //  media= new Media(file.toURI().toString());
         //  mediaPlayer= new MediaPlayer(media);
         // mediaView.setMediaPlayer(mediaPlayer);
+
     }
 
     public void redButtonOnAction() {
@@ -145,7 +148,7 @@ public class CameraListe  implements Initializable {
     private void ajouterVoitByDet(String m,String d) throws SQLException, ClassNotFoundException {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.connectionDuBd();
-        String addVoitureSQL = "INSERT INTO `voiture` (`matricule`, `date_dentrer`) VALUES ('"+m+"','"+d+"')";
+        String addVoitureSQL = "INSERT INTO `voiture` (`matricule`, `dateEntrée`) VALUES ('"+m+"','"+d+"')";
         String deletDup = "DELETE S1 FROM voiture AS S1  \n" +
                 "INNER JOIN voiture AS S2   \n" +
                 "WHERE S1.id < S2.id AND S1.matricule = S2.matricule; ";
@@ -153,6 +156,46 @@ public class CameraListe  implements Initializable {
         Statement statement = connectDB.createStatement();
         statement.executeUpdate(addVoitureSQL);
         statement.executeUpdate(deletDup);
+
+    }
+
+    private void remplireTableview() throws SQLException, ClassNotFoundException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.connectionDuBd();
+        String countHowManyCarInPark = "SELECT * FROM voiture";
+        Statement statement = connectDB.createStatement();
+        ResultSet rs = statement.executeQuery(countHowManyCarInPark);
+
+        while (rs.next()) {
+            Voiture v = new Voiture(rs.getInt("id"), rs.getString("matricule"), rs.getString("dateEntrée"));
+            table.getItems().add(v);
+            //---------------------------------------------------------------------------------------------------
+            try {
+                Parking  parking =new Parking();
+                 connectDB = connectNow.connectionDuBd();
+                String query = "SELECT * FROM `liste noir`";
+                statement = connectDB.createStatement();
+                ResultSet rs1 = statement.executeQuery(query);
+                while (rs1.next()){
+                    for(int i =0;i<parking.voiture.size();i++){
+                        if(rs1.getString("matricule").equals(parking.voiture.get(i).getMatricule())){
+                            Notifications.create()
+                                    .title("Warning")
+                                    .text("Decter dans liste noire")
+                                    .showWarning();
+                            break;
+                        }
+
+                    }
+                }
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            //---------------------------------------------------------------------------------------------------
+
+        }
     }
 
     public CameraListe() { };
@@ -203,6 +246,7 @@ public class CameraListe  implements Initializable {
 
                 // update the button content
                 this.cameraButton.setText("Stop Camera");
+               
             }
             else
             {
@@ -257,11 +301,12 @@ public class CameraListe  implements Initializable {
                             if (result.getBestPlate().getCharacters() != null) {
                                 id++;
                                 //listV.add(new Voiture(id,result.getBestPlate().getCharacters(),strDate));
-                                Voiture v = new Voiture(result.getBestPlate().getCharacters(),strDate);
-                                table.getItems().add(v);
+                               // Voiture v = new Voiture(result.getBestPlate().getCharacters(),strDate);
+                             //   table.getItems().add(v);
                                 // cvSaveImage("_img/" + result.getBestPlate().getCharacters() + "_.jpg", frame);
                                 System.out.println("ra9m lmatricule howa :"+result.getBestPlate().getCharacters());
                                 ajouterVoitByDet(result.getBestPlate().getCharacters(),strDate);
+                                remplireTableview();
 
                             }
                         }

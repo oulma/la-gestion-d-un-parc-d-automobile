@@ -120,7 +120,7 @@ public class Archive implements Initializable {
         idCol.setCellValueFactory(cellData -> cellData.getValue().getIdVProperty1().asObject());
     matriculeCol.setCellValueFactory(cellData -> cellData.getValue().getMatriculeProperty1());
     nomCol.setCellValueFactory(cellData -> cellData.getValue().nomPropertyProperty());
-     dateCol.setCellValueFactory(cellData -> cellData.getValue().dateEntrerProperty1());
+    // dateCol.setCellValueFactory(cellData -> cellData.getValue().dateEntrerProperty1());
         try {
             ObservableList<Voiture> VoiList1 = Voiture.getArchive();
             populateTable(VoiList1);

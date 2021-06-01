@@ -156,6 +156,7 @@ public class ReservationController implements Initializable {
                     return;
                 }else{
                     int status=statement.executeUpdate("INSERT INTO réservation (nom, CIN, Matricule, `date d'entrée`, `date de sortie`)   VALUES  ( '"+NomPrenomFld.getText()+" ','"+cinFld.getText()+"','"+martAjt+"','"+dateEntée.getValue()+"', '"+dateDeSortie.getValue()+"')");
+                   // int status1=statement.executeUpdate("INSERT INTO voiture ( matricule, `dateEntrée`)   VALUES  ( '"+martAjt+"','"+dateEntée.getValue().toString()+"')");
                     if(status>0)
                     {
                         JOptionPane.showMessageDialog(null,"Ajout avec succes");
