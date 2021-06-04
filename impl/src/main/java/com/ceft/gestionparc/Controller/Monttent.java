@@ -243,10 +243,22 @@ public class Monttent implements Initializable{
         Stage stage = (Stage)  annul.getScene().getWindow();
         stage.close();
     }
-
+    @FXML private Button dash;
     public void Dashboard(ActionEvent actionEvent) {
         DashboardController dh = new DashboardController();
         dh.goToDashboard();
+        Stage stage = (Stage) dash.getScene().getWindow();
+        stage.close();
+    }
+    @FXML private Button r;
+    @FXML private Button x;
+    public void xAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) x.getScene().getWindow();
+        stage.close();
+    }
+    public void Reduire(ActionEvent actionEvent) {
+        Stage stage = (Stage) r.getScene().getWindow();
+        stage.close();
     }
 }
 

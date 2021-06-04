@@ -134,7 +134,7 @@
                 <Image url="@../../../../../../../_img/new-user.png" />
             </image>
         </ImageView>
-        <Button fx:id="redo" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1238.0" layoutY="10.0" mnemonicParsing="false"  prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X">
+        <Button alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1238.0" layoutY="10.0" mnemonicParsing="false" onAction="#xAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X" fx:id="x">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -144,7 +144,7 @@
                 <Font name="Arial" size="10.0" />
             </font>
         </Button>
-        <Button fx:id="gree" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1170.0" layoutY="9.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_" underline="true">
+        <Button fx:id="r" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1170.0" layoutY="9.0" mnemonicParsing="false" mouseTransparent="true" onAction="#Reduire" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_" underline="true">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
