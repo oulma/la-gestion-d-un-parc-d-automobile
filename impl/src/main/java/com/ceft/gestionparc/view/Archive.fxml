@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Archive">
@@ -139,22 +140,22 @@
             <Font name="Arial" size="9.0" />
          </font>
       </Button>
-      <Button fx:id="Reservation" alignment="CENTER" mnemonicParsing="false" onAction="#showReservationArchive" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="Réservation" underline="true" wrapText="true" AnchorPane.bottomAnchor="154.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="1053.0" AnchorPane.topAnchor="381.0">
+      <Button fx:id="Reservation" alignment="CENTER" layoutX="26.0" layoutY="382.0" mnemonicParsing="false" onAction="#showReservationArchive" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="Réservation" wrapText="true" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="1060.0" AnchorPane.topAnchor="382.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="listnoir" alignment="CENTER" mnemonicParsing="false" onAction="#showListNoirArchive" prefHeight="61.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="List Noir" underline="true" wrapText="true" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="1053.0" AnchorPane.topAnchor="454.0">
+      <Button fx:id="listnoir" alignment="CENTER" layoutX="16.0" layoutY="454.0" mnemonicParsing="false" onAction="#showListNoirArchive" prefHeight="61.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="List Noir" wrapText="true" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="1070.0" AnchorPane.topAnchor="454.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="Montant" alignment="CENTER" mnemonicParsing="false" onAction="#showMontantArchive" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="Montant" underline="true" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="1053.0" AnchorPane.topAnchor="520.0">
+      <Button fx:id="Montant" alignment="CENTER" layoutX="12.0" layoutY="522.0" mnemonicParsing="false" onAction="#showMontantArchive" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #ffffff00;" text="Montant" wrapText="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="1074.0" AnchorPane.topAnchor="522.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="CameraEtListe" alignment="CENTER" layoutX="48.0" layoutY="238.0" mnemonicParsing="false" onAction="#showCameraEtListeArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="Caméra &amp; Liste" underline="true" wrapText="true" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="1038.0" AnchorPane.topAnchor="238.0">
+      <Button fx:id="CameraEtListe" alignment="CENTER" layoutX="50.0" layoutY="238.0" mnemonicParsing="false" onAction="#showCameraEtListeArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="Caméra &amp; Liste" wrapText="true" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="1036.0" AnchorPane.topAnchor="238.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
@@ -164,12 +165,12 @@
             <Font name="Times New Roman" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="AjouterMember" alignment="CENTER" layoutX="48.0" layoutY="314.0" mnemonicParsing="false" onAction="#showAjouterMemberArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="AjouterMember" underline="true" wrapText="true" AnchorPane.bottomAnchor="221.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="1038.0" AnchorPane.topAnchor="314.0">
+      <Button fx:id="AjouterMember" alignment="CENTER" layoutX="48.0" layoutY="314.0" mnemonicParsing="false" onAction="#showAjouterMemberArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="AjouterMember" wrapText="true" AnchorPane.bottomAnchor="221.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="1038.0" AnchorPane.topAnchor="314.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
       </Button>
-      <Button fx:id="Satistiques" alignment="CENTER" mnemonicParsing="false" onAction="#showSatistiquesArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="Satistiques" underline="true" wrapText="true" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="1041.0" AnchorPane.topAnchor="173.0">
+      <Button fx:id="Satistiques" alignment="CENTER" layoutX="24.0" layoutY="173.0" mnemonicParsing="false" onAction="#showSatistiquesArchive" prefHeight="65.0" prefWidth="187.0" style="-fx-background-color: #ffffff00;" text="Satistiques" wrapText="true" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="1062.0" AnchorPane.topAnchor="173.0">
          <font>
             <Font name="Times New Roman" size="23.0" />
          </font>
@@ -182,5 +183,6 @@
             <Insets />
          </opaqueInsets>
       </Button>
+      <BorderPane layoutY="161.0" prefHeight="9.0" prefWidth="247.0" style="-fx-background-color: WHITE;" />
    </children>
 </AnchorPane>

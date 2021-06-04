@@ -20,7 +20,7 @@
             <Image url="@../../../../../../../_img/VOITURE1.png" />
          </image>
       </ImageView>
-      <LineChart fx:id="parcMois" layoutX="38.0" layoutY="230.0" prefHeight="348.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(#EECEC8,#6f6464);" title="Place / jour">
+      <LineChart fx:id="parcMois" layoutX="38.0" layoutY="230.0" prefHeight="348.0" prefWidth="606.0" style="-fx-background-color: white;" title="Place / jour">
          <xAxis>
             <CategoryAxis fx:id="Z" label="jour" side="BOTTOM" />
          </xAxis>

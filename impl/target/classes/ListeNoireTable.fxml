@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ListeNoireTable">
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.ListeNoireTable">
     <children>
         <AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 1EM 1EM 1EM 1EM;">
             <children>
@@ -64,7 +64,7 @@
                         <Font name="Times New Roman" size="23.0" />
                     </font>
                 </Button>
-                <Button fx:id="Montant" layoutX="-263.0" layoutY="482.0" mnemonicParsing="false" onAction="#Montant" prefHeight="63.0" prefWidth="260.0" style="-fx-background-color: #ffffff00;" text="   Montant">
+                <Button fx:id="Montant" layoutX="-253.0" layoutY="484.0" mnemonicParsing="false" onAction="#Montant" prefHeight="63.0" prefWidth="250.0" style="-fx-background-color: #ffffff00;" text="Paiment">
                <font>
                   <Font name="Times New Roman" size="23.0" />
                </font></Button>
@@ -73,7 +73,7 @@
                         <Font name="Times New Roman" size="23.0" />
                     </font>
                 </Button>
-                <Button fx:id="Satistiques" alignment="CENTER" layoutX="-252.0" layoutY="113.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="      Satistiques" wrapText="true">
+                <Button fx:id="Satistiques" alignment="CENTER" layoutX="-245.0" layoutY="121.0" mnemonicParsing="false" onAction="#Satistiques" prefHeight="65.0" prefWidth="238.0" style="-fx-background-color: #ffffff00;" text="      Satistiques" wrapText="true">
                     <font>
                         <Font name="Times New Roman" size="23.0" />
                     </font>
@@ -83,7 +83,7 @@
                         <Font name="Times New Roman" size="23.0" />
                     </font>
                 </Button>
-                <ImageView id="statistics" fx:id="statistics" fitHeight="50.0" fitWidth="50.0" layoutX="-236.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                <ImageView id="statistics" fx:id="statistics" fitHeight="50.0" fitWidth="50.0" layoutX="-239.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                     <image>
                         <Image url="@../../../../../../../_img/statistics.png" />
                     </image>
@@ -145,7 +145,7 @@
         </Button>
         <Button fx:id="yellowButton" graphicTextGap="5.0" layoutX="1202.0" layoutY="6.0" mnemonicParsing="false" onAction="#yellowButtonOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text=" ❐">
             <font>
-                <Font name="Arial" size="12.0" />
+                <Font name="Arial" size="9.0" />
             </font>
         </Button>
         <Button fx:id="greenButton" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1169.0" layoutY="5.0" mnemonicParsing="false" mouseTransparent="true" onAction="#greenButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="_" underline="true">
@@ -185,6 +185,6 @@
          </font>
       </Label>
       <TextField id="Prenom" fx:id="MarqueFld" layoutX="1003.0" layoutY="307.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-radius: 1EM;" />
-      <BorderPane layoutY="145.0" prefHeight="9.0" prefWidth="256.0" style="-fx-background-color: WHITE;" />
+      <BorderPane layoutY="145.0" prefHeight="9.0" prefWidth="250.0" style="-fx-background-color: WHITE;" />
     </children>
 </AnchorPane>

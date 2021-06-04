@@ -52,6 +52,10 @@ public class ListeNoireTable implements Initializable {
 
     ObservableList<liste_noire> observableList = FXCollections.observableArrayList();
 
+    public TableView<com.ceft.gestionparc.Model.liste_noire> getTable() {
+        return table;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         fill();

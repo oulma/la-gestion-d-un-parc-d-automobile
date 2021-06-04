@@ -25,8 +25,9 @@ import javax.swing.*;
 
 
 public class ReservationController implements Initializable {
+    DashboardController dh = new DashboardController();
     @FXML
-    private ImageView Reservation,AjouterCompte,statistic,Camera,archive,ListeNoire,paiment,rechercher;
+    private ImageView Reservation,AjouterCompte,statistic,Camera,archive,ListeNoire,paiment,rechercher,image_gmail;
     @FXML
     private Label setEmail,confirmierReservation;
     @FXML
@@ -59,6 +60,11 @@ public class ReservationController implements Initializable {
         File ReservationFile = new File("_img/reservation.png");
         Image ReservationImage = new Image(ReservationFile.toURI().toString());
         Reservation.setImage(ReservationImage);
+
+        File image_gmailFile = new File("_img/admin.png");
+        Image image_gmailImage = new Image(image_gmailFile.toURI().toString());
+        image_gmail.setImage(image_gmailImage);
+
         File rechercherFile = new File("_img/_search.png");
         Image rechercherImage = new Image(rechercherFile.toURI().toString());
         rechercher.setImage(rechercherImage);
@@ -206,7 +212,6 @@ public class ReservationController implements Initializable {
 
     @FXML private Button montantRS;
     public void MontantonAction(ActionEvent actionEvent) {
-        DashboardController dh = new DashboardController();
         dh.showMontant();
         Stage stage = (Stage)  montantRS.getScene().getWindow();
         stage.close();
@@ -387,7 +392,11 @@ public class ReservationController implements Initializable {
         refreshTableAction();
         clean();
     }
-            }
+
+    public void dashboardOnAction(ActionEvent actionEvent) {
+        dh.goToDashboard();
+    }
+}
 
 
 

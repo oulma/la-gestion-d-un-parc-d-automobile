@@ -46,8 +46,7 @@ public class AjouterMember implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         File sideFile = new File("_img/_side.png");
         Image sideImage = new Image(sideFile.toURI().toString());
-        side1.setImage(sideImage);
-        side2.setImage(sideImage);
+
 
 
         File dash1File = new File("_img/statistics.png");

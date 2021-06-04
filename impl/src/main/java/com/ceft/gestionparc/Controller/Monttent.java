@@ -36,6 +36,8 @@ public class Monttent implements Initializable{
 
     @FXML
     private Label po;
+    @FXML
+    private Label Email;
 
     @FXML
     private ImageView mm;
@@ -92,7 +94,15 @@ public class Monttent implements Initializable{
         File mmFile = new File("_img/save-money.png");
         Image mmImage = new Image(mmFile.toURI().toString());
         mm.setImage(mmImage);
+           AjouterMember  ajouterMember = new AjouterMember();
+        try {
+            Email.setText(ajouterMember.afficherEmail());
+        } catch (SQLException throwables) {
 
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
         File aaFile = new File("_img/statistics.png");
@@ -188,17 +198,14 @@ public class Monttent implements Initializable{
     public void greenButtonOnAction(ActionEvent actionEvent) {
     }
 
-    public void vue(ActionEvent actionEvent) {
-
-
+    public void vue() {
         DashboardController dh = new DashboardController();
         dh.showStatistique();
         Stage stage = (Stage)  sati.getScene().getWindow();
         stage.close();
     }
 
-    public void liste(ActionEvent actionEvent) {
-
+    public void liste() {
         DashboardController dh = new DashboardController();
         dh.showCameraliste();
         Stage stage = (Stage)  ww.getScene().getWindow();
@@ -207,7 +214,7 @@ public class Monttent implements Initializable{
     }
 
 
-    public void ajou(ActionEvent actionEvent) {
+    public void ajou() {
         DashboardController dh = new DashboardController();
         dh.showAjouterMember();
         Stage stage = (Stage)  lolo.getScene().getWindow();
@@ -216,7 +223,6 @@ public class Monttent implements Initializable{
     }
 
     public void mor(ActionEvent actionEvent) {
-
         DashboardController dh = new DashboardController();
         dh.showReservation();
         Stage stage = (Stage)  model.getScene().getWindow();
@@ -225,8 +231,6 @@ public class Monttent implements Initializable{
 
 
     public void nod(ActionEvent actionEvent) {
-
-
         DashboardController dh = new DashboardController();
         dh.showArchive();
         Stage stage = (Stage)  chaha.getScene().getWindow();
@@ -234,26 +238,15 @@ public class Monttent implements Initializable{
     }
 
     public void nul(ActionEvent actionEvent) {
-
         DashboardController dh = new DashboardController();
         dh.showListeNoire();
         Stage stage = (Stage)  annul.getScene().getWindow();
         stage.close();
     }
 
-    public void reddo(ActionEvent actionEvent) {
-
-
-        Stage stage = (Stage) redo.getScene().getWindow();
-        stage.close();
-    }
-
-
-    public void gros(ActionEvent actionEvent) {
-
-
-        Stage stage = (Stage) gree.getScene().getWindow();
-        stage.close();
+    public void Dashboard(ActionEvent actionEvent) {
+        DashboardController dh = new DashboardController();
+        dh.goToDashboard();
     }
 }
 

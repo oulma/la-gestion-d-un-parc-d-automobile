@@ -11,6 +11,6 @@ public class ConfirmationAjouterUtil {
         Stage stage = (Stage) okAjouterButton.getScene().getWindow();
         stage.close();
         DashboardController dashboardController = new DashboardController();
-        dashboardController.goToDashboard();
+        dashboardController.showAjouterMember();
     }
 }

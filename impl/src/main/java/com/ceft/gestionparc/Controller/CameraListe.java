@@ -7,12 +7,14 @@ import com.openalpr.jni.Alpr;
 import com.openalpr.jni.AlprException;
 import com.openalpr.jni.AlprPlateResult;
 import com.openalpr.jni.AlprResults;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -77,10 +79,10 @@ public class CameraListe  implements Initializable {
     private static int id =0;
     @FXML private ImageView Cameraliste,AjouterCompte,statistic,reservation,archive,ListeNoire,paiment;
     @FXML private Button greenButton, redButton, yellowButton;
+    @FXML private ImageView image_admin;
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         Parking parking = new Parking();
-
         parking.getVoiture().clear();
         try {
             parking.SQLajouterVoiture();
@@ -90,10 +92,13 @@ public class CameraListe  implements Initializable {
             e.printStackTrace();
         }
 
-
-       File CameralisteFile = new File("_img/_camera.png");
+        File CameralisteFile = new File("_img/_camera.png");
         Image CameralisteImage = new Image(CameralisteFile.toURI().toString());
         Cameraliste.setImage(CameralisteImage);
+
+        File Cameraliste1File = new File("_img/admin.png");
+        Image Cameraliste1Image = new Image(Cameraliste1File.toURI().toString());
+        image_admin.setImage(Cameraliste1Image);
 
         File AjouterCompteFile = new File("_img/new-user.png");
         Image AjouterCompteImage = new Image(AjouterCompteFile.toURI().toString());
@@ -169,34 +174,38 @@ public class CameraListe  implements Initializable {
         while (rs.next()) {
             Voiture v = new Voiture(rs.getInt("id"), rs.getString("matricule"), rs.getString("dateEntrée"));
             table.getItems().add(v);
-            //---------------------------------------------------------------------------------------------------
-            try {
-                Parking  parking =new Parking();
-                 connectDB = connectNow.connectionDuBd();
-                String query = "SELECT * FROM `liste noir`";
-                statement = connectDB.createStatement();
-                ResultSet rs1 = statement.executeQuery(query);
-                while (rs1.next()){
-                    for(int i =0;i<parking.voiture.size();i++){
-                        if(rs1.getString("matricule").equals(parking.voiture.get(i).getMatricule())){
-                            Notifications.create()
-                                    .title("Warning")
-                                    .text("Decter dans liste noire")
-                                    .showWarning();
-                            break;
-                        }
+        }
+
+             connectNow = new DatabaseConnection();
+             connectDB = connectNow.connectionDuBd();
+            String checkListNoir = "SELECT * FROM `liste noir`";
+             statement = connectDB.createStatement();
+            ResultSet rs1 = statement.executeQuery(checkListNoir);
+        while (rs.next())
+        {
+
+            Platform.runLater(new Runnable(){
+                @Override
+                public void run() {
+                    if(true){
+                        Notifications.create()
+                                .title("Warning")
+                                .text("Voiture Liste noire")
+                                .showError();
 
                     }
                 }
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-            //---------------------------------------------------------------------------------------------------
+// do your GUI stuff here
+            });
+        }
+
+
+
+
+
 
         }
-    }
+
 
     public CameraListe() { };
     @FXML
@@ -307,7 +316,9 @@ public class CameraListe  implements Initializable {
                                 System.out.println("ra9m lmatricule howa :"+result.getBestPlate().getCharacters());
                                 ajouterVoitByDet(result.getBestPlate().getCharacters(),strDate);
                                 remplireTableview();
+                                //---------------------------------------------------------//
 
+                                //---------------------------------------------------------//
                             }
                         }
                         alpr.unload();
@@ -427,4 +438,8 @@ public class CameraListe  implements Initializable {
     }
 
 
+    public void dashboardOnAction(ActionEvent actionEvent) {
+        DashboardController dh = new DashboardController();
+        dh.goToDashboard();
+    }
 }
