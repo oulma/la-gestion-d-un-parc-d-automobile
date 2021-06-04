@@ -121,7 +121,7 @@
             <Image url="@../../../../../../../_img/new-user.png" />
          </image>
       </ImageView>
-      <Label fx:id="setEmail" layoutX="866.0" layoutY="34.0" prefHeight="28.0" prefWidth="321.0" underline="true">
+      <Label fx:id="setEmail" layoutX="881.0" layoutY="46.0" prefHeight="28.0" prefWidth="321.0" underline="true">
          <font>
             <Font name="Times New Roman Bold Italic" size="24.0" />
          </font>
@@ -185,5 +185,12 @@
          </font>
       </Button>
       <BorderPane layoutX="1.0" layoutY="173.0" prefHeight="9.0" prefWidth="250.0" style="-fx-background-color: WHITE;" />
+      <Button layoutX="1215.0" layoutY="35.0" minHeight="0.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="56.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 3em 3em 3em 3em;" textFill="WHITE" wrapText="true" />
+      <Button layoutX="1218.0" layoutY="38.0" minHeight="0.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 4em 4em 4em 4em;" textFill="WHITE" wrapText="true" />
+      <ImageView id="Add" fx:id="Add" fitHeight="38.0" fitWidth="30.0" layoutX="1229.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../_img/new-user.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

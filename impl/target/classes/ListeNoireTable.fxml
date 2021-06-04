@@ -156,7 +156,7 @@
                 <Insets />
             </opaqueInsets>
         </Button>
-        <Button fx:id="Dashboard" alignment="CENTER" layoutX="4.0" layoutY="90.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Dashboard" underline="true" wrapText="true">
+        <Button fx:id="Dashboard" alignment="CENTER" layoutX="4.0" layoutY="90.0" mnemonicParsing="false" onAction="#showDashboard" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #ffffff00;" text="Dashboard" underline="true" wrapText="true">
             <font>
                 <Font name="Times New Roman" size="23.0" />
             </font>

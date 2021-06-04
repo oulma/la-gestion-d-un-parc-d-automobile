@@ -39,14 +39,11 @@ public class AjouterMember implements Initializable {
     @FXML
     private Button annulerAjouterMember;
     @FXML
-    private ImageView dash1, dash2, dash3, dash4, dash5, dash6, dash7, side1,side2;
+    private ImageView dash1, dash2,Add,dash3, dash4, dash5, dash6, dash7, side1,side2;
     @FXML
     private Button ajouterUtilisateur;
     DashboardController dh = new DashboardController();
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File sideFile = new File("_img/_side.png");
-        Image sideImage = new Image(sideFile.toURI().toString());
-
 
 
         File dash1File = new File("_img/statistics.png");
@@ -64,6 +61,10 @@ public class AjouterMember implements Initializable {
         File dash4File = new File("_img/blocked.png");
         Image dash4Image = new Image(dash4File.toURI().toString());
         dash4.setImage(dash4Image);
+
+        File AddFile = new File("_img/admin.png");
+        Image AddImage = new Image(AddFile.toURI().toString());
+        Add.setImage(AddImage);
 
         File dash5File = new File("_img/reservation.png");
         Image dash5Image = new Image(dash5File.toURI().toString());

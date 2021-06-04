@@ -116,6 +116,11 @@
                           <Image url="@../../../../../../../_img/new-user.png" />
                       </image>
                   </ImageView>
+            <Label fx:id="setEmail1" layoutX="882.0" layoutY="65.0" prefHeight="28.0" prefWidth="321.0" underline="true">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
       <Button fx:id="redButton" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="1238.0" layoutY="11.0" mnemonicParsing="false" onAction="#redButtonOnAction" prefHeight="22.0" prefWidth="25.0" style="-fx-background-color: linear-gradient(#ffffff00,#6f6464,WHITE); -fx-background-radius: 2EM 2EM 2EM 2EM;" text="X">

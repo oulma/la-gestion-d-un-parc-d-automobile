@@ -130,31 +130,28 @@ public class ListeNoireTable implements Initializable {
         Stage stage = (Stage) greenButton.getScene().getWindow();
         stage.toBack();
     }
+    @FXML private Button Satistiques,CameraEtListe,AjouterMemberListNoir,Reservation,Archive,Montant;
 
-    @FXML void Satistiques() { dh.showStatistique(); }
-
-    @FXML public void showAjouterMemberListNoir() { dh.showAjouterMember(); }
-
-    @FXML public void Montant(ActionEvent actionEvent) { dh.showMontant(); }
-
-    @FXML public void CameraEtListe() { dh.showCameraliste(); }
-
-    @FXML public void Reservation() { dh.showReservation(); }
-
-    @FXML public void Archive() {
-    try {
-        Parent root = FXMLLoader.load(getClass().getResource("/Archive.fxml"));
-        Scene scene = new Scene(root);
-        Stage primaryStage = new Stage();
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.setScene(scene);
-        scene.setFill(Color.TRANSPARENT);
-        primaryStage.show();
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        e.getCause();
-    }}
+    @FXML void Satistiques() { dh.showStatistique();
+    Stage stage = (Stage) Satistiques.getScene().getWindow();
+    stage.close();
+    }
+    @FXML public void showAjouterMemberListNoir() { dh.showAjouterMember();
+        Stage stage = (Stage) AjouterMemberListNoir.getScene().getWindow();
+        stage.close();}
+    @FXML public void Montant() { dh.showMontant();
+    Stage stage = (Stage) Montant.getScene().getWindow();
+        stage.close(); }
+    @FXML public void CameraEtListe() { dh.showCameraliste();
+    Stage stage = (Stage) CameraEtListe.getScene().getWindow();
+        stage.close();}
+    @FXML public void Reservation() { dh.showReservation();
+        Stage stage = (Stage) Reservation.getScene().getWindow();
+        stage.close();
+    }
+    @FXML public void Archive() {dh.showArchive();
+        Stage stage = (Stage) Archive.getScene().getWindow();
+        stage.close();}
 
     String query = null;
     Connection connection = null;
@@ -332,5 +329,12 @@ public class ListeNoireTable implements Initializable {
             }
         }
     }
+    @FXML
+    private Button Dashboard;
+    public void showDashboard() {
+       dh.goToDashboard();
+       Stage s = (Stage) Dashboard.getScene().getWindow();
+       s.close();
 
- }
+    }
+}

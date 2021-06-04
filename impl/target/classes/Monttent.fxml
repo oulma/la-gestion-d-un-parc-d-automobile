@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="589.0" prefWidth="1224.0" style="-fx-background-radius: 100;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceft.gestionparc.Controller.Monttent">
     <children>
-        <AnchorPane fx:id="kk" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="1278.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 15;">
+        <AnchorPane fx:id="kk" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="1278.0" style="-fx-background-color: linear-gradient(WHITE,#6f6464); -fx-background-radius: 15;">
             <children>
                 <Button ellipsisString="" layoutX="47.0" layoutY="18.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="151.0" style="-fx-background-color: #D2D2D2; -fx-background-radius: 2EM 2EM 2EM 2EM;" textAlignment="RIGHT" textFill="#613030" />
                 <Button ellipsisString="" layoutX="58.0" layoutY="24.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="132.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 1EM 1EM;" textAlignment="RIGHT" textFill="#613030" />
@@ -54,43 +54,43 @@
                         <Image url="@../../../../../../../_img/statistics.png" />
                     </image>
                 </ImageView>
-            <Button id="Satistiques" fx:id="ww" alignment="CENTER" layoutX="26.0" layoutY="234.0" mnemonicParsing="false" onAction="#liste" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Camera Lsite" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="23.0" />
-               </font>
-            </Button>
-            <Button id="Satistiques" fx:id="lolo" alignment="CENTER" layoutX="34.0" layoutY="304.0" mnemonicParsing="false" onAction="#ajou" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="23.0" />
-               </font>
-            </Button>
-            <Button id="Satistiques" fx:id="model" alignment="CENTER" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#mor" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Réservation" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="23.0" />
-               </font>
-            </Button>
-            <Button id="Satistiques" fx:id="chaha" alignment="CENTER" layoutX="-2.0" layoutY="444.0" mnemonicParsing="false" onAction="#nod" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Archive" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="23.0" />
-               </font>
-            </Button>
-            <Button id="Satistiques" fx:id="annul" alignment="CENTER" layoutX="7.0" layoutY="510.0" mnemonicParsing="false" onAction="#nul" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Liste Noir" wrapText="true">
-               <font>
-                  <Font name="Times New Roman" size="23.0" />
-               </font>
-            </Button>
 
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="rese" layoutX="262.0" layoutY="42.0" prefHeight="548.0" prefWidth="1022.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 0EM 0EM;">
+        <AnchorPane fx:id="rese" layoutX="250.0" layoutY="41.0" prefHeight="548.0" prefWidth="1022.0" style="-fx-background-color: WHITE; -fx-background-radius: 1EM 1EM 0EM 0EM;">
             <children>
+            <Button id="Satistiques" fx:id="annul" alignment="CENTER" layoutX="-250.0" layoutY="473.0" mnemonicParsing="false" onAction="#nul" prefHeight="72.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Liste Noir" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button id="Satistiques" fx:id="chaha" alignment="CENTER" layoutX="-248.0" layoutY="399.0" mnemonicParsing="false" onAction="#nod" prefHeight="81.0" prefWidth="228.0" style="-fx-background-color: #ffffff00;" text="Archive" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button id="Satistiques" fx:id="model" alignment="CENTER" layoutX="-248.0" layoutY="327.0" mnemonicParsing="false" onAction="#mor" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Réservation" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button id="Satistiques" fx:id="lolo" alignment="CENTER" layoutX="-228.0" layoutY="259.0" mnemonicParsing="false" onAction="#ajou" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Ajouter Compte" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
+            <Button id="Satistiques" fx:id="ww" alignment="CENTER" layoutX="-236.0" layoutY="193.0" mnemonicParsing="false" onAction="#liste" prefHeight="81.0" prefWidth="250.0" style="-fx-background-color: #ffffff00;" text="Camera Lsite" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="23.0" />
+               </font>
+            </Button>
                 <Label id="Montant" layoutX="14.0" prefHeight="51.0" prefWidth="256.0" text="Montant" underline="true" AnchorPane.leftAnchor="14.0">
                     <font>
                         <Font name="Times New Roman Bold Italic" size="37.0" />
                     </font>
                 </Label>
-                <Button ellipsisString="" layoutX="242.0" layoutY="417.0" mnemonicParsing="false" prefHeight="115.0" prefWidth="395.0" style="-fx-background-color: #CCC4C2; -fx-background-radius: 3em 3em 3em 3em;" textAlignment="RIGHT" textFill="#828d7f" />
-                <Button ellipsisString="" layoutX="242.0" layoutY="433.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="395.0" style="-fx-background-color: WHITE; -fx-background-radius: 3EM 3EM 3EM 3EM;" textAlignment="RIGHT" textFill="#613030" />
+                <Button ellipsisString="" layoutX="323.0" layoutY="406.0" mnemonicParsing="false" prefHeight="115.0" prefWidth="395.0" style="-fx-background-color: #CCC4C2; -fx-background-radius: 3em 3em 3em 3em;" textAlignment="RIGHT" textFill="#828d7f" />
+                <Button ellipsisString="" layoutX="323.0" layoutY="422.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="395.0" style="-fx-background-color: WHITE; -fx-background-radius: 3EM 3EM 3EM 3EM;" textAlignment="RIGHT" textFill="#613030" />
                 <Label fx:id="Email" layoutX="559.0" layoutY="22.0" text="chaimae.elinawi2000@gmail.com">
                     <font>
                         <Font name="System Bold Italic" size="22.0" />
@@ -104,8 +104,8 @@
                     </columns>
                 </TableView>
                 <Accordion layoutX="-247.0" layoutY="44.0" />
-            <Label fx:id="po" layoutX="440.0" layoutY="458.0" prefHeight="35.0" prefWidth="186.0" text="montant" />
-              <Label id="Matricule" layoutX="271.0" layoutY="457.0" prefHeight="35.0" prefWidth="144.0" text="Montant total">
+            <Label fx:id="po" layoutX="521.0" layoutY="447.0" prefHeight="35.0" prefWidth="186.0" text="montant" />
+              <Label id="Matricule" layoutX="341.0" layoutY="448.0" prefHeight="35.0" prefWidth="144.0" text="Montant total">
                   <font>
                       <Font name="Times New Roman Bold Italic" size="24.0" />
                   </font>
@@ -115,7 +115,7 @@
                         <Font name="Times New Roman" size="24.0" />
                     </font>
                 </Button>
-                <Button id="Satistiques" fx:id="sati" alignment="CENTER" layoutX="-242.0" layoutY="125.0" mnemonicParsing="false" onAction="#vue" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Satistiques" wrapText="true">
+                <Button id="Satistiques" fx:id="sati" alignment="CENTER" layoutX="-250.0" layoutY="125.0" mnemonicParsing="false" onAction="#vue" prefHeight="81.0" prefWidth="256.0" style="-fx-background-color: #ffffff00;" text="Satistiques" wrapText="true">
                     <font>
                         <Font name="Times New Roman" size="23.0" />
                     </font>

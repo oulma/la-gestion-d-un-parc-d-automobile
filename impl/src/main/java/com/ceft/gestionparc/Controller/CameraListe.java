@@ -68,6 +68,8 @@ public class CameraListe  implements Initializable {
 
     @FXML
      private ImageView originalFrame;
+    @FXML
+     private Label setEmail1;
 
    // @FXML
    // private MediaView mediaView;
@@ -86,6 +88,14 @@ public class CameraListe  implements Initializable {
         parking.getVoiture().clear();
         try {
             parking.SQLajouterVoiture();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        AjouterMember a = new AjouterMember();
+        try {
+            setEmail1.setText(a.afficherEmail());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
